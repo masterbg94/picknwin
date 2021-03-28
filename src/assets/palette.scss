@@ -1,0 +1,49 @@
+/* Main */
+$main-light-green: #B5C80E;
+$main-yellow: #F6F418;
+$main-dark-blue: #0A1A2A;
+$main-blue-gray: #253340;
+
+/* Gradients */
+@mixin gradient {
+  background: linear-gradient(90deg, #80BE23 0%, #B5C80E 100%);
+}
+
+@mixin gradient2 {
+  background: linear-gradient(90deg, #23BE80 0%, #B5C80E 100%);
+}
+
+@mixin gradient3 {
+  background: linear-gradient(90deg, #A8C51330 0%, #9EC317 100%);
+}
+
+@mixin gradient3 {
+  background: linear-gradient(90deg, #83BE22 0%, #132C3B 100%);
+}
+
+
+/* Alpha */
+$white10: rgba(255, 255, 255, 0.1);
+$white20: rgba(255, 255, 255, 0.2);
+$white30: rgba(255, 255, 255, 0.3);
+$white50: rgba(255, 255, 255, 0.5);
+$white90: rgba(255, 255, 255, 0.9);
+$white: rgba(255, 255, 255);
+$yellow20: rgba(255, 255, 0, 0.2);
+
+/* Border */
+@mixin border-green6 {
+  border: 1px solid #B5C80E;
+  border-radius: 6px;
+}
+
+@mixin border-gray4 {
+  border: 1px solid #3C444C;
+  border-radius: 4px;
+}
+
+/* states */
+$state-success: #00FF33;
+$state-error: #FF0000;
+
+
