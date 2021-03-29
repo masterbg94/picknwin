@@ -1,0 +1,32 @@
+@import "../../assets/palette";
+
+.pl-24 {
+  padding-left: 24px;
+}
+
+.pr-24 {
+  padding-right: 24px;
+}
+
+.px-24 {
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.button-gradient-green {
+  @include gradient();
+  border: none;
+  border-radius: 4px;
+  font: normal normal 600 14px/21px Poppins;
+  color: white;
+  height: 40px;
+  width: 160px;
+}
+
+.button-border-green {
+  @include border-green6();
+  color: white;
+  background: transparent;
+  height: 40px;
+  width: 160px;
+}
