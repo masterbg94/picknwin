@@ -1,0 +1,21 @@
+.heading-background {
+  background: url("../../../../assets/img/heading-csgo.jpeg");
+  background-size: cover;
+
+  .home-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .heading-text {
+      h3,
+      p {
+        color: white;
+      }
+
+      p {
+        margin-top: 20px;
+      }
+    }
+  }
+}

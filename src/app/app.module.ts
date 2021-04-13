@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import {AppRoutingModule} from './app.routing.module';
 import {MainToolbarModule} from './shared/components/main-toolbar/main-toolbar.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -12,7 +13,8 @@ import {MainToolbarModule} from './shared/components/main-toolbar/main-toolbar.m
   imports: [
     BrowserModule,
     AppRoutingModule,
-    MainToolbarModule
+    MainToolbarModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

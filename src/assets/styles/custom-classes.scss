@@ -13,6 +13,11 @@
   padding-right: 24px;
 }
 
+.w-1440{
+  max-width: 1440px;
+  width: 100%;
+}
+
 .button-gradient-green {
   @include gradient();
   border: none;

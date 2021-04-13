@@ -1,0 +1,37 @@
+<div class="login-home-wrapper d-flex flex-column">
+  <div class="login-home-header d-flex flex-column">
+    <p>Login</p>
+    <p>Enter the details below</p>
+  </div>
+  <div class="login-home-form">
+    <div class="d-flex flex-column">
+      <mat-label>Username</mat-label>
+      <mat-form-field
+        appearance="outline"
+        floatLabel="never"
+        class="example-full-width"
+      >
+        <input matInput placeholder="Username"/>
+      </mat-form-field>
+    </div>
+    <div class="d-flex flex-column">
+     <div class="d-flex justify-content-between">
+       <mat-label>Password</mat-label>
+       <mat-label style="font-weight: normal">Forgot pass?</mat-label>
+     </div>
+      <mat-form-field
+        appearance="outline"
+        floatLabel="never"
+        class="example-full-width"
+      >
+        <input matInput type="password" placeholder="********"/>
+      </mat-form-field>
+    </div>
+  </div>
+  <button class="button-gradient-green w-100">Login</button>
+  <p>Or login with Steam or Google</p>
+  <div class="login-icons d-flex justify-content-center flex-grow-1">
+    <img src="../../../../assets/img/icons/steam.png" alt="" class="img-fluid">
+    <img src="../../../../assets/img/icons/google.svg" alt="" class="img-fluid">
+  </div>
+</div>
