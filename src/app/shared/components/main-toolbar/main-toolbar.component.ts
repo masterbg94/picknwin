@@ -6,18 +6,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./main-toolbar.component.scss'],
 })
 export class MainToolbarComponent {
-  navigation: [
+  navigation = [
     {
-      name: 'Home';
-      path: '';
+      name: 'Home',
+      path: '/',
     },
     {
-      name: 'Matches';
-      path: '/matches';
+      name: 'Matches',
+      path: '/matches',
     },
     {
-      name: 'Leadbord';
-      path: '/leadbord';
-    }
+      name: 'Leadbord',
+      path: '/leadbord',
+    },
   ];
 }

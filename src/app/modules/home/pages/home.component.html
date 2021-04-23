@@ -1,6 +1,6 @@
 <div class="container-fluid heading-background d-flex justify-content-center">
   <div class="home-main w-1440 px-24">
-    <div class="heading-text d-flex flex-column" style="max-width: 450px">
+    <div class="heading-text d-flex flex-column" style="max-width: 450px;">
       <h3>Win Rewards by</h3>
       <h3><b>Predicting CS:GO Matches</b></h3>
       <p>
@@ -9,20 +9,30 @@
         million players.
       </p>
     </div>
-    <app-home-login-component></app-home-login-component>
+    <div class="mw-330">
+      <app-home-login-component></app-home-login-component>
+    </div>
   </div>
 </div>
 
 <div class="home__matches d-flex justify-content-center">
-  <div class="home__matches--wrapper d-flex justify-content-between w-1440 px-24">
-    <app-upgrade-premium></app-upgrade-premium>
-    <app-matches-list></app-matches-list>
-    <app-upgrade-premium></app-upgrade-premium>
+  <div
+    class="home__matches--wrapper d-flex justify-content-between w-1440 px-24"
+  >
+    <div class="mw-330">
+      <app-upgrade-premium></app-upgrade-premium>
+    </div>
+    <div class="mw-684">
+      <app-matches-list></app-matches-list>
+    </div>
+    <div class="mw-330">
+      <app-home-login-component></app-home-login-component>
+    </div>
   </div>
 </div>
 
 <div class="container-fluid main-background">
-  <div class="container d-flex justify-content-center ">
+  <div class="container d-flex justify-content-center">
     <div class="d-flex flex-column mw-684">
       <app-promo-banner-component></app-promo-banner-component>
       <app-leadbord-table-component></app-leadbord-table-component>

@@ -3,6 +3,9 @@
 .heading-background {
   background: url("../../../../assets/img/heading-csgo.jpeg");
   background-size: cover;
+  margin-top: -88px;
+  padding-top: 112px;
+  padding-bottom: 24px;
 
   .home-main {
     display: flex;
@@ -23,6 +26,7 @@
 }
 
 .home__matches {
+  padding-top: 54px;
   background: $main-dark-blue;
 
   app-matches-list {

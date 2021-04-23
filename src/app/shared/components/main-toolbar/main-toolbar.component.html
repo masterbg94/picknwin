@@ -6,14 +6,8 @@
         <img src="../../../../assets/img/logo2x.png" alt="" class="img-fluid">
       </div>
       <div class="navigation">
-        <div class="nav-item">
-          <p [routerLink]="'/'">Home</p>
-        </div>
-        <div class="nav-item">
-          <p [routerLink]="'/matches'">Matches</p>
-        </div>
-        <div class="nav-item">
-          <p [routerLink]="'/leadbord'">Leadbord</p>
+        <div class="nav-item" *ngFor="let n of navigation">
+          <p [routerLink]="n.path" [routerLinkActive]="['active-route']" [routerLinkActiveOptions]="{ exact: true }">{{n.name}}</p>
         </div>
       </div>
     </div>
