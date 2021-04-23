@@ -5,4 +5,19 @@ import { Component } from '@angular/core';
   templateUrl: './main-toolbar.component.html',
   styleUrls: ['./main-toolbar.component.scss'],
 })
-export class MainToolbarComponent {}
+export class MainToolbarComponent {
+  navigation: [
+    {
+      name: 'Home';
+      path: '';
+    },
+    {
+      name: 'Matches';
+      path: '/matches';
+    },
+    {
+      name: 'Leadbord';
+      path: '/leadbord';
+    }
+  ];
+}

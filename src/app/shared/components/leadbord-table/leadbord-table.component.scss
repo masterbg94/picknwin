@@ -1,0 +1,99 @@
+.leadboard {
+  &__header {
+    height: 40px;
+    line-height: 40px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 24px;
+    color: #fff;
+
+    button {
+      font-size: 14px;
+      border: 1px solid #b5c80e;
+      border-radius: 4px;
+      background-color: transparent;
+      outline: none;
+      color: #fff;
+      height: 40px;
+      line-height: 40px;
+      padding: 0 52px;
+      cursor: pointer;
+    }
+  }
+
+  &__table {
+    width: 100%;
+    background-color: #1a2837;
+    color: #fff;
+    border-radius: 6px;
+    margin-bottom: 108px;
+    border-collapse: collapse;
+
+    tr {
+      height: 72px;
+    }
+
+    .text-left {
+      text-align: left;
+    }
+
+    .text-right {
+      text-align: right;
+    }
+
+    th,
+    td {
+      padding: 0 30px;
+    }
+
+    .table__container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &--start {
+        justify-content: flex-start;
+      }
+    }
+
+    .icon {
+      &__place {
+        width: 23.5px;
+        margin-left: 45px;
+      }
+
+      &__score {
+        width: 21px;
+        height: 21px;
+        margin-right: 8px;
+        background-color: #f6f418;
+      }
+
+      &__prize {
+        margin-right: 8px;
+      }
+    }
+
+    .avatar {
+      width: 40px;
+      height: 40px;
+      background-color: #5cb6e5;
+      border-radius: 6px;
+      margin-right: 16px;
+    }
+
+    thead {
+      font-size: 14px;
+    }
+
+    tbody {
+      font-size: 16px;
+
+      tr {
+        &:nth-child(odd) {
+          background-color: #0a1a2a;
+        }
+      }
+    }
+  }
+}

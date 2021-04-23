@@ -1,3 +1,5 @@
+@import "../../../../assets/palette";
+
 .heading-background {
   background: url("../../../../assets/img/heading-csgo.jpeg");
   background-size: cover;
@@ -17,5 +19,14 @@
         margin-top: 20px;
       }
     }
+  }
+}
+
+.home__matches {
+  background: $main-dark-blue;
+
+  app-matches-list {
+    max-width: 684px;
+    width: 100%;
   }
 }

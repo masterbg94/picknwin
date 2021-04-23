@@ -1,5 +1,6 @@
 @import "../../assets/palette";
 
+/* Common paddings */
 .pl-24 {
   padding-left: 24px;
 }
@@ -13,11 +14,28 @@
   padding-right: 24px;
 }
 
-.w-1440{
+/* Custom width */
+.mw-330 {
+  max-width: 330px;
+  width: 100%;
+}
+
+.mw-684 {
+  max-width: 684px;
+  width: 100%;
+}
+
+.w-1440 {
   max-width: 1440px;
   width: 100%;
 }
 
+/* Main background colors */
+.main-background {
+  background: $main-dark-blue;
+}
+
+/* Gradients */
 .button-gradient-green {
   @include gradient();
   border: none;
