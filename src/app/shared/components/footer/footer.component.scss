@@ -1,0 +1,102 @@
+.footer-container-wrapper {
+  display: flex;
+  justify-content: center;
+  background: linear-gradient(
+      345deg,
+      rgba(255, 0, 0, 0.5) 0%,
+      rgba(0, 0, 255, 0.5) 42%,
+      rgba(255, 0, 255, 0.5) 99%,
+      rgba(0, 255, 255, 0.5) 100%
+    ),
+    url("../../../../assets/img/footer-bg.svg");
+
+  .footer-container {
+    max-width: 1160px;
+    width: 100%;
+
+    .footer-top {
+      display: flex;
+      justify-content: space-between;
+      padding-top: 84px;
+      padding-bottom: 54px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+
+      &-item {
+        display: flex;
+        flex-direction: column;
+        color: white;
+
+        &_heading {
+          font-size: 16px;
+          font-weight: bold;
+          line-height: 25px;
+          margin-bottom: 32px;
+        }
+
+        &_desc {
+          font-size: 12px;
+          line-height: 22px;
+        }
+      }
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      padding-top: 46px;
+      padding-bottom: 80px;
+
+      &-item {
+        display: flex;
+        align-items: center;
+        // TODO: Remove double style with footer-bottom-email
+        .d-flex {
+          border-radius: 20px;
+          height: 40px;
+          width: 40px;
+          background: rgba(255, 255, 255, 0.4);
+          margin-right: 16px;
+
+          img {
+            width: 18px;
+          }
+        }
+      }
+
+      .footer-bottom-email {
+        a {
+          display: flex;
+          align-items: center;
+          color: white;
+
+          .d-flex {
+            border-radius: 20px;
+            height: 40px;
+            width: 40px;
+            background: rgba(255, 255, 255, 0.4);
+            margin-right: 16px;
+
+            img {
+              width: 18px;
+            }
+          }
+        }
+      }
+    }
+
+    .footer-bottom-menu {
+      display: flex;
+      flex-direction: row;
+      margin-bottom: 80px;
+
+      p {
+        color: white;
+        cursor: pointer;
+      }
+
+      p:not(:last-of-type) {
+        margin-right: 50px;
+      }
+    }
+  }
+}

@@ -1,0 +1,61 @@
+<div class="footer-container-wrapper">
+  <div class="footer-container">
+    <div class="footer-top">
+      <div class="footer-top-item col-4">
+        <p class="footer-top-item_heading">Game Description</p>
+        <p class="footer-top-item_desc">Looking for the best CSGO betting site? Join Picknwin and bet on CS:GO - the
+          second biggest eSports game in terms of prize pools with over 70 million ...</p>
+      </div>
+      <div class="footer-top-item col-4">
+        <p class="footer-top-item_heading">Basic Rules</p>
+        <p class="footer-top-item_desc">Looking for the best CSGO betting site? Join Picknwin and bet on CS:GO - the
+          second biggest eSports game in terms of prize pools with over 70 million ...</p>
+      </div>
+      <div class="footer-top-item col-4">
+        <p class="footer-top-item_heading">CS:GO Predictions</p>
+        <p class="footer-top-item_desc">Looking for the best CSGO betting site? Join Picknwin and bet on CS:GO - the
+          second biggest eSports game in terms of prize pools with over 70 million ...</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-bottom-item col-4">
+        <img src="../../../../assets/img/logo2x.png" alt="footer-logo" class="img-fluid">
+      </div>
+      <div class="footer-bottom-item col-4 footer-bottom-email">
+        <a href="mailto:support@picknwin.gg">
+          <div class="d-flex align-content-center justify-content-center">
+            <img class="img-fluid"
+                 src="../../../../assets/img/footer-email-icon.svg"
+                 alt="footer-mail">
+          </div>
+          support@picknwin.gg
+        </a>
+      </div>
+      <div class="footer-bottom-item col-4">
+        <div class="d-flex align-content-center justify-content-center">
+          <img class="img-fluid"
+               src="../../../../assets/img/footer-email-icon.svg"
+               alt="footer-mail">
+        </div>
+        <div class="d-flex align-content-center justify-content-center">
+          <img class="img-fluid"
+               src="../../../../assets/img/footer-email-icon.svg"
+               alt="footer-mail">
+        </div>
+        <div class="d-flex align-content-center justify-content-center">
+          <img class="img-fluid"
+               src="../../../../assets/img/footer-email-icon.svg"
+               alt="footer-mail">
+        </div>
+        <div class="d-flex align-content-center justify-content-center">
+          <img class="img-fluid"
+               src="../../../../assets/img/footer-email-icon.svg"
+               alt="footer-mail">
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom-menu">
+      <p *ngFor="let f of footerMenu" [routerLink]="f.path">{{f.name}}</p>
+    </div>
+  </div>
+</div>
