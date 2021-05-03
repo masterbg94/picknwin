@@ -5,4 +5,10 @@ import { Component } from '@angular/core';
   templateUrl: './predictions.component.html',
   styleUrls: ['./predictions.component.scss'],
 })
-export class PredictionsComponent {}
+export class PredictionsComponent {
+  tabValue = 'Predictions'
+  changeTab(event){
+    console.log(event.tab.textLabel);
+    this.tabValue = event.tab.textLabel;
+  }
+}

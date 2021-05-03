@@ -1,0 +1,69 @@
+@import "../../../../../assets/palette";
+
+.single-prediction {
+  background: rgba(10, 25, 41, 0.5);
+  padding: 12px;
+  border-radius: 6px;
+  margin-top: 8px;
+
+  p {
+    margin: 0;
+    padding: 0;
+  }
+
+  .icon-team {
+    &_icon {
+      background: #6C767F;
+      border-radius: 6px;
+      height: 40px;
+      width: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      img {
+        height: 25px;
+        width: 25px;
+      }
+    }
+
+    &_team {
+      margin-left: 6px;
+
+      p {
+        color: white;
+      }
+    }
+
+    &_win {
+      text-align: left;
+      font: normal normal normal 12px/18px Poppins;
+      letter-spacing: 0px;
+      color: $main-yellow;
+      margin-top: 12px;
+    }
+  }
+
+  .delete-odds {
+    align-items: flex-end;
+    justify-content: space-between;
+
+    &_icon {
+      background: #ffffff;
+      border-radius: 4px;
+      opacity: 0.4;
+      width: 20px;
+      height: 20px;
+
+      img {
+        width: 8px;
+        height: 8px;
+      }
+    }
+
+    .odd p.odd-number {
+      color: $main-yellow;
+      font-size: 14px;
+    }
+  }
+}

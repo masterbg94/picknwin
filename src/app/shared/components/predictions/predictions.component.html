@@ -2,9 +2,13 @@
   <div class="predictions-container">
     <!--    <div class="predictions-select"></div>-->
     <!--    <div class="predictions-content"></div>-->
-    <mat-tab-group [backgroundColor]="'#fff'">
+    <mat-tab-group [backgroundColor]="'#fff'" (selectedTabChange)="changeTab($event)">
       <mat-tab label="Predictions">
-        <p>Predictions</p>
+        <app-single-prediction-component></app-single-prediction-component>
+        <app-single-prediction-component></app-single-prediction-component>
+        <app-single-prediction-component></app-single-prediction-component>
+        <app-single-prediction-component></app-single-prediction-component>
+        <button class="submit-predictions">Submit</button>
       </mat-tab>
       <mat-tab label="Chat">
         <p>Chat</p>
