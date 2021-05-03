@@ -1,3 +1,54 @@
-p{
-  color: rebeccapurple;
+@import "../../../../assets/palette";
+
+p {
+  color: white;
+}
+
+.predictions-wrapper {
+  display: flex;
+  //max-width: 330px;
+  width: 100%;
+  background: $main-blue-gray;
+  border-radius: 6px;
+  opacity: 0.6;
+  padding: 16px;
+
+  .predictions-container {
+    width: 100%;
+  }
+}
+
+::ng-deep {
+  mat-tab-group {
+    mat-tab-header {
+      .mat-tab-label-container {
+        .mat-tab-list {
+          .mat-tab-labels {
+            .mat-tab-label {
+              height: 83px;
+              padding: 0!important;
+              cursor: pointer;
+              box-sizing: border-box;
+              opacity: .6;
+              min-width: 50px !important;
+              text-align: center;
+              display: inline-flex;
+              justify-content: center;
+              align-items: center;
+              white-space: nowrap;
+              position: relative;
+              width: 100%;
+
+              &-content {
+                color: white;
+              }
+            }
+          }
+        }
+      }
+    }
+    .mat-ink-bar{
+      background: $main-yellow!important;
+    }
+  }
 }

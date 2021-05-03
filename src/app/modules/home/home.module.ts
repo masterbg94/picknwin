@@ -7,9 +7,10 @@ import {UpgradePremiumModule} from '../../shared/components/upgrade-premium/upgr
 import {PromoBannerModule} from '../../shared/components/promo-banner/promo-banner.module';
 import {LeadbordTableComponent} from '../../shared/components/leadbord-table/leadbord-table.component';
 import {GameCategoriesModule} from '../../shared/components/game-categories/game-categories.module';
+import {LeadbordTableModule} from '../../shared/components/leadbord-table/leadbord-table.module';
 
 @NgModule({
-  declarations: [HomeComponent, LeadbordTableComponent],
+  declarations: [HomeComponent],
   imports: [
     HomeRoutingModule,
     HomeLoginModule,
@@ -17,7 +18,10 @@ import {GameCategoriesModule} from '../../shared/components/game-categories/game
     UpgradePremiumModule,
     PromoBannerModule,
     GameCategoriesModule,
+    LeadbordTableModule
   ],
-  exports: [],
+  exports: [
+    LeadbordTableComponent
+  ],
 })
 export class HomeModule {}

@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MatchesListComponent implements OnInit {
   Arr = Array;
-  num = 5;
+  num = 9;
 
   constructor() { }
 

@@ -16,7 +16,7 @@ export class MainToolbarComponent {
       path: '/matches',
     },
     {
-      name: 'Leadbord',
+      name: 'Leaderboard',
       path: '/leadbord',
     },
   ];

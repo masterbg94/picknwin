@@ -9,6 +9,7 @@
   padding-right: 24px;
 }
 
+/* padding za glavne containere */
 .px-24 {
   padding-left: 24px;
   padding-right: 24px;
@@ -25,9 +26,12 @@
   width: 100%;
 }
 
+/* Sirina glavnih container */
 .w-1440 {
   max-width: 1440px;
   width: 100%;
+  //padding-left: 24px;
+  //padding-right: 24px;
 }
 
 /* Main background colors */

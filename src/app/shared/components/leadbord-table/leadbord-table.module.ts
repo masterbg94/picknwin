@@ -1,10 +1,10 @@
 import {NgModule} from '@angular/core';
+import {LeadbordTableComponent} from './leadbord-table.component';
 
-import {LeadbordComponent} from '../../../modules/leadbord/pages/leadbord.component';
 
 @NgModule({
-  declarations: [LeadbordComponent],
+  declarations: [LeadbordTableComponent],
   imports: [],
-  exports: [LeadbordComponent],
+  exports: [LeadbordTableComponent],
 })
 export class LeadbordTableModule {}
