@@ -1,0 +1,78 @@
+@import "../../../../assets/palette";
+
+.login-wrapper {
+  display: flex;
+  justify-content: center;
+  background: #0a1a2a;
+
+  .login-container {
+    max-width: 920px;
+    width: 100%;
+    background: #1a2937;
+
+    .login-content {
+      display: flex;
+      flex: 1;
+      flex-wrap: wrap;
+
+      p {
+        color: white;
+      }
+
+      &-left,
+      &-right {
+        display: flex;
+        flex: 1;
+      }
+
+      &-left {
+        align-items: center;
+        justify-content: center;
+
+        &-data {
+          max-width: 330px;
+          width: 100%;
+
+          button {
+            background: transparent;
+            color: white;
+            font-size: 14px;
+            width: 100%;
+            height: 40px;
+            outline: none;
+            @include border-green6();
+
+            span {
+              color: $main-yellow;
+            }
+          }
+
+          .login-with {
+            p {
+              text-align: center;
+              font-size: 14px;
+            }
+          }
+
+          .login-form {
+            button {
+              background: $main-light-green;
+              border-radius: 4px;
+              border: none;
+              height: 40px;
+            }
+          }
+        }
+      }
+
+      &-right {
+        max-width: 354px;
+
+        img {
+          object-fit: cover;
+          width: 100%;
+        }
+      }
+    }
+  }
+}
