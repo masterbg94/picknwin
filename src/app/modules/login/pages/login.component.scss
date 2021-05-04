@@ -3,12 +3,13 @@
 .login-wrapper {
   display: flex;
   justify-content: center;
-  background: #0a1a2a;
+  background: $main-dark-blue;
+  padding: 24px 0;
 
   .login-container {
     max-width: 920px;
     width: 100%;
-    background: #1a2937;
+    background: $modal-background;
 
     .login-content {
       display: flex;
@@ -41,17 +42,37 @@
             height: 40px;
             outline: none;
             @include border-green6();
+            font-weight: 600;
 
             span {
               color: $main-yellow;
             }
           }
 
-          .login-with {
-            p {
-              text-align: center;
-              font-size: 14px;
+          .login-error {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.1);
+            height: 48px;
+            border-radius: 6px;
+            margin-bottom: 38px;
+            padding-left: 16px;
+
+            img {
+              max-width: 18px;
+              width: 100%;
             }
+
+            p {
+              font-size: 12px;
+              line-height: 24px;
+              margin: 0 16px;
+            }
+          }
+
+          .login-text {
           }
 
           .login-form {
@@ -60,6 +81,14 @@
               border-radius: 4px;
               border: none;
               height: 40px;
+              font-weight: 400;
+            }
+          }
+
+          .login-with {
+            p {
+              text-align: center;
+              font-size: 14px;
             }
           }
         }

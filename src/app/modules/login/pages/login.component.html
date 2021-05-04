@@ -1,14 +1,22 @@
+<!--TODO: Fix this layout-->
 <div class="login-wrapper">
   <div class="login-container">
     <div class="login-content">
       <div class="login-content-left flex-column">
         <div class="login-content-left-data">
+          <div class="back-button" *ngIf="forgotPasswordForm">
+            <p (click)="toggleForgotPassword()" style="cursor: pointer">Back</p>
+          </div>
+          <div class="login-error" *ngIf="loginError">
+            <img src="assets/img/blocked.svg" alt="" class="img-fluid">
+            <p>{{loginError}}</p>
+          </div>
           <div class="login-text d-flex flex-column">
-            <p>Login</p>
-            <p>Enter the details below</p>
+            <p>{{forgotPasswordForm ? 'Forgot Password?' : 'Login'}}</p>
+            <p *ngIf="!forgotPasswordForm">Enter the details below</p>
           </div>
           <div class="login-form">
-            <form>
+            <form *ngIf="!forgotPasswordForm">
               <div class="d-flex flex-column">
                 <mat-label>Username</mat-label>
                 <mat-form-field
@@ -22,7 +30,9 @@
               <div class="d-flex flex-column">
                 <div class="d-flex justify-content-between">
                   <mat-label>Password</mat-label>
-                  <mat-label style="font-weight: normal">Forgot pass?</mat-label>
+                  <mat-label style="font-weight: normal;cursor: pointer;opacity: 0.7"
+                             (click)="toggleForgotPassword()">Forgot password?
+                  </mat-label>
                 </div>
                 <mat-form-field
                   appearance="outline"
@@ -33,12 +43,27 @@
                 </mat-form-field>
               </div>
             </form>
-            <button>Login</button>
+            <!--Forgot password form -->
+            <form *ngIf="forgotPasswordForm">
+              <div class="d-flex flex-column">
+                <mat-label>Email</mat-label>
+                <mat-form-field
+                  appearance="outline"
+                  floatLabel="never"
+                  class="example-full-width"
+                >
+                  <input matInput placeholder="Email"/>
+                </mat-form-field>
+              </div>
+            </form>
+            <!--Forgot password end -->
+            <button *ngIf="!forgotPasswordForm" (click)="submitLogin()">Login</button>
+            <button *ngIf="forgotPasswordForm" (click)="submitForgotPassword()">Confirm</button>
           </div>
-          <div class="login-with">
+          <div class="login-with" *ngIf="!forgotPasswordForm">
             <p>Or login with Steam or Google</p>
           </div>
-          <button>Dont have an Account <span>Register now</span></button>
+          <button>Dont have an Account?<span> Register now</span></button>
         </div>
       </div>
       <div class="login-content-right">

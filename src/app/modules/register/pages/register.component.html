@@ -1,0 +1,78 @@
+<!-- TODO: Fix classes to pass bem methodology or another method that will look good -->
+<div class="register-wrapper">
+  <div class="register-container">
+    <div class="register-content">
+      <div class="register-content_left">
+        <div class="register-content_left_wrapper">
+          <div class="register-form">
+            <div class="register-form_heading">
+              <p>Register</p>
+              <p>Enter the details below to create account</p>
+            </div>
+            <form>
+              <div class="d-flex flex-column">
+                <mat-label>Username</mat-label>
+                <mat-form-field
+                  appearance="outline"
+                  floatLabel="never"
+                  class="example-full-width"
+                >
+                  <input matInput placeholder="Username"/>
+                </mat-form-field>
+              </div>
+              <div class="d-flex flex-column">
+                <div class="d-flex justify-content-between">
+                  <mat-label>Password</mat-label>
+                </div>
+                <mat-form-field
+                  appearance="outline"
+                  floatLabel="never"
+                  class="example-full-width"
+                >
+                  <input matInput type="password" placeholder="********"/>
+                </mat-form-field>
+              </div>
+              <div class="d-flex flex-column">
+                <mat-label>Name</mat-label>
+                <mat-form-field
+                  appearance="outline"
+                  floatLabel="never"
+                  class="example-full-width"
+                >
+                  <input matInput placeholder="Name"/>
+                </mat-form-field>
+              </div>
+              <div class="d-flex flex-column">
+                <mat-label>Surname</mat-label>
+                <mat-form-field
+                  appearance="outline"
+                  floatLabel="never"
+                  class="example-full-width"
+                >
+                  <input matInput placeholder="Surname"/>
+                </mat-form-field>
+              </div>
+              <div class="d-flex flex-column">
+                <mat-label>Email</mat-label>
+                <mat-form-field
+                  appearance="outline"
+                  floatLabel="never"
+                  class="example-full-width"
+                >
+                  <input matInput type="email" placeholder="Email"/>
+                </mat-form-field>
+              </div>
+              <button>Register</button>
+            </form>
+          </div>
+          <div class="register-form_register-with">
+            <button>Dont have an Account?<span> Register now</span></button>
+          </div>
+        </div>
+      </div>
+      <div class="register-content_right">
+        <img src="assets/img/register-background.png" alt="" class="img-fluid">
+      </div>
+    </div>
+  </div>
+</div>
