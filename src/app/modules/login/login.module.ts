@@ -7,7 +7,9 @@ import {CommonModule} from '@angular/common';
 
 @NgModule({
   declarations: [LoginComponent],
-  imports: [LoginRoutingModule, CustomMaterialModule, CommonModule],
+  imports: [LoginRoutingModule,
+    CustomMaterialModule,
+    CommonModule],
 })
 export class LoginModule {
 }

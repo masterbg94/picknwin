@@ -1,0 +1,36 @@
+@import "../../../../assets/palette";
+
+.giveaway-container {
+  width: 100%;
+  height: 330px;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  border-radius: 6px;
+  background-color: $modal-background;
+
+  .giveaway-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 26px;
+    height: 100%;
+
+    p {
+      color: white;
+      font-size: 21px;
+      font-weight: 700;
+      line-height: 24px;
+    }
+
+    button {
+      width: 100%;
+      height: 40px;
+      background: transparent;
+      color: white;
+      font-size: 14px;
+      line-height: 21px;
+      @include border-green6();
+    }
+  }
+}
