@@ -1,10 +1,7 @@
 .leadboard {
   &__header {
-    //height: 40px;
-    //line-height: 40px;
     display: flex;
     flex-direction: column;
-    //justify-content: space-between;
     margin-bottom: 24px;
     color: #fff;
 
@@ -59,7 +56,7 @@
 
     th,
     td {
-      padding: 0 30px;
+      padding: 0 25px;
     }
 
     .table__container {
