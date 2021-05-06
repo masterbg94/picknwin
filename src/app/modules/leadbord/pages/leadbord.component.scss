@@ -4,5 +4,8 @@
   display: flex;
   justify-content: center;
   background: $main-dark-blue;
-  padding-top: 32px;
+  //padding-top: 32px;
+  /* Menu bug */
+  margin-top: -88px;
+  padding-top: 120px;
 }

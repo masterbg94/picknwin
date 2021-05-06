@@ -25,6 +25,44 @@
   }
 }
 
+.three-descriptions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 212px;
+  width: 100%;
+  height: 280px;
+  border-radius: 6px;
+  background: #1A2937;
+
+  .picture {
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      object-fit: contain;
+    }
+  }
+
+  span {
+    font-weight: 600;
+    color: white;
+    font-size: 16px;
+    line-height: 25px;
+    margin-bottom: 14px;
+  }
+
+  p {
+    font-size: 12px;
+    line-height: 18px;
+    color: white;
+    text-align: center;
+  }
+}
+
 .home__matches {
   padding-top: 54px;
   background: $main-dark-blue;

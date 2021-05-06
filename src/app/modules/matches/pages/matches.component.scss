@@ -2,6 +2,9 @@
 
 .matches-page-container {
   background: $main-dark-blue;
+  /* Menu bug */
+  margin-top: -88px;
+  padding-top: 120px;
 
   .app-upgrade-premium {
     width: 100%;

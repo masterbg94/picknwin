@@ -1,20 +1,29 @@
 <div class="predictions-wrapper">
   <div class="predictions-container">
-    <!--    <div class="predictions-select"></div>-->
-    <!--    <div class="predictions-content"></div>-->
     <mat-tab-group [backgroundColor]="'#fff'" (selectedTabChange)="changeTab($event)">
-      <mat-tab label="Predictions">
+      <mat-tab>
+        <ng-template mat-tab-label>
+          <mat-icon class="example-tab-icon">text_snippet</mat-icon>
+          Predictions
+        </ng-template>
         <app-single-prediction-component></app-single-prediction-component>
         <app-single-prediction-component></app-single-prediction-component>
         <app-single-prediction-component></app-single-prediction-component>
         <app-single-prediction-component></app-single-prediction-component>
         <button class="submit-predictions">Submit</button>
       </mat-tab>
-      <mat-tab label="Chat">
+      <mat-tab>
+        <ng-template mat-tab-label>
+          <mat-icon class="example-tab-icon">chat</mat-icon>
+          Chat
+        </ng-template>
         <p>Chat</p>
       </mat-tab>
-      <mat-tab label="Activity">
-        <p>Activity</p>
+      <mat-tab>
+        <ng-template mat-tab-label>
+          <mat-icon class="example-tab-icon">celebration</mat-icon>
+          Activity
+        </ng-template>
       </mat-tab>
     </mat-tab-group>
   </div>
