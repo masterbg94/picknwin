@@ -13,7 +13,34 @@
     </div>
     <div class="register-login">
       <button class="button-gradient-green">Register</button>
-      <button class="button-border-green">Login</button>
+      <button class="button-border-green"
+      (click)="toggleDropdown()">Login</button>
+<!--      position absolute LOGIN DD -->
+<!--      TODO: fix menu style / only toggle when is logged -->
+      <div class="login-dropdown position-absolute d-flex flex-column"
+      *ngIf="isDropdownToggled">
+        <div class="dd-item">
+          <img src="" alt="">
+          <p>Dashboard</p>
+        </div>
+        <div class="dd-item">
+          <img src="" alt="">
+          <p>Notifications</p>
+        </div>
+        <div class="dd-item">
+          <img src="" alt="">
+          <p>Billing</p>
+        </div>
+        <div class="dd-item">
+          <img src="" alt="">
+          <p>Settings</p>
+        </div>
+        <div class="dd-item">
+          <img src="" alt="">
+          <p>Logout</p>
+        </div>
+      </div>
+<!--      position absolute LOGIN DD -->
     </div>
   </div>
 </div>

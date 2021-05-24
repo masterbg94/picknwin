@@ -20,4 +20,8 @@ export class MainToolbarComponent {
       path: '/leadbord',
     },
   ];
+  isDropdownToggled = false;
+  toggleDropdown(){
+    this.isDropdownToggled = !this.isDropdownToggled;
+  }
 }

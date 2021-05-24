@@ -71,8 +71,39 @@
       }
 
       .register-login {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        position: relative;
+
+
         button:last-of-type {
           margin-left: 10px;
+        }
+
+        .login-dropdown {
+          top: 88px;
+          right: 0;
+          background: rgba(10, 26, 42);
+          // TODO: fix opacity + backdrop
+          //backdrop-filter: blur(9px);
+          z-index: 123;
+          max-width: 330px;
+          width: 100%;
+
+          .dd-item {
+            display: flex;
+            align-items: center;
+            height: 64px;
+
+            p {
+              font-size: 16px;
+              margin: 0 0 0 12px;
+              padding: 0;
+              color: white;
+              cursor: pointer;
+            }
+          }
         }
       }
     }
