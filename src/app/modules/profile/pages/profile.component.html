@@ -1,2 +1,16 @@
-<p>Settings profile</p>
-<router-outlet></router-outlet>
+<div class="profile-wrapper">
+  <div class="profile-container w-1440 px-24">
+    <div class="mw-330 profile-menu">
+      <ul>
+        <li [routerLink]="'dashboard'">Dashboard</li>
+        <li [routerLink]="'notifications'">Notifications</li>
+        <li [routerLink]="'billing'">Billing</li>
+        <li [routerLink]="'settings'">Settings</li>
+        <li [routerLink]="'logout'">Logout</li>
+      </ul>
+    </div>
+    <div class="profile-outlet">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
