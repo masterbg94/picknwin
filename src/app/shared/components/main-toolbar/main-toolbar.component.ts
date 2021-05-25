@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-main-toolbar-component',
@@ -21,7 +21,13 @@ export class MainToolbarComponent {
     },
   ];
   isDropdownToggled = false;
-  toggleDropdown(){
+  isLogged = false;
+
+  toggleDropdown() {
     this.isDropdownToggled = !this.isDropdownToggled;
+  }
+
+  toggleLogin() {
+    this.isLogged = !this.isLogged;
   }
 }

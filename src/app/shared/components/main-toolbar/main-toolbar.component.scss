@@ -70,6 +70,7 @@
         }
       }
 
+      /* If user not logged */
       .register-login {
         height: 100%;
         display: flex;
@@ -104,6 +105,53 @@
               cursor: pointer;
             }
           }
+        }
+      }
+
+      /* If logged user */
+      .logged-user {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        height: 100%;
+        max-width: 330px;
+        width: 100%;
+        padding: 0 32px;
+        // bg
+        background: rgba(246, 244, 24, 0.2);
+
+        .username-coins {
+          margin-right: 24px;
+
+          p {
+            margin: 0;
+            padding: 0;
+            font: normal normal medium 15px/23px Poppins;
+            letter-spacing: 0px;
+            color: #FFFFFF;
+          }
+
+          .coins {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+
+            img {
+              width: 18px;
+              height: 18px;
+            }
+
+            p {
+              margin: 0;
+              padding: 0;
+              color: $main-yellow;
+            }
+          }
+        }
+
+        img {
+          width: 56px;
+          height: 56px;
         }
       }
     }

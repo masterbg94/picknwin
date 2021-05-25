@@ -1,47 +1,63 @@
 <div class="container-fluid p-0 navbar">
-<div class="nav-bar-wrapper">
-  <div class="row m-0 px-24 d-flex flex-row align-items-center">
-    <div class="logo-navi">
-      <div class="logo">
-        <img src="../../../../assets/img/logo2x.png" alt="" class="img-fluid">
-      </div>
-      <div class="navigation">
-        <div class="nav-item" *ngFor="let n of navigation">
-          <p [routerLink]="n.path" [routerLinkActive]="['active-route']" [routerLinkActiveOptions]="{ exact: true }">{{n.name}}</p>
+  <div class="nav-bar-wrapper">
+    <div class="row m-0 px-24 d-flex flex-row align-items-center">
+      <div class="logo-navi">
+        <div class="logo">
+          <img src="../../../../assets/img/logo2x.png" alt="" class="img-fluid">
+        </div>
+        <div class="navigation">
+          <div class="nav-item" *ngFor="let n of navigation">
+            <p [routerLink]="n.path" [routerLinkActive]="['active-route']"
+               [routerLinkActiveOptions]="{ exact: true }">{{n.name}}</p>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="register-login">
-      <button class="button-gradient-green">Register</button>
-      <button class="button-border-green"
-      (click)="toggleDropdown()">Login</button>
-<!--      position absolute LOGIN DD -->
-<!--      TODO: fix menu style / only toggle when is logged -->
-      <div class="login-dropdown position-absolute d-flex flex-column"
-      *ngIf="isDropdownToggled">
-        <div class="dd-item">
-          <img src="" alt="">
-          <p>Dashboard</p>
+      <!-- This if not logged -->
+      <div class="register-login" *ngIf="!isLogged">
+        <button class="button-gradient-green"
+        (click)="toggleLogin()">Register</button>
+        <button class="button-border-green"
+                (click)="toggleDropdown()">Login
+        </button>
+        <!--  Position absolute LOGIN DD -->
+        <!--  TODO: fix menu style / only toggle when is logged -->
+        <div class="login-dropdown position-absolute d-flex flex-column"
+             *ngIf="isDropdownToggled">
+          <div class="dd-item">
+            <img src="" alt="">
+            <p>Dashboard</p>
+          </div>
+          <div class="dd-item">
+            <img src="" alt="">
+            <p>Notifications</p>
+          </div>
+          <div class="dd-item">
+            <img src="" alt="">
+            <p>Billing</p>
+          </div>
+          <div class="dd-item">
+            <img src="" alt="">
+            <p>Settings</p>
+          </div>
+          <div class="dd-item">
+            <img src="" alt="">
+            <p>Logout</p>
+          </div>
         </div>
-        <div class="dd-item">
-          <img src="" alt="">
-          <p>Notifications</p>
-        </div>
-        <div class="dd-item">
-          <img src="" alt="">
-          <p>Billing</p>
-        </div>
-        <div class="dd-item">
-          <img src="" alt="">
-          <p>Settings</p>
-        </div>
-        <div class="dd-item">
-          <img src="" alt="">
-          <p>Logout</p>
-        </div>
+        <!-- Position absolute LOGIN DD -->
       </div>
-<!--      position absolute LOGIN DD -->
+
+      <div class="logged-user" *ngIf="isLogged">
+        <div class="username-coins">
+          <p>Jonathan Smith</p>
+          <div class="d-flex coins">
+            <img src="assets/img/logged-user-coins.svg" alt="" class="img-fluid">
+            <p>125.000</p>
+          </div>
+        </div>
+        <img src="assets/img/logged-user.png" alt="" class="img-fluid" (click)="toggleLogin()">
+      </div>
+
     </div>
   </div>
-</div>
 </div>
