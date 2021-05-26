@@ -1,13 +1,29 @@
 <div class="profile-wrapper">
   <div class="profile-container w-1440 px-24">
-    <div class="mw-330 profile-menu">
-      <ul>
-        <li [routerLink]="'dashboard'">Dashboard</li>
-        <li [routerLink]="'notifications'">Notifications</li>
-        <li [routerLink]="'billing'">Billing</li>
-        <li [routerLink]="'settings'">Settings</li>
-        <li [routerLink]="'logout'">Logout</li>
-      </ul>
+    <div class="mw-330 profile-selection">
+      <div class="profile-menu">
+        <div class="my-profile-heading">
+          <svg-icon src="/assets/img/profile-my-profile.svg"></svg-icon>
+          <p class="m-0 p-0">My Profile</p>
+          <div class="divider"></div>
+        </div>
+        <ul>
+          <li [routerLink]="'dashboard'">
+            <svg-icon src="/assets/img/profile-dashboard.svg"></svg-icon>
+            Dashboard</li>
+          <li [routerLink]="'notifications'">
+            <svg-icon src="/assets/img/profile-notifications.svg"></svg-icon>
+            Notifications</li>
+          <li [routerLink]="'billing'">
+            <svg-icon src="/assets/img/profile-billing.svg"></svg-icon>
+            Billing</li>
+          <li [routerLink]="'settings'">
+            <svg-icon src="/assets/img/profile-settings.svg"></svg-icon>
+            Settings</li>
+          <li [routerLink]="'logout'">Logout</li>
+        </ul>
+      </div>
+      <app-upgrade-premium></app-upgrade-premium>
     </div>
     <div class="profile-outlet">
       <router-outlet></router-outlet>

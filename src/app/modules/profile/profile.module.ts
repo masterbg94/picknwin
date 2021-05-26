@@ -5,9 +5,15 @@ import {ProfileRoutingModule} from './profile.routing.module';
 import {ProfileBillingComponent} from './pages/profile-billing/profile-billing.component';
 import {ProfileNotificationsComponent} from './pages/profile-notifications/profile-notifications.component';
 import {ProfileSettingsComponent} from './pages/profile-settings/profile-settings.component';
+import {SharedModule} from "../shared.module";
+import {UpgradePremiumModule} from "../../shared/components/upgrade-premium/upgrade-premium.module";
 
 @NgModule({
-  imports: [ProfileRoutingModule],
+  imports: [
+    ProfileRoutingModule,
+    SharedModule,
+    UpgradePremiumModule
+  ],
   declarations: [
     ProfileComponent,
     ProfileBillingComponent,
