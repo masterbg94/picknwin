@@ -1,5 +1,36 @@
 @import "../../assets/palette";
 
+/* Common margins */
+.m-24 {
+  margin: 24px;
+}
+
+.my-24 {
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+
+.mx-24 {
+  margin-left: 24px;
+  margin-right: 24px;
+}
+
+.mt-24 {
+  margin-top: 24px;
+}
+
+.ml-24 {
+  margin-left: 24px;
+}
+
+.mb-24 {
+  margin-bottom: 24px;
+}
+
+.mr-24 {
+  margin-right: 24px;
+}
+
 /* Common paddings */
 .pl-24 {
   padding-left: 24px;
@@ -15,6 +46,10 @@
   padding-right: 24px;
 }
 
+.m-24 {
+  padding: 24px;
+}
+
 /* Custom width */
 .mw-330 {
   max-width: 330px;
@@ -26,7 +61,7 @@
   width: 100%;
 }
 
-/* Sirina glavnih container */
+/* Sirina glavnih containera */
 .w-1440 {
   max-width: 1440px;
   width: 100%;
@@ -39,7 +74,7 @@
   background: $main-dark-blue;
 }
 
-/* Gradients */
+/* Gradients buttons */
 .button-gradient-green {
   @include gradient();
   border: none;

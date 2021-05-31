@@ -8,24 +8,28 @@
           <div class="divider"></div>
         </div>
         <ul>
-          <li [routerLink]="'dashboard'">
+          <li [routerLink]="'/profile'">
             <svg-icon src="/assets/img/profile-dashboard.svg"></svg-icon>
-            Dashboard</li>
+            Dashboard
+          </li>
           <li [routerLink]="'notifications'">
             <svg-icon src="/assets/img/profile-notifications.svg"></svg-icon>
-            Notifications</li>
+            Notifications
+          </li>
           <li [routerLink]="'billing'">
             <svg-icon src="/assets/img/profile-billing.svg"></svg-icon>
-            Billing</li>
+            Billing
+          </li>
           <li [routerLink]="'settings'">
             <svg-icon src="/assets/img/profile-settings.svg"></svg-icon>
-            Settings</li>
+            Settings
+          </li>
           <li [routerLink]="'logout'">Logout</li>
         </ul>
       </div>
       <app-upgrade-premium></app-upgrade-premium>
     </div>
-    <div class="profile-outlet">
+    <div class="profile-outlet mt-24 ml-24" style="background: red">
       <router-outlet></router-outlet>
     </div>
   </div>

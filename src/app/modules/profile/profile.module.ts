@@ -7,6 +7,7 @@ import {ProfileNotificationsComponent} from './pages/profile-notifications/profi
 import {ProfileSettingsComponent} from './pages/profile-settings/profile-settings.component';
 import {SharedModule} from "../shared.module";
 import {UpgradePremiumModule} from "../../shared/components/upgrade-premium/upgrade-premium.module";
+import {ProfileDashboardComponent} from './pages/profile-dashboard/profile-dashboard.component';
 
 @NgModule({
   imports: [
@@ -18,7 +19,8 @@ import {UpgradePremiumModule} from "../../shared/components/upgrade-premium/upgr
     ProfileComponent,
     ProfileBillingComponent,
     ProfileNotificationsComponent,
-    ProfileSettingsComponent
+    ProfileSettingsComponent,
+    ProfileDashboardComponent
   ]
 })
 export class ProfileModule {
