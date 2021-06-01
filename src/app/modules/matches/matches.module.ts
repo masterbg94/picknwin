@@ -1,5 +1,4 @@
-import {NgModule} from '@angular/core'
-  ;
+import {NgModule} from '@angular/core';
 import {MatchesComponent} from './pages/matches.component';
 import {MatchesRoutingModule} from './matches.routing.module';
 import {UpgradePremiumModule} from '../../shared/components/upgrade-premium/upgrade-premium.module';

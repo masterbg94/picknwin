@@ -8,13 +8,15 @@ import {ProfileSettingsComponent} from './pages/profile-settings/profile-setting
 import {SharedModule} from "../shared.module";
 import {UpgradePremiumModule} from "../../shared/components/upgrade-premium/upgrade-premium.module";
 import {ProfileDashboardComponent} from './pages/profile-dashboard/profile-dashboard.component';
+import {GiveawayModule} from '../../shared/components/giveaway/giveaway.module';
 
 @NgModule({
-  imports: [
-    ProfileRoutingModule,
-    SharedModule,
-    UpgradePremiumModule
-  ],
+    imports: [
+        ProfileRoutingModule,
+        SharedModule,
+        UpgradePremiumModule,
+        GiveawayModule
+    ],
   declarations: [
     ProfileComponent,
     ProfileBillingComponent,

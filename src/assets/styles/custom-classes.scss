@@ -31,23 +31,35 @@
   margin-right: 24px;
 }
 
-/* Common paddings */
-.pl-24 {
+/* Common paddings 24px */
+.p-24 {
+  padding: 24px;
+}
+
+.px-24 {
   padding-left: 24px;
+  padding-right: 24px;
+}
+
+.py-24 {
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+
+.pt-24 {
+  padding-top: 24px;
 }
 
 .pr-24 {
   padding-right: 24px;
 }
 
-/* padding za glavne containere */
-.px-24 {
-  padding-left: 24px;
-  padding-right: 24px;
+.pb-24 {
+  padding-bottom: 24px;
 }
 
-.m-24 {
-  padding: 24px;
+.pl-24 {
+  padding-left: 24px;
 }
 
 /* Custom width */
