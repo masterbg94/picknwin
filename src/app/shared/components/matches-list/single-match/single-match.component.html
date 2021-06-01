@@ -2,15 +2,11 @@
   <div class="match__team">
     <div class="match__team--desc">
       <div class="match__team--icon">
-        <img src="../../../../assets/img/600px-Isurus_Gaming.png" alt=""/>
+        <img [src]="singleMatch.team_one.team_logo" alt=""/>
       </div>
-      <h4 class="match__team--title">
-        Isurus
-      </h4>
+      <h4 class="match__team--title">{{singleMatch.team_one.team_name}}</h4>
     </div>
-    <div class="match__team--score">
-      18.5
-    </div>
+    <div class="match__team--score">{{singleMatch.team_one_points}}</div>
   </div>
   <div class="match__description">
     <div class="match__description--background"></div>
@@ -60,14 +56,10 @@
   <div class="match__team">
     <div class="match__team--desc">
       <div class="match__team--icon">
-        <img src="../../../../assets/img/t34055.png" alt=""/>
+        <img [src]="singleMatch.team_two.team_logo" alt=""/>
       </div>
-      <h4 class="match__team--title">
-        Infinity
-      </h4>
+      <h4 class="match__team--title">{{singleMatch.team_two.team_name}}</h4>
     </div>
-    <div class="match__team--score">
-      1600
-    </div>
+    <div class="match__team--score">{{singleMatch.team_two_points}}</div>
   </div>
 </div>

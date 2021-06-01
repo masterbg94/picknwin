@@ -1,15 +1,24 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
+
+import {MatchesData} from '../../../models/matches';
 
 @Component({
   selector: 'app-single-match',
   templateUrl: './single-match.component.html',
   styleUrls: ['./single-match.component.scss']
 })
-export class SingleMatchComponent implements OnInit {
+export class SingleMatchComponent implements OnInit, OnChanges {
 
-  constructor() { }
+  @Input() singleMatch: MatchesData;
+
+  constructor() {
+  }
 
   ngOnInit(): void {
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    console.log('changes', changes.singleMatch.currentValue);
   }
 
 }

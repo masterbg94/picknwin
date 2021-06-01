@@ -23,6 +23,10 @@
       .match__team--desc {
         order: 2;
 
+        .match__team--title {
+          text-align: right;
+        }
+
         .match__team--icon {
           order: 2;
           margin-right: 0;
@@ -38,8 +42,14 @@
 
     &--icon {
       height: 36px;
-      width: auto;
+      //width: auto;
       margin-right: 24px;
+      width: 44px;
+
+      img {
+        height: 100%;
+        object-fit: contain;
+      }
     }
 
     &--title {

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-matches-list',
@@ -8,8 +8,10 @@ import { Component, OnInit } from '@angular/core';
 export class MatchesListComponent implements OnInit {
   Arr = Array;
   num = 9;
+  @Input() matches;
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
   }
