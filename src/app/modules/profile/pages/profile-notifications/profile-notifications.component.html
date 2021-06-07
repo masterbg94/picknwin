@@ -1,1 +1,40 @@
-<p>Profile notifications</p>
+<div class="notifications-wrapper d-flex flex-column">
+  <p class="heading">Notifications</p>
+  <div class="notification-content">
+    <div class="unread-notifications">
+      <p class="notification-type">UNREAD</p>
+      <div class="single-notification d-flex align-items-center"
+           *ngFor="let not of numbers">
+        <div class="single-notification_icon">
+          <svg-icon src="./assets/img/profile/profile-notification.svg"></svg-icon>
+        </div>
+        <div class="single-notification_text ml-3">
+          <p>Congrats, you have won </p>
+          <div class="win-points">
+            <svg-icon src="./assets/img/profile/profile-notification.svg"></svg-icon>
+            <p>125.000</p>
+          </div>
+          <p>on your last prediction</p>
+        </div>
+      </div>
+    </div>
+    <hr class="divider">
+    <div class="read-notifications">
+      <p class="notification-type">READ</p>
+      <div class="single-notification d-flex align-items-center"
+           *ngFor="let not of numbers">
+        <div class="single-notification_icon">
+          <svg-icon src="./assets/img/profile/profile-notification.svg"></svg-icon>
+        </div>
+        <div class="single-notification_text ml-3">
+          <p>Congrats, you have won </p>
+          <div class="win-points">
+            <svg-icon src="./assets/img/profile/profile-notification.svg"></svg-icon>
+            <p>125.000</p>
+          </div>
+          <p>on your last prediction</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

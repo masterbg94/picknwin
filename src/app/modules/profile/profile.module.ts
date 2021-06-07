@@ -9,13 +9,15 @@ import {SharedModule} from "../shared.module";
 import {UpgradePremiumModule} from "../../shared/components/upgrade-premium/upgrade-premium.module";
 import {ProfileDashboardComponent} from './pages/profile-dashboard/profile-dashboard.component';
 import {GiveawayModule} from '../../shared/components/giveaway/giveaway.module';
+import {CommonModule} from '@angular/common';
 
 @NgModule({
     imports: [
         ProfileRoutingModule,
         SharedModule,
         UpgradePremiumModule,
-        GiveawayModule
+        GiveawayModule,
+        CommonModule
     ],
   declarations: [
     ProfileComponent,

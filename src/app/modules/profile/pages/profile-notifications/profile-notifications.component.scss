@@ -1,1 +1,90 @@
+p {
+  margin: 0;
+  padding: 0;
+}
 
+.notifications-wrapper {
+  background: rgba(37, 51, 64, 0.6);
+  border-radius: 6px;
+  padding: 24px;
+
+  p.heading:first-of-type {
+    font-size: 24px;
+    line-height: 30px;
+    color: white;
+    font-weight: bold;
+  }
+
+  .notification-content {
+    // TODO: Fix this classes / unify this below
+    .unread-notifications, .read-notifications {
+      display: flex;
+      flex-direction: column;
+
+      p.notification-type {
+        color: white;
+        font-weight: bold;
+        font-size: 12px;
+        margin-top: 32px;
+        margin-bottom: 12px;
+      }
+
+      .single-notification {
+        height: 32px;
+        margin: 24px 0;
+
+        &_icon {
+          height: 32px;
+          width: 32px;
+          // TODO: Convert to dynamic color bg
+          background: #2CAD4A;
+          border-radius: 20px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          svg-icon {
+            height: 21px;
+            width: 21px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+        }
+
+        &_text {
+          display: flex;
+          align-items: center;
+
+          p {
+            font-size: 14px;
+            line-height: 20px;
+            color: white;
+          }
+
+          .win-points {
+            display: flex;
+            align-items: center;
+
+            svg-icon svg path {
+              fill: yellow;
+            }
+
+            p {
+              color: yellow;
+              font-size: 16px;
+              line-height: 24px;
+            }
+          }
+        }
+      }
+    }
+
+    hr.divider {
+      background: white;
+    }
+
+    .read-notifications {
+    }
+  }
+}

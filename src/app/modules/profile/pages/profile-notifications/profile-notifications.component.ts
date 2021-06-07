@@ -6,4 +6,7 @@ import {Component} from '@angular/core';
   styleUrls: ['./profile-notifications.component.scss']
 })
 export class ProfileNotificationsComponent {
+  arr: Array<number>;
+  unreadCount = 10;
+  numbers = Array(5).fill(0).map((x, i) => i);
 }
