@@ -66,8 +66,10 @@ p {
             display: flex;
             align-items: center;
 
-            svg-icon svg path {
-              fill: yellow;
+            svg-icon svg {
+              path, circle {
+                fill: yellow;
+              }
             }
 
             p {
