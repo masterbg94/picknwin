@@ -10,6 +10,7 @@ import {UpgradePremiumModule} from "../../shared/components/upgrade-premium/upgr
 import {ProfileDashboardComponent} from './pages/profile-dashboard/profile-dashboard.component';
 import {GiveawayModule} from '../../shared/components/giveaway/giveaway.module';
 import {CommonModule} from '@angular/common';
+import {ProfileTableModule} from '../../shared/components/profile-table/profile-table.module';
 
 @NgModule({
     imports: [
@@ -17,7 +18,8 @@ import {CommonModule} from '@angular/common';
         SharedModule,
         UpgradePremiumModule,
         GiveawayModule,
-        CommonModule
+        CommonModule,
+        ProfileTableModule
     ],
   declarations: [
     ProfileComponent,

@@ -1,0 +1,49 @@
+@import "src/assets/palette";
+
+table.profile-table {
+  width: 100%;
+  border-radius: 6px;
+  @include border-gray4();
+
+  tbody, thead {
+    tr {
+      th, td {
+        height: 72px;
+
+        &:first-of-type {
+          padding-left: 32px;
+        }
+
+        &:last-of-type {
+          padding-right: 32px;
+        }
+      }
+    }
+  }
+
+  /** Profile table HEAD style */
+  thead tr {
+    th {
+      color: white;
+
+      &:nth-of-type(4) {
+        color: yellow;
+      }
+    }
+  }
+
+  /** Profile table BODY style */
+  tbody tr {
+    td {
+      color: white;
+
+      &:nth-of-type(4) {
+        color: yellow;
+      }
+    }
+  }
+
+  tbody tr:nth-of-type(odd) {
+    background: #0A1A2A;
+  }
+}

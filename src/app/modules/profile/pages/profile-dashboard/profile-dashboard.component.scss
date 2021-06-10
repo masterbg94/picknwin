@@ -1,0 +1,20 @@
+@import "src/assets/palette";
+
+.dashboard-wrapper {
+  background: $main-blue-gray-06;
+  border-radius: 6px;
+
+  p#heading {
+    color: white;
+  }
+
+  .profile-dashboard-stats {
+    .col-12 {
+      .col-4 {
+        p {
+          color: white;
+        }
+      }
+    }
+  }
+}
