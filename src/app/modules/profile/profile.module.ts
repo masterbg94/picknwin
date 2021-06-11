@@ -11,16 +11,18 @@ import {ProfileDashboardComponent} from './pages/profile-dashboard/profile-dashb
 import {GiveawayModule} from '../../shared/components/giveaway/giveaway.module';
 import {CommonModule} from '@angular/common';
 import {ProfileTableModule} from '../../shared/components/profile-table/profile-table.module';
+import {CustomMaterialModule} from '../custom-material.module';
 
 @NgModule({
-    imports: [
-        ProfileRoutingModule,
-        SharedModule,
-        UpgradePremiumModule,
-        GiveawayModule,
-        CommonModule,
-        ProfileTableModule
-    ],
+  imports: [
+    ProfileRoutingModule,
+    SharedModule,
+    UpgradePremiumModule,
+    GiveawayModule,
+    CommonModule,
+    ProfileTableModule,
+    CustomMaterialModule
+  ],
   declarations: [
     ProfileComponent,
     ProfileBillingComponent,

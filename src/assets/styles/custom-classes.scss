@@ -82,8 +82,12 @@
 }
 
 /* Main background colors */
-.main-background {
+.main-background-blue {
   background: $main-dark-blue;
+}
+
+.main-background-blue-gray {
+  background: $main-blue-gray-06;
 }
 
 /* Gradients buttons */

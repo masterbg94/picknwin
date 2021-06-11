@@ -1,1 +1,94 @@
-<p>Profile settings</p>
+<div class="profile-settings-wrapper main-background-blue-gray d-flex flex-column px-24 py-24">
+  <p id="heading">Profile settings</p>
+
+  <div class="profile-settings">
+
+    <div class="profile-settings-short main-background-blue">
+      <div class="profile-settings-short-avatar">
+        <img src="assets/img/logged-user.png" alt="">
+        <div class="name-username d-flex flex-column pl-2">
+          <p>Jonathan Smith</p>
+          <p><i>john-s-86</i></p>
+        </div>
+      </div>
+      <div class="profile-settings-short-points">
+        <p>125.000</p>
+        <p>Reward Points</p>
+      </div>
+    </div>
+
+    <div class="profile-settings-form">
+
+      <form>
+        <div class="form-two-items">
+          <div class="d-flex flex-column settings-form-item">
+            <mat-label>Username</mat-label>
+            <mat-form-field
+              appearance="outline"
+              floatLabel="never"
+              class="example-full-width"
+            >
+              <input matInput placeholder="Username"/>
+            </mat-form-field>
+          </div>
+          <div class="d-flex flex-column settings-form-item">
+            <mat-label>Password</mat-label>
+            <mat-form-field
+              appearance="outline"
+              floatLabel="never"
+              class="example-full-width"
+            >
+              <input matInput placeholder="Password" type="password"/>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="form-two-items">
+          <div class="d-flex flex-column settings-form-item">
+            <mat-label>Name</mat-label>
+            <mat-form-field
+              appearance="outline"
+              floatLabel="never"
+              class="example-full-width"
+            >
+              <input matInput placeholder="Name"/>
+            </mat-form-field>
+          </div>
+          <div class="d-flex flex-column settings-form-item">
+            <mat-label>Surname</mat-label>
+            <mat-form-field
+              appearance="outline"
+              floatLabel="never"
+              class="example-full-width"
+            >
+              <input matInput placeholder="Surname"/>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="form-two-items">
+          <div class="d-flex flex-column settings-form-item">
+            <mat-label>E-mail</mat-label>
+            <mat-form-field
+              appearance="outline"
+              floatLabel="never"
+              class="example-full-width"
+            >
+              <input matInput placeholder="john@email.com"/>
+            </mat-form-field>
+          </div>
+          <div class="d-flex flex-column settings-form-item">
+            <mat-label>Trade URL</mat-label>
+            <mat-form-field
+              appearance="outline"
+              floatLabel="never"
+              class="example-full-width"
+            >
+              <input matInput placeholder="http/tradedummyurl"/>
+            </mat-form-field>
+          </div>
+        </div>
+        <button class="button-gradient-green">Save</button>
+      </form>
+
+    </div>
+  </div>
+</div>

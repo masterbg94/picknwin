@@ -1,0 +1,59 @@
+@import "src/assets/palette";
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+.profile-settings-wrapper {
+
+  #heading {
+    color: white;
+  }
+
+  .profile-settings {
+    .profile-settings-short {
+      display: flex;
+      justify-content: space-between;
+      padding: 32px;
+      @include border-gray4();
+
+      &-avatar {
+        .name-username {
+          p {
+            font: italic normal medium 15px/23px Poppins;
+            color: #FFFFFF;
+
+            &:first-of-type {
+              font: normal normal 600 18px/27px Poppins;
+            }
+          }
+        }
+      }
+
+      &-points {
+        display: flex;
+        flex-direction: column;
+        text-align: right;
+
+        p {
+          color: yellow;
+        }
+      }
+    }
+
+    .profile-settings-form {
+      .form-two-items {
+        display: flex;
+        justify-content: space-between;
+
+        .settings-form-item {
+          max-width: 48%;
+          width: 100%;
+        }
+      }
+    }
+  }
+
+
+}
