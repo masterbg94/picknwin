@@ -14,7 +14,7 @@ const ROUTES: Routes = [
     component: ProfileComponent,
     children: [
       {
-        path:'',
+        path: '',
         component: ProfileDashboardComponent
       },
       {

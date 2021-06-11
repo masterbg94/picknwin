@@ -1,0 +1,23 @@
+<div class="documents-wrapper">
+  <div class="documents-container w-1440 px-24">
+    <div class="mw-330 documents-selection">
+      <div class="documents-menu">
+        <div class="my-documents-heading">
+          <svg-icon src="/assets/img/documents-my-documents.svg"></svg-icon>
+          <p class="m-0 p-0">Documents</p>
+          <div class="divider"></div>
+        </div>
+        <ul>
+          <li [routerLink]="m.route" *ngFor="let m of documentsMenu">
+            <svg-icon [src]="'/assets/img/documents/' + m.icon"></svg-icon>
+            {{m.name}}
+          </li>
+        </ul>
+      </div>
+      <app-upgrade-premium></app-upgrade-premium>
+    </div>
+    <div class="documents-outlet mt-24 ml-24">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
