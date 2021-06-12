@@ -6,9 +6,9 @@ import {Component, Input, OnInit} from '@angular/core';
   styleUrls: ['./matches-list.component.scss']
 })
 export class MatchesListComponent implements OnInit {
-  Arr = Array;
-  num = 9;
   @Input() matches;
+  @Input() haveOptions = false;
+  searchValue;
 
   constructor() {
   }
