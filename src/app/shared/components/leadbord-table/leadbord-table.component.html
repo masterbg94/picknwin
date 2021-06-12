@@ -5,11 +5,11 @@
       <h4>
         Leadboard
       </h4>
-      <button>
+      <button routerLink="/leadbord">
         View All
       </button>
     </div>
-    <div class="places d-flex justify-content-between">
+    <div class="places d-flex justify-content-between" *ngIf="leadboardPlaces">
       <div class="place-single">
         <div class="place-image">
           <img src="assets/img/leadbord-place-3.svg" alt="" class="img-fluid"/>
@@ -40,14 +40,16 @@
     </tr>
     </thead>
     <tbody>
-    <tr>
+    <tr *ngFor="let lead of allLeadboardData;let i = index">
       <td>
         <div class="table__container">
             <span>
-              #01
+              #{{lead.place}}
             </span>
+          <!-- TODO: Fix with svg-icon -->
           <div class="icon icon__place">
             <svg
+              *ngIf="i < 3"
               xmlns="http://www.w3.org/2000/svg"
               width="23.5"
               height="19.5"
@@ -99,7 +101,7 @@
         <div class="table__container table__container--start">
           <div class="avatar"></div>
           <span>
-              WomboDucky
+              {{lead.player}}
             </span>
         </div>
       </td>
@@ -107,7 +109,7 @@
         <div class="table__container">
           <div class="icon icon__score"></div>
           <span>
-              125.000
+              {{lead.score}}
             </span>
         </div>
       </td>
@@ -155,12 +157,12 @@
             </svg>
           </div>
           <span>
-              60.000
+              {{lead.price}}
             </span>
         </div>
       </td>
     </tr>
-    <tr>
+    <!--<tr>
       <td>
         <div class="table__container">
             <span>
@@ -216,7 +218,7 @@
         </div>
       </td>
       <td>
-        <div class="table__container table__container--start">
+        <div class="table__container table__container&#45;&#45;start">
           <div class="avatar"></div>
           <span>
               Fernandezmarco
@@ -336,7 +338,7 @@
         </div>
       </td>
       <td>
-        <div class="table__container table__container--start">
+        <div class="table__container table__container&#45;&#45;start">
           <div class="avatar"></div>
           <span>
               chees2y
@@ -410,7 +412,7 @@
         </div>
       </td>
       <td>
-        <div class="table__container table__container--start">
+        <div class="table__container table__container&#45;&#45;start">
           <div class="avatar"></div>
           <span>
               Stilled
@@ -484,7 +486,7 @@
         </div>
       </td>
       <td>
-        <div class="table__container table__container--start">
+        <div class="table__container table__container&#45;&#45;start">
           <div class="avatar"></div>
           <span>
               WomboDucky
@@ -554,7 +556,7 @@
         </div>
       </td>
       <td>
-        <div class="table__container table__container--start">
+        <div class="table__container table__container&#45;&#45;start">
           <div class="avatar"></div>
           <span>
               WomboDucky
@@ -624,7 +626,7 @@
         </div>
       </td>
       <td>
-        <div class="table__container table__container--start">
+        <div class="table__container table__container&#45;&#45;start">
           <div class="avatar"></div>
           <span>
               WomboDucky
@@ -694,7 +696,7 @@
         </div>
       </td>
       <td>
-        <div class="table__container table__container--start">
+        <div class="table__container table__container&#45;&#45;start">
           <div class="avatar"></div>
           <span>
               WomboDucky
@@ -764,7 +766,7 @@
         </div>
       </td>
       <td>
-        <div class="table__container table__container--start">
+        <div class="table__container table__container&#45;&#45;start">
           <div class="avatar"></div>
           <span>
               WomboDucky
@@ -834,7 +836,7 @@
         </div>
       </td>
       <td>
-        <div class="table__container table__container--start">
+        <div class="table__container table__container&#45;&#45;start">
           <div class="avatar"></div>
           <span>
               WomboDucky
@@ -893,7 +895,7 @@
             </span>
         </div>
       </td>
-    </tr>
+    </tr>-->
     </tbody>
   </table>
 </div>
