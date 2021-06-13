@@ -4,12 +4,18 @@ import {LoginComponent} from './pages/login.component';
 import {LoginRoutingModule} from './login.routing.module';
 import {CustomMaterialModule} from '../custom-material.module';
 import {CommonModule} from '@angular/common';
+import {ReactiveFormsModule} from '@angular/forms';
+import {AuthenticationService} from '../../shared/services/auth.service';
 
 @NgModule({
   declarations: [LoginComponent],
-  imports: [LoginRoutingModule,
+  imports: [
+    LoginRoutingModule,
     CustomMaterialModule,
-    CommonModule],
+    CommonModule,
+    ReactiveFormsModule
+  ],
+  providers: [AuthenticationService]
 })
 export class LoginModule {
 }

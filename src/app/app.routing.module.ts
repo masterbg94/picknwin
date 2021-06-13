@@ -1,5 +1,6 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
+import {AuthGuard} from './shared/guards/auth.guard';
 
 const ROUTES: Routes = [
   {
@@ -16,6 +17,7 @@ const ROUTES: Routes = [
   },
   {
     path: 'matches',
+    canActivate: [AuthGuard],
     loadChildren: () =>
       import('./modules/matches/matches.module').then((m) => m.MatchesModule),
   },
@@ -45,4 +47,5 @@ const ROUTES: Routes = [
   imports: [RouterModule.forRoot(ROUTES)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule {
+}
