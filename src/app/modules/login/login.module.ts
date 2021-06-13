@@ -14,8 +14,7 @@ import {AuthenticationService} from '../../shared/services/auth.service';
     CustomMaterialModule,
     CommonModule,
     ReactiveFormsModule
-  ],
-  providers: [AuthenticationService]
+  ]
 })
 export class LoginModule {
 }

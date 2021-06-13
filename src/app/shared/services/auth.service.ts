@@ -1,27 +1,44 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Router} from '@angular/router';
-import {Observable} from 'rxjs';
-import {AbstractControl} from '@angular/forms';
+import {BehaviorSubject, Observable} from 'rxjs';
 
 
-@Injectable()
+@Injectable({providedIn: 'root'})
 export class AuthenticationService {
+  private currentUserSubject: BehaviorSubject<any>;
+  public currentUser: Observable<any>;
+
   constructor(private http: HttpClient, private router: Router) {
+    this.currentUserSubject = new BehaviorSubject<any>(
+      JSON.parse(localStorage.getItem('auth'))
+    );
+    this.currentUser = this.currentUserSubject.asObservable();
   }
 
   public authenticate(username: any, password: any): boolean {
 
+    /** Backend get status 200 */
     if (username === 'mmaster' && password === 'nemanja') {
       const auth = {
-        username: username,
+        username,
         pass: new Date(),
       };
       localStorage.setItem('auth', JSON.stringify(auth));
-      this.router.navigate(['/matches']);
+      /** Ne mora nijedan redirekt , nek ostane na istoj strani */
+      // this.router.navigate(['/matches']);
+      this.currentUserSubject.next(auth);
       return true;
     }
-
+    /** Backend get error */
+    // this.currentUserSubject.next('Greska auth.service => currentUserSubject.error');
+    // this.currentUserSubject.next(null);
+    alert('Bad login');
     return false;
+  }
+
+  public logout() {
+    localStorage.removeItem('auth');
+    this.currentUserSubject.next(null);
   }
 }
