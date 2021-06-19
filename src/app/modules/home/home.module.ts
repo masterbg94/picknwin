@@ -8,18 +8,20 @@ import {PromoBannerModule} from '../../shared/components/promo-banner/promo-bann
 import {LeadbordTableComponent} from '../../shared/components/leadbord-table/leadbord-table.component';
 import {GameCategoriesModule} from '../../shared/components/game-categories/game-categories.module';
 import {LeadbordTableModule} from '../../shared/components/leadbord-table/leadbord-table.module';
+import {CommonModule} from '@angular/common';
 
 @NgModule({
   declarations: [HomeComponent],
-  imports: [
-    HomeRoutingModule,
-    HomeLoginModule,
-    MatchesListModule,
-    UpgradePremiumModule,
-    PromoBannerModule,
-    GameCategoriesModule,
-    LeadbordTableModule
-  ],
+    imports: [
+        HomeRoutingModule,
+        HomeLoginModule,
+        MatchesListModule,
+        UpgradePremiumModule,
+        PromoBannerModule,
+        GameCategoriesModule,
+        LeadbordTableModule,
+        CommonModule
+    ],
   exports: [
     LeadbordTableComponent
   ],

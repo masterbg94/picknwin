@@ -1,12 +1,13 @@
 <div class="match">
-  <div class="match__team">
+  <div class="match__team" (click)="teamOnePredict(index)">
     <div class="match__team--desc">
       <div class="match__team--icon">
         <img [src]="singleMatch.team_one.team_logo" alt=""/>
       </div>
       <h4 class="match__team--title">{{singleMatch.team_one.team_name}}</h4>
     </div>
-    <div class="match__team--score">{{singleMatch.team_one_points}}</div>
+    <div class="match__team--score"
+         [class.selected-team]="teamOneSelect === singleMatch.team_one.team_name">{{singleMatch.team_one_points}}</div>
   </div>
   <div class="match__description">
     <div class="match__description--background"></div>
@@ -51,13 +52,14 @@
       <span>{{singleMatch.date | date:'HH:mm'}}</span>
     </div>
   </div>
-  <div class="match__team">
+  <div class="match__team" (click)="teamTwoPredict(index)">
     <div class="match__team--desc">
       <div class="match__team--icon">
-        <img [src]="singleMatch.team_two.team_logo" alt=""/>
+        <img [src]="singleMatch.team_two.team_logo" onerror="" alt="" (error)="errorHandler($event)" />
       </div>
       <h4 class="match__team--title">{{singleMatch.team_two.team_name}}</h4>
     </div>
-    <div class="match__team--score">{{singleMatch.team_two_points}}</div>
+    <div class="match__team--score"
+         [class.selected-team]="teamTwoSelect === singleMatch.team_two.team_name">{{singleMatch.team_two_points}}</div>
   </div>
 </div>

@@ -1,4 +1,4 @@
-import {Injectable} from '@angular/core';
+import {EventEmitter, Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Router} from '@angular/router';
 import {BehaviorSubject, Observable} from 'rxjs';
@@ -8,6 +8,7 @@ import {BehaviorSubject, Observable} from 'rxjs';
 export class AuthenticationService {
   private currentUserSubject: BehaviorSubject<any>;
   public currentUser: Observable<any>;
+  public isUserLogged: EventEmitter<any> = new EventEmitter<any>();
 
   constructor(private http: HttpClient, private router: Router) {
     this.currentUserSubject = new BehaviorSubject<any>(
@@ -28,6 +29,8 @@ export class AuthenticationService {
       /** Ne mora nijedan redirekt , nek ostane na istoj strani */
       // this.router.navigate(['/matches']);
       this.currentUserSubject.next(auth);
+      // If user is logged then remove login components
+      this.isUserLogged.emit(true);
       return true;
     }
     /** Backend get error */
@@ -40,5 +43,7 @@ export class AuthenticationService {
   public logout() {
     localStorage.removeItem('auth');
     this.currentUserSubject.next(null);
+    // Logged out user , show login components
+    this.isUserLogged.emit(null);
   }
 }

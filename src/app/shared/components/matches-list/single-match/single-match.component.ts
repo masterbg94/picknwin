@@ -10,6 +10,9 @@ import {MatchesData} from '../../../models/matches';
 export class SingleMatchComponent implements OnInit, OnChanges {
 
   @Input() singleMatch: MatchesData;
+  @Input() index;
+  teamOneSelect;
+  teamTwoSelect;
 
   constructor() {
   }
@@ -18,7 +21,21 @@ export class SingleMatchComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    console.log('changes', changes.singleMatch.currentValue);
+  }
+
+  teamOnePredict(x) {
+    console.log(this.singleMatch.team_one.team_name);
+    this.teamOneSelect = this.singleMatch.team_one.team_name;
+  }
+
+  teamTwoPredict(x) {
+    console.log(this.singleMatch.team_two.team_name);
+    this.teamTwoSelect = this.singleMatch.team_two.team_name;
+  }
+
+  /** Default if dont have (cant load) image URL */
+  errorHandler(event) {
+    event.target.src = 'https://bitsofco.de/content/images/2018/12/broken-1.png';
   }
 
 }

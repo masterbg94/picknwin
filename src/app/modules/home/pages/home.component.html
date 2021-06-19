@@ -10,7 +10,7 @@
       </p>
     </div>
     <div class="mw-330">
-      <app-home-login-component></app-home-login-component>
+      <app-home-login-component *ngIf="userNotLogged"></app-home-login-component>
     </div>
   </div>
 </div>
@@ -24,7 +24,7 @@
       <app-matches-list [matches]="allMatches"></app-matches-list>
     </div>
     <div class="mw-330">
-      <app-home-login-component></app-home-login-component>
+      <app-home-login-component *ngIf="userNotLogged"></app-home-login-component>
     </div>
   </div>
 </div>
