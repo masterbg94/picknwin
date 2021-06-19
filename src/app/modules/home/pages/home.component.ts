@@ -19,6 +19,8 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.userNotLogged = !Boolean(localStorage.getItem('auth'));
+
     this.matchesService.getAllMatches().pipe(take(1)).subscribe(
       (response: Matches) => {
         this.allMatches = response.data;
