@@ -8,7 +8,7 @@
       <app-leadbord-table-component></app-leadbord-table-component>
     </div>
     <div class="mw-330">
-      <app-home-login-component></app-home-login-component>
+      <app-home-login-component *ngIf="userNotLogged"></app-home-login-component>
     </div>
   </div>
 </div>
