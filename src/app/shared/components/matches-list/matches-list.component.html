@@ -9,7 +9,9 @@
 <!--      <input type="search" placeholder="Search matches...">-->
       <mat-form-field class="example-form-field">
         <mat-label>Search matches...</mat-label>
-        <input matInput type="search" placeholder="Search matches..." [(ngModel)]="searchValue">
+        <input matInput type="search" placeholder="Search matches..."
+               [(ngModel)]="searchValue"
+               (ngModelChange)="changedInput($event)">
         <button *ngIf="searchValue" matSuffix mat-icon-button aria-label="Clear" (click)="searchValue=''">
           <mat-icon>close</mat-icon>
         </button>
@@ -17,11 +19,10 @@
     </div>
   </div>
   <div class="col-12 p-0 m-0 d-flex justify-content-between">
-
   </div>
 </div>
 
-<app-single-match *ngFor="let match of matches; let index = index"
+<app-single-match *ngFor="let match of matches | filter: searchValue; let index = index"
                   [singleMatch]="match"
                   [index]="index">
 </app-single-match>

@@ -1,4 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {Matches, MatchesData} from '../../models/matches';
 
 @Component({
   selector: 'app-matches-list',
@@ -16,4 +17,7 @@ export class MatchesListComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  changedInput(x){
+    console.log('typed search', x);
+  }
 }
