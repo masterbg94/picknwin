@@ -23,9 +23,10 @@ export class SingleMatchComponent implements OnInit, OnChanges {
   ngOnChanges(changes: SimpleChanges): void {
   }
 
-  teamOnePredict(x) {
-    console.log(this.singleMatch.team_one.team_name);
-    this.teamOneSelect = this.singleMatch.team_one.team_name;
+  predictTeam(selectedTeam) {
+    this.selectedMatch = selectedTeam.team_name;
+    // this.prediction.push(selectedTeam);
+    // this.predictionService.updatePredictionList(this.singleMatch);
   }
 
   teamTwoPredict(x) {
