@@ -1,22 +1,24 @@
-<div class="game-categories-wrapper d-flex flex-column">
-  <div class="game-categories-heading">
+<div class="game-categories-wrapper d-flex flex-column" [class.collapsed-categories]="collapsed">
+  <div class="game-categories-heading" (click)="collapse()" style="cursor: pointer">
     <div class="game-categories-heading-content">
       <img src="../../../../assets/img/game-categories.svg" alt="" class="img-fluid">
       <p>Game Categories</p>
+      <svg-icon [src]="collapsed ? './assets/img/arrow-up.svg' : './assets/img/arrow-down.svg'"  alt="game-categories-up"></svg-icon>
+<!--      <svg-icon src="./assets/img/arrow-down.svg" *ngIf="!collapsed" alt="game-categories-down"></svg-icon>-->
     </div>
   </div>
 
   <div class="game-categories-list">
     <div class="game-categories-list_item">
       <div class="list-item-border"></div>
-      <div class="list-item-icon-text">
+      <div class="list-item-icon-text" (click)="selectCategory('csgo')">
         <img src="../../../../assets/img/csgo-icon.svg" alt="" class="img-fluid">
         <p class="text">CS:GO</p>
       </div>
     </div>
     <div class="game-categories-list_item">
       <div class="list-item-border"></div>
-      <div class="list-item-icon-text">
+      <div class="list-item-icon-text" (click)="selectCategory('dota')">
         <img src="../../../../assets/img/dota2-icon.png" alt="" class="img-fluid">
         <p class="text">DOTA2</p>
       </div>

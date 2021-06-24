@@ -5,6 +5,14 @@
   margin-bottom: 24px;
   border-radius: 6px;
   height: 400px;
+  transition: 0.5s;
+  overflow: hidden;
+
+  &.collapsed-categories {
+    transition: 0.5s;
+    height: 78px !important;
+    overflow: hidden;
+  }
 
   .game-categories-heading {
     display: flex;
@@ -25,11 +33,19 @@
       }
 
       p {
-        margin: 0;
-        margin-left: 18px;
+        margin: 0 18px;
         font-size: 15px;
         color: white;
         font-weight: 600;
+        width: 100%;
+      }
+
+      svg-icon {
+        svg {
+          path {
+            fill: white;
+          }
+        }
       }
     }
   }
