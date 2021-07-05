@@ -1,40 +1,51 @@
 import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
 
 import {MatchesData} from '../../../models/matches';
+import {PredictionService} from '../../../services/prediction.service';
+import {Subscription} from 'rxjs';
 
 @Component({
   selector: 'app-single-match',
   templateUrl: './single-match.component.html',
   styleUrls: ['./single-match.component.scss']
 })
-export class SingleMatchComponent implements OnInit, OnChanges {
-
+export class SingleMatchComponent implements OnInit {
   @Input() singleMatch: MatchesData;
   @Input() index;
-  teamOneSelect;
-  teamTwoSelect;
+  @Input() predictedMatch = false;
 
-  constructor() {
+  prediction: any[] = [];
+  selectedMatch;
+  localStoragePredictions: any[];
+
+  /** Subscription for same match click but another team */
+  subscription: Subscription[] = [];
+
+  constructor(private predictionService: PredictionService) {
   }
 
   ngOnInit(): void {
+    this.subscription.push(
+      this.predictionService.predictionsObservable.subscribe(
+        (resp: any) => {
+          // this.allPredictionsData = resp;
+          // console.log('all p data', this.allPredictionsData);
+        }
+      )
+    );
   }
 
-  ngOnChanges(changes: SimpleChanges): void {
-  }
-
-  predictTeam(selectedTeam) {
+  predictTeam(selectedTeam, points) {
     this.selectedMatch = selectedTeam.team_name;
-    // this.prediction.push(selectedTeam);
-    // this.predictionService.updatePredictionList(this.singleMatch);
+    const predictionItem = {
+      match: this.singleMatch,
+      team: this.selectedMatch,
+      points: points
+    };
+    this.predictionService.addToPredictionList(predictionItem);
   }
 
-  teamTwoPredict(x) {
-    console.log(this.singleMatch.team_two.team_name);
-    this.teamTwoSelect = this.singleMatch.team_two.team_name;
-  }
-
-  /** Default if dont have (cant load) image URL */
+  /** Default team picture if dont have / cant load image URL */
   errorHandler(event) {
     event.target.src = 'https://bitsofco.de/content/images/2018/12/broken-1.png';
   }

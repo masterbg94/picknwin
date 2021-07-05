@@ -24,5 +24,6 @@
 
 <app-single-match *ngFor="let match of matches | filter: searchValue; let index = index"
                   [singleMatch]="match"
-                  [index]="index">
+                  [index]="index"
+                  [predictedMatch]="returnPredictedMatch(match)">
 </app-single-match>

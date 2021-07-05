@@ -6,11 +6,14 @@
           <mat-icon class="example-tab-icon">text_snippet</mat-icon>
           Predictions
         </ng-template>
-        <app-single-prediction-component></app-single-prediction-component>
-        <app-single-prediction-component></app-single-prediction-component>
-        <app-single-prediction-component></app-single-prediction-component>
-        <app-single-prediction-component></app-single-prediction-component>
-        <button class="submit-predictions">Submit</button>
+        <ng-container *ngIf="predictions!=null">
+          <app-single-prediction-component *ngFor="let prediction of predictions;let index = index"
+                                           [singlePrediction]="prediction"
+                                           [predictionIndex]="index"
+                                           (deletePredictionEvent)="deletePrediction(index)"
+          ></app-single-prediction-component>
+        </ng-container>
+        <button class="submit-predictions" *ngIf="predictions && predictions.length" (click)="submitPredictions()">Submit</button>
       </mat-tab>
       <mat-tab>
         <ng-template mat-tab-label>
