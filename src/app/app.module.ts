@@ -7,6 +7,7 @@ import { MainToolbarModule } from './shared/components/main-toolbar/main-toolbar
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { FooterModule } from './shared/components/footer/footer.module';
+import {CustomMaterialModule} from './modules/custom-material.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -17,6 +18,7 @@ import { FooterModule } from './shared/components/footer/footer.module';
     AppRoutingModule,
     MainToolbarModule,
     FooterModule,
+    CustomMaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent],

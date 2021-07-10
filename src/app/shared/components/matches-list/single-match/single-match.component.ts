@@ -12,7 +12,7 @@ import {Subscription} from 'rxjs';
 export class SingleMatchComponent implements OnInit {
   @Input() singleMatch: MatchesData;
   @Input() index;
-  @Input() predictedMatch = false;
+  @Input() predictedMatch;
 
   prediction: any[] = [];
   selectedMatch;
