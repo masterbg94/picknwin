@@ -7,8 +7,8 @@
       rgba(10, 26, 42, 0.9) 42%,
       rgba(10, 26, 42, 0.95) 99%,
       rgba(10, 26, 42, 1) 100%
-    ),
-    url("../../../../assets/img/footer-bg.svg");
+  ),
+  url("../../../../assets/img/footer-bg.svg");
 
   .footer-container {
     max-width: 1160px;
@@ -97,6 +97,36 @@
       p:not(:last-of-type) {
         margin-right: 50px;
       }
+    }
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .footer-top, .footer-bottom, .footer-bottom-menu {
+    flex-direction: column !important;;
+    flex-wrap: wrap;
+  }
+  .footer-top {
+    .footer-top-item.col-4 {
+      width: 100%;
+      text-align: center;
+      max-width: unset;
+    }
+  }
+  .footer-bottom {
+    .footer-bottom-item.col-4 {
+      width: 100%;
+      text-align: center;
+      max-width: unset;
+
+      &:last-of-type {
+        margin-top: 20px;
+      }
+    }
+
+    //   menu
+    &-menu {
+      padding-left: 24px;
     }
   }
 }

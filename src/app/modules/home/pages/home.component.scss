@@ -72,3 +72,41 @@
     width: 100%;
   }
 }
+
+@media screen and (max-width: 576px) {
+  .heading-background {
+    background-position: center center;
+  }
+  // TODO: FIX this CLASS NAME in html & scss
+  .home-info-details {
+    flex-direction: column;
+
+    .col-4.three-descriptions {
+      max-width: unset;
+      margin-bottom: 12px;
+    }
+  }
+
+  .home__matches--wrapper {
+  }
+}
+
+// lomi se premium/tablea/login
+@media screen and (max-width: 1392px) {
+  .home__matches .home__matches--wrapper {
+    justify-content: center;
+    // prvo ide login i premium
+    .mw-684{
+      order: 2;
+    }
+    .mw-330{
+      margin: 24px 12px;
+    }
+  }
+}
+
+@media screen and (min-width: 1392px) {
+  .home__matches .home__matches--wrapper {
+    justify-content: space-between;
+  }
+}

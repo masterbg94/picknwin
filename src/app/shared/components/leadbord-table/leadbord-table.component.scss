@@ -17,16 +17,19 @@
       padding: 0 52px;
       cursor: pointer;
     }
-    .places{
-      .place-single{
+
+    .places {
+      .place-single {
         display: flex;
         flex-direction: column;
         align-items: center;
-        .place-image{
+
+        .place-image {
           height: 200px;
           display: flex;
           align-items: start;
-          img{
+
+          img {
             height: 100%;
           }
         }
@@ -108,5 +111,11 @@
         }
       }
     }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .leadboard {
+    overflow: scroll;
   }
 }
