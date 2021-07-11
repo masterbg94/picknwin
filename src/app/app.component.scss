@@ -1,0 +1,41 @@
+@import "src/assets/palette";
+
+.example-container {
+  .mat-toolbar.example-toolbar.mat-primary.mat-toolbar-single-row {
+    background: rgb(26 41 55);
+  }
+
+  .side-nav-logo {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    // padding because of menu / logo go on center
+    padding-right: 40px;
+
+    img {
+      max-height: 48px;
+    }
+  }
+
+  mat-sidenav-container.example-sidenav-container {
+    // sidenav whole bg color
+    mat-sidenav {
+      background: $main-blue-gray;
+
+      mat-nav-list {
+        a {
+          color: white;
+          .mat-list-item-content {
+            color: white;
+          }
+        }
+
+        // active route style
+        .menu-link-active {
+          color: $main-yellow;
+          background: $main-dark-blue;
+        }
+      }
+    }
+  }
+}
