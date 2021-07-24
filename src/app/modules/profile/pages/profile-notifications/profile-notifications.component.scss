@@ -90,3 +90,9 @@ p {
     }
   }
 }
+
+@media screen and (max-width: 576px) {
+  .notifications-wrapper {
+    width: 520px;
+  }
+}

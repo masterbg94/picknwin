@@ -18,3 +18,9 @@
     }
   }
 }
+
+@media screen and (max-width: 576px) {
+  .dashboard-wrapper {
+    width: 520px;
+  }
+}

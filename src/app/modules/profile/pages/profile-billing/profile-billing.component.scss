@@ -40,7 +40,7 @@
           @include border-gray4();
         }
 
-        &:nth-of-type(2){
+        &:nth-of-type(2) {
           @include gradient2();
           @include border-green6();
         }
@@ -93,6 +93,20 @@
 
         &_activate {
           padding-top: 102px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .profile-billing-wrapper {
+    .profile-billing-container {
+      .profile-billing-container_types {
+        flex-direction: column;
+
+        .billing-type:first-of-type {
+          margin-bottom: 24px;
         }
       }
     }

@@ -69,3 +69,34 @@
     }
   }
 }
+
+@media screen and (max-width: 576px) {
+  .profile-container {
+    flex-direction: column;
+    display: flex;
+
+    .profile-selection {
+      flex-direction: column;
+      display: flex;
+      max-width: 100%;
+
+      ::ng-deep {
+        app-upgrade-premium .upgrade-premium {
+          width: 100%;
+          max-width: 100% !important;
+        }
+      }
+
+      //   order
+      .profile-menu {
+        order: 2;
+        margin-top: 24px;
+      }
+    }
+    // profile menu content / outlet
+    .profile-outlet{
+      margin: 0 auto 24px;
+      overflow-x: scroll;
+    }
+  }
+}
