@@ -9,27 +9,27 @@ export class FooterComponent {
   footerMenu = [
     {
       name: 'FAQ',
-      path: '/'
+      path: 'documents'
     },
     {
       name: 'Affiliates',
-      path: '/'
+      path: 'documents/affiliates'
     },
     {
       name: 'Legal',
-      path: '/'
+      path: 'documents/legal'
     },
     {
       name: 'Privacy & Security',
-      path: '/'
+      path: 'documents/privacy-security'
     },
     {
       name: 'Provably Fair',
-      path: '/'
+      path: 'documents/provably-fair'
     },
     {
       name: 'Responsible Gaming',
-      path: '/'
+      path: 'documents/responsible-gaming'
     },
   ];
 }
