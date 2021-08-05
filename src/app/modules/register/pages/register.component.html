@@ -9,7 +9,7 @@
               <p>Register</p>
               <p>Enter the details below to create account</p>
             </div>
-            <form>
+            <form [formGroup]="registerForm">
               <div class="d-flex flex-column">
                 <mat-label>Username</mat-label>
                 <mat-form-field
@@ -17,7 +17,7 @@
                   floatLabel="never"
                   class="custom-input-field"
                 >
-                  <input matInput placeholder="Username"/>
+                  <input matInput formControlName="username" placeholder="Username"/>
                 </mat-form-field>
               </div>
               <div class="d-flex flex-column">
@@ -29,7 +29,7 @@
                   floatLabel="never"
                   class="custom-input-field"
                 >
-                  <input matInput type="password" placeholder="********"/>
+                  <input matInput formControlName="password" type="password" placeholder="********"/>
                 </mat-form-field>
               </div>
               <div class="d-flex flex-column">
@@ -39,7 +39,7 @@
                   floatLabel="never"
                   class="custom-input-field"
                 >
-                  <input matInput placeholder="Name"/>
+                  <input matInput formControlName="name" placeholder="Name"/>
                 </mat-form-field>
               </div>
               <div class="d-flex flex-column">
@@ -49,7 +49,7 @@
                   floatLabel="never"
                   class="custom-input-field"
                 >
-                  <input matInput placeholder="Surname"/>
+                  <input matInput formControlName="surname" placeholder="Surname"/>
                 </mat-form-field>
               </div>
               <div class="d-flex flex-column">
@@ -59,10 +59,10 @@
                   floatLabel="never"
                   class="custom-input-field"
                 >
-                  <input matInput type="email" placeholder="Email"/>
+                  <input matInput formControlName="email" type="email" placeholder="Email"/>
                 </mat-form-field>
               </div>
-              <button>Register</button>
+              <button (click)="submitRegister()">Register</button>
             </form>
           </div>
           <div class="register-form_register-with">
