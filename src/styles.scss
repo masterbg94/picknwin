@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @import "assets/styles/custom-classes";
+@import "assets/styles/inputs";
 
 * {
   margin: 0;
@@ -14,71 +15,4 @@ body {
 body {
   margin: 0;
   //font-family: Roboto, "Helvetica Neue", sans-serif;
-}
-
-
-/* Inputs */
-mat-label {
-  font: normal normal 600 10px/24px Poppins;
-  color: white;
-}
-
-mat-form-field {
-  input {
-    color: white;
-  }
-  // MAIN INPUT text color
-  .mat-form-field-infix{
-    input {
-      color: white;
-    }
-  }
-}
-
-/* Change INPUT TEXT COLOR styles in */
-input {
-  display: block;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 400;
-  color: #333333;
-  --placeHolder-color: white;
-}
-
-input::placeholder {
-  color: var(--placeHolder-color);
-}
-
-input::-webkit-input-placeholder {
-  /* Edge */
-  color: var(--placeHolder-color);
-}
-
-input:-ms-input-placeholder {
-  /* Internet Explorer 10-11 */
-  color: var(--placeHolder-color);
-}
-
-input:-moz-placeholder {
-  color: var(--placeHolder-color);
-}
-
-input::-moz-placeholder {
-  color: var(--placeHolder-color);
-}
-
-/* Change Autocomplete styles in Chrome*/
-input:-webkit-autofill,
-input:-webkit-autofill:hover,
-input:-webkit-autofill:focus,
-textarea:-webkit-autofill,
-textarea:-webkit-autofill:hover,
-textarea:-webkit-autofill:focus,
-select:-webkit-autofill,
-select:-webkit-autofill:hover,
-select:-webkit-autofill:focus {
-  border: none;
-  -webkit-text-fill-color: white;
-  -webkit-box-shadow: 0 0 0px 1000px transparent inset;
-  transition: background-color 5000s ease-in-out 0s;
 }

@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {AuthenticationService} from '../../../shared/services/auth.service';
+import {FormValidationService} from '../../../shared/services/form-validation.service';
 
 @Component({
   selector: 'app-login',
@@ -8,12 +9,14 @@ import {AuthenticationService} from '../../../shared/services/auth.service';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
-  forgotPasswordForm;
+  showResetPassword;
   loginError;
   loginForm: FormGroup;
+  resetPasswordForm: FormGroup;
 
-  constructor(private formBuilder: FormBuilder, private authService: AuthenticationService) {
+  constructor(private formBuilder: FormBuilder, private authService: AuthenticationService, public formService: FormValidationService) {
     this.initForm();
+    this.initResetPassword();
   }
 
   initForm() {
@@ -23,16 +26,22 @@ export class LoginComponent implements OnInit {
     });
   }
 
+  initResetPassword() {
+    this.resetPasswordForm = this.formBuilder.group({
+      resetPasswordEmail: ['', Validators.required]
+    });
+  }
+
   ngOnInit(): void {
   }
 
   toggleForgotPassword() {
-    this.forgotPasswordForm = !this.forgotPasswordForm;
+    this.showResetPassword = !this.showResetPassword;
   }
 
   submitLogin() {
-    let username = this.loginForm.get('username').value;
-    let password = this.loginForm.get('password').value;
+    const username = this.loginForm.get('username').value;
+    const password = this.loginForm.get('password').value;
     console.log(this.authService.authenticate(username, password));
     // TODO: When the login result is obtained, display if there is an error
     if (!this.authService.authenticate(username, password)) {
@@ -41,7 +50,12 @@ export class LoginComponent implements OnInit {
   }
 
   submitForgotPassword() {
-    console.log('forgotten password');
+    alert(`Email sent to: ${this.resetPasswordForm.get('resetPasswordEmail').value}`);
   }
+
+  /* Form validation */
+  // manageInputValidation(formElement: any) {
+  //   return this.formService.manageInputValidation(formElement);
+  // }
 
 }

@@ -1,11 +1,11 @@
-/* Main colors */
+/* MAIN COLORS */
 $main-light-green: #B5C80E;
 $main-yellow: #F6F418;
 $main-dark-blue: #0A1A2A;
 $main-blue-gray: #253340;
 $main-blue-gray-06: rgba(37, 51, 64, 0.6);
 
-/* Gradients */
+/* GRADIENTS */
 @mixin gradient {
   background: linear-gradient(90deg, #80BE23 0%, #B5C80E 100%);
 }
@@ -23,16 +23,17 @@ $main-blue-gray-06: rgba(37, 51, 64, 0.6);
 }
 
 
-/* Alpha */
+/* WHITE ALPHA */
 $white10: rgba(255, 255, 255, 0.1);
 $white20: rgba(255, 255, 255, 0.2);
 $white30: rgba(255, 255, 255, 0.3);
 $white50: rgba(255, 255, 255, 0.5);
+$white70: rgba(255, 255, 255, 0.7);
 $white90: rgba(255, 255, 255, 0.9);
 $white: rgba(255, 255, 255);
 $yellow20: rgba(255, 255, 0, 0.2);
 
-/* Border */
+/* BORDERS */
 @mixin border-green6 {
   border: 1px solid #B5C80E;
   border-radius: 6px;
@@ -47,6 +48,14 @@ $yellow20: rgba(255, 255, 0, 0.2);
 $state-success: #00FF33;
 $state-error: #FF0000;
 
-/* Modal login/register background */
+/* MODAL login/register background */
 $modal-background: #1a2937;
 
+/* INPUT OUTLINES & BACKGROUND */
+$inputDefaultBackground: #1F2E3A;
+$inputDefaultOutline: #2E4151;
+$inputHoverOutline: $white70;
+$inputActiveOutline: #F6F41899;
+$inputDisabledOutline: #3C444C;
+$inputErrorOutline: #FF000059;
+$inputSuccessOutline: #00FF334D;

@@ -9,6 +9,7 @@ export class AuthenticationService {
   private currentUserSubject: BehaviorSubject<any>;
   public currentUser: Observable<any>;
   public isUserLogged: EventEmitter<any> = new EventEmitter<any>();
+  // Is user logged to show or hide small login component
 
   constructor(private http: HttpClient, private router: Router) {
     this.currentUserSubject = new BehaviorSubject<any>(
