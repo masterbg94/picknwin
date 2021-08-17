@@ -21,7 +21,9 @@
           <button class="button-border-green" [routerLink]="'/login'">Login</button>
         </div>
         <div class="logged-user"
-             *ngIf="isLogged">
+             *ngIf="isLogged"
+             (click)="toggleDropdown()"
+             [class.user-dropdown-opened]="isDropdownToggled">
           <div class="username-coins">
             <p>Jonathan Smith</p>
             <div class="d-flex coins">
@@ -29,18 +31,18 @@
               <p>125.000</p>
             </div>
           </div>
-          <img src="assets/img/logged-user.png" (click)="toggleDropdown()" alt="" class="img-fluid">
+          <img src="assets/img/logged-user.png" alt="" class="img-fluid">
         </div>
 
         <!--  Position absolute LOGIN DD -->
         <!--  TODO: fix menu style / only toggle when is logged -->
         <div class="login-dropdown position-absolute d-flex flex-column"
              *ngIf="isDropdownToggled">
-          <div class="dd-item">
-            <img src="" alt="">
-            <p>Dashboard</p>
+          <div class="dd-item" *ngFor="let item of userDropdown" [routerLink]="item.path">
+            <svg-icon [src]="'/assets/img/icons/profile-dropdown/profile-dd-' + item.icon + '.svg'"></svg-icon>
+            <p>{{item.name}}</p>
           </div>
-          <div class="dd-item">
+         <!-- <div class="dd-item">
             <img src="" alt="">
             <p>Notifications</p>
           </div>
@@ -55,7 +57,7 @@
           <div class="dd-item" (click)="logoutUser()">
             <img src="" alt="">
             <p>Logout</p>
-          </div>
+          </div>-->
         </div>
         <!-- Position absolute LOGIN DD -->
       </div>

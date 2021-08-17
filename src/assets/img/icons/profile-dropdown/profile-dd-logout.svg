@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+  <defs>
+    <style>
+      .profile-dd-none,
+      .profile-dd-fill {
+        fill: none;
+      }
+
+      .profile-dd-fill {
+        stroke: #fff;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 1.5px;
+      }
+    </style>
+  </defs>
+  <g transform="translate(0 0)">
+    <rect class="profile-dd-none" width="20" height="20" transform="translate(0 0)"/>
+    <path class="profile-dd-fill" d="M174.029,86l3.262,3.262-3.262,3.262" transform="translate(-160.511 -79.297)"/>
+    <line class="profile-dd-fill" x2="8" transform="translate(8 9.908)"/>
+    <path class="profile-dd-fill"
+          d="M46.214,53.671H40.621A.621.621,0,0,1,40,53.05V40.621A.621.621,0,0,1,40.621,40h5.593"
+          transform="translate(-36.893 -36.87)"/>
+  </g>
+</svg>

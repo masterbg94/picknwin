@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+  <defs>
+    <style>
+      .profile-dd-fill {
+        fill: #fff;
+      }
+
+      .profile-dd-none {
+        fill: none;
+      }
+    </style>
+  </defs>
+  <g transform="translate(0 0)">
+    <rect class="profile-dd-none" width="20" height="20" transform="translate(0.578 0.809)"/>
+    <g transform="translate(2.906 2.192)">
+      <path class="profile-dd-fill"
+            d="M47.714,36.061a10.053,10.053,0,0,1-1.036-5.075v-.563A6.4,6.4,0,0,0,40.376,24h-.049a6.351,6.351,0,0,0-6.35,6.35v.635a10.048,10.048,0,0,1-1.036,5.075,1.27,1.27,0,0,0,1.1,1.911h12.58a1.27,1.27,0,0,0,1.1-1.911Z"
+            transform="translate(-32.767 -24)"/>
+      <path class="profile-dd-fill" d="M93.645,216H88.564a.635.635,0,0,0,0,1.27h5.081a.635.635,0,0,0,0-1.27Z"
+            transform="translate(-83.55 -200.758)"/>
+    </g>
+  </g>
+</svg>

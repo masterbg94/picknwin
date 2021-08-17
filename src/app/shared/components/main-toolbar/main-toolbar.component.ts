@@ -22,6 +22,34 @@ export class MainToolbarComponent implements OnInit {
       path: '/leadbord',
     },
   ];
+
+  userDropdown: any[] = [
+    {
+      name: 'Dashboard',
+      path: '/profile/',
+      icon: 'chart'
+    },
+    {
+      name: 'Notifications',
+      path: '/profile/notifications',
+      icon: 'alert'
+    },
+    {
+      name: 'Billing',
+      path: '/profile/billing',
+      icon: 'money'
+    },
+    {
+      name: 'Settings',
+      path: '/profile/settings',
+      icon: 'settings'
+    },
+    {
+      name: 'Logout',
+      path: '/profile/',
+      icon: 'logout'
+    }
+  ];
   isDropdownToggled = false;
   isLogged = false;
 

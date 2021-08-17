@@ -98,8 +98,11 @@
           max-width: 330px;
           width: 100%;
           padding: 0 32px;
+          cursor: pointer;
           // bg
-          background: rgba(246, 244, 24, 0.2);
+          &.user-dropdown-opened {
+            background: rgba(246, 244, 24, 0.2)
+          }
 
           .username-coins {
             margin-right: 24px;
@@ -140,9 +143,11 @@
         .login-dropdown {
           top: 88px;
           right: 0;
-          background: rgba(10, 26, 42);
+          background: rgb(10 26 42 / 82%);
           // TODO: fix opacity + backdrop
           //backdrop-filter: blur(9px);
+          backdrop-filter: blur(9px);
+          -webkit-backdrop-filter: blur(9px);
           z-index: 123;
           max-width: 330px;
           width: 100%;
@@ -151,6 +156,7 @@
             display: flex;
             align-items: center;
             height: 64px;
+            cursor: pointer;
 
             p {
               font-size: 16px;
@@ -158,6 +164,12 @@
               padding: 0;
               color: white;
               cursor: pointer;
+            }
+            &:hover{
+              p{
+                color: $main-yellow;
+              }
+
             }
           }
         }
