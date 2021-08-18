@@ -46,7 +46,7 @@ export class MainToolbarComponent implements OnInit {
     },
     {
       name: 'Logout',
-      path: '/profile/',
+      path: '#',
       icon: 'logout'
     }
   ];

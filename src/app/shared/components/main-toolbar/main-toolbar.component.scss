@@ -157,6 +157,7 @@
             align-items: center;
             height: 64px;
             cursor: pointer;
+            transition: 0.3s;
 
             p {
               font-size: 16px;
@@ -164,12 +165,25 @@
               padding: 0;
               color: white;
               cursor: pointer;
+              transition: 0.3s;
             }
-            &:hover{
-              p{
+
+            &:hover {
+              transition: 0.3s;
+
+              p {
+                transition: 0.3s;
                 color: $main-yellow;
               }
 
+              svg-icon {
+                svg {
+                  path.profile-dd-fill {
+                    stroke: $main-yellow;
+                    transition: 0.3s;
+                  }
+                }
+              }
             }
           }
         }

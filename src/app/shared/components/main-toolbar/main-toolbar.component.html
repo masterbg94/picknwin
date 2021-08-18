@@ -38,7 +38,7 @@
         <!--  TODO: fix menu style / only toggle when is logged -->
         <div class="login-dropdown position-absolute d-flex flex-column"
              *ngIf="isDropdownToggled">
-          <div class="dd-item" *ngFor="let item of userDropdown" [routerLink]="item.path">
+          <div class="dd-item pl-24" *ngFor="let item of userDropdown" [routerLink]="item.path">
             <svg-icon [src]="'/assets/img/icons/profile-dropdown/profile-dd-' + item.icon + '.svg'"></svg-icon>
             <p>{{item.name}}</p>
           </div>
