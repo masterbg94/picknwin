@@ -1,9 +1,11 @@
+<!--TABLET/MOBILE VIEW-->
 <div *ngIf="innerWidth>1024">
-  <app-main-toolbar-component></app-main-toolbar-component>
+  <app-main-toolbar-component [isLoggedUser]="isLogged"></app-main-toolbar-component>
   <router-outlet></router-outlet>
   <app-footer-component></app-footer-component>
 </div>
 
+<!--DESKTOP VIEW-->
 <div class="example-container" *ngIf="innerWidth<=1024" [class.example-is-mobile]="mobileQuery.matches">
   <mat-toolbar color="primary" class="example-toolbar">
     <button mat-icon-button (click)="snav.toggle()">
@@ -13,6 +15,7 @@
     <div class="side-nav-logo">
       <img src="assets/img/logo2x.png" class="img-fluid" alt="pick-win-logo">
     </div>
+    <app-main-toolbar-dropdown [isLogged]="isLogged"></app-main-toolbar-dropdown>
   </mat-toolbar>
 
   <!-- TODO: Ne treba margina [style.marginTop.px]="mobileQuery.matches ? 56 : 0" -->
@@ -25,6 +28,7 @@
            *ngFor="let nav of sideMenu"
            [routerLinkActive]="['menu-link-active']"
            [routerLinkActiveOptions]="{ exact: true }"
+           (click)="snav.close()"
         >{{nav.name}}</a>
       </mat-nav-list>
     </mat-sidenav>

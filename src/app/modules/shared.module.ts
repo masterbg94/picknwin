@@ -1,14 +1,20 @@
 import {NgModule} from '@angular/core';
-import {AngularSvgIconModule} from 'angular-svg-icon';
 import {CommonModule} from '@angular/common';
+import {RouterModule} from '@angular/router';
+
+import {AngularSvgIconModule} from 'angular-svg-icon';
+import {MainToolbarDropdownComponent} from '../shared/components/main-toolbar/main-toolbar-dropdown/main-toolbar-dropdown.component';
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    MainToolbarDropdownComponent
+  ],
   imports: [
     CommonModule,
-    AngularSvgIconModule.forRoot()
+    AngularSvgIconModule.forRoot(),
+    RouterModule
   ],
-  exports: [AngularSvgIconModule]
+  exports: [AngularSvgIconModule, MainToolbarDropdownComponent]
 })
 export class SharedModule {
   // constructor(@Optional() @SkipSelf() parentModule: SharedModule) {

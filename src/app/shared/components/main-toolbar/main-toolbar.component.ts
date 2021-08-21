@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {AuthenticationService} from '../../services/auth.service';
 import {Subscription} from 'rxjs';
 
@@ -23,7 +23,7 @@ export class MainToolbarComponent implements OnInit {
     },
   ];
 
-  userDropdown: any[] = [
+  /*userDropdown: any[] = [
     {
       name: 'Dashboard',
       path: '/profile/',
@@ -49,46 +49,46 @@ export class MainToolbarComponent implements OnInit {
       path: '#',
       icon: 'logout'
     }
-  ];
-  isDropdownToggled = false;
-  isLogged = false;
+  ];*/
+  // isDropdownToggled = false;
+  // isLogged = false;
+  @Input() isLoggedUser = false;
 
-  subscription: Subscription[] = [];
+  // subscription: Subscription[] = [];
 
   constructor(private authService: AuthenticationService) {
   }
 
-  toggleDropdown() {
-    this.isDropdownToggled = !this.isDropdownToggled;
-  }
-
-  /*  toggleLogin() {
-      this.isLogged = !this.isLogged;
+  /*  toggleDropdown() {
+      this.isDropdownToggled = !this.isDropdownToggled;
     }*/
 
-  logoutUser() {
-    this.authService.logout();
-  }
+  /*  logoutUser() {
+      this.authService.logout();
+    }*/
 
-  /** User login subscription */
   ngOnInit(): void {
-    this.subscription.push(
-      this.authService.currentUser.subscribe(
-        (resp) => {
-          console.log('currentUser', resp);
-          if (resp != null) {
-            this.isLogged = true;
-            console.log('this.isLogged = true');
-          } else if (resp == null) {
-            console.log('currentUser else state', resp);
-            this.isLogged = false;
-            this.isDropdownToggled = false;
-          }
-        }, (error: any) => {
-          alert(error);
-        }
-      )
-    );
+    /**
+     * User login subscription
+     * implemented userLogStatus for binding in child component
+     */
+    /*    this.subscription.push(
+          this.authService.currentUser.subscribe(
+            (userLogStatus) => {
+              console.log('currentUser', userLogStatus);
+              if (userLogStatus != null) {
+                this.isLogged = true;
+                console.log('this.isLogged = true');
+              } else if (userLogStatus == null) {
+                console.log('currentUser else state', userLogStatus);
+                this.isLogged = false;
+                this.isDropdownToggled = false;
+              }
+            }, (error: any) => {
+              alert(error);
+            }
+          )
+        );*/
   }
 
 }

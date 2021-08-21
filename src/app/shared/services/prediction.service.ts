@@ -7,6 +7,10 @@ export class PredictionService {
   private predictionsSubject: BehaviorSubject<any>;
   public predictionsObservable: Observable<any>;
 
+  /**
+   * predictionsData: matchPrediction[]
+   * goes through service in localstorage
+   */
   predictionsData: any[] = [];
 
   constructor() {
@@ -25,9 +29,11 @@ export class PredictionService {
 
   /* Add Prediction to list / update if have same match √ */
   addToPredictionList(prediction) {
+    // Search if have same predicted match and replace prediction choice
     if (this.predictionsData.findIndex(x => x.match.id === prediction.match.id) !== -1) {
       this.predictionsData[this.predictionsData.findIndex(x => x.match.id === prediction.match.id)] = prediction;
     } else {
+      // If dont have prediction in localstorage
       this.predictionsData.push(prediction);
     }
     // this.predictionsData.push(prediction);

@@ -1,19 +1,19 @@
-import {ChangeDetectorRef, Component, HostListener, OnDestroy} from '@angular/core';
+import {ChangeDetectorRef, Component, HostListener, OnDestroy, OnInit} from '@angular/core';
 import {MediaMatcher} from '@angular/cdk/layout';
+import {Subscription} from 'rxjs';
+import {AuthenticationService} from './shared/services/auth.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnDestroy {
+export class AppComponent implements OnInit, OnDestroy {
   title = 'PicknWin';
-
   mobileQuery: MediaQueryList;
   fillerNav = Array.from({length: 50}, (_, i) => `Nav Item ${i + 1}`);
   _mobileQueryListener: () => void;
   innerWidth: number;
-
   sideMenu = [
     {
       path: '/',
@@ -51,9 +51,11 @@ export class AppComponent implements OnDestroy {
       icon: ''
     }
   ];
+  subscription: Subscription[] = [];
+  isLogged: boolean;
 
   /** TODO: Srediti constructor izbaciti nepotrebne stvari */
-  constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher) {
+  constructor(private authService: AuthenticationService, changeDetectorRef: ChangeDetectorRef, media: MediaMatcher) {
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
     this.mobileQuery.addListener(this._mobileQueryListener);
@@ -67,7 +69,23 @@ export class AppComponent implements OnDestroy {
   @HostListener('window:resize')
   public onResize(): void {
     this.innerWidth = window.innerWidth;
-    console.log(this.innerWidth);
+    console.log('appRoot', this.innerWidth);
+  }
+
+  ngOnInit(): void {
+    this.subscription.push(
+      this.authService.currentUser.subscribe(
+        (userLogStatus) => {
+          if (userLogStatus != null) {
+            this.isLogged = true;
+          } else if (userLogStatus == null) {
+            this.isLogged = false;
+          }
+        }, (error: any) => {
+          alert(error);
+        }
+      )
+    );
   }
 
 

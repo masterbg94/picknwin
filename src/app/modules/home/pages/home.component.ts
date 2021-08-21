@@ -23,7 +23,8 @@ export class HomeComponent implements OnInit {
 
     this.matchesService.getAllMatches().pipe(take(1)).subscribe(
       (response: Matches) => {
-        this.allMatches = response.data;
+        // Fixed to show only first 10items from matches array
+        this.allMatches = response.data.slice(0, 10);
       }
     );
     /** Remove user login component when user is logged */

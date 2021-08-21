@@ -1,0 +1,106 @@
+@import "../../../../../assets/palette";
+
+/* If logged user */
+.logged-user {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  height: 100%;
+  max-width: 330px;
+  width: 100%;
+  padding: 0 32px;
+  cursor: pointer;
+  // bg
+  &.user-dropdown-opened {
+    background: rgba(246, 244, 24, 0.2)
+  }
+
+  .username-coins {
+    margin-right: 24px;
+
+    p {
+      margin: 0;
+      padding: 0;
+      font: normal normal medium 15px/23px Poppins;
+      letter-spacing: 0px;
+      color: #FFFFFF;
+    }
+
+    .coins {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+
+      img {
+        width: 18px;
+        height: 18px;
+      }
+
+      p {
+        margin: 0;
+        padding: 0;
+        color: $main-yellow;
+      }
+    }
+  }
+
+  img {
+    width: 56px;
+    height: 56px;
+  }
+}
+
+/* Dropdown user menu */
+.login-dropdown {
+  // Replaced by element dinamically calculated height
+  //top: 88px;
+  right: 0;
+  background: rgb(10 26 42 / 82%);
+  // TODO: fix opacity + backdrop
+  //backdrop-filter: blur(9px);
+  backdrop-filter: blur(9px);
+  -webkit-backdrop-filter: blur(9px);
+  z-index: 123;
+  max-width: 330px;
+  width: 100%;
+
+  .dd-item {
+    display: flex;
+    align-items: center;
+    height: 64px;
+    cursor: pointer;
+    transition: 0.3s;
+
+    p {
+      font-size: 16px;
+      margin: 0 0 0 12px;
+      padding: 0;
+      color: white;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    &:hover {
+      transition: 0.3s;
+
+      p {
+        transition: 0.3s;
+        color: $main-yellow;
+      }
+
+      svg-icon {
+        svg {
+          path.profile-dd-fill {
+            stroke: $main-yellow;
+            transition: 0.3s;
+          }
+        }
+      }
+    }
+  }
+}
+
+/*TODO: Profile menu style for mobile version*/
+//@media screen and (max-width: 1024px){
+//
+//}
