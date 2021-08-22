@@ -1,4 +1,5 @@
 import {Component, HostListener, Input, OnInit, ViewChild} from '@angular/core';
+import {AuthenticationService} from '../../../services/auth.service';
 
 @Component({
   selector: 'app-main-toolbar-dropdown',
@@ -28,19 +29,23 @@ export class MainToolbarDropdownComponent implements OnInit {
       path: '/profile/settings',
       icon: 'settings',
     },
-    {
-      name: 'Logout',
-      path: '#',
-      icon: 'logout',
-    },
+    // Logout implemented separately
+    // {
+    //   name: 'Logout',
+    //   path: '#',
+    //   icon: 'logout',
+    // },
   ];
   isDropdownToggled = false;
   innerWidth: any;
   @ViewChild('profileDropdown') profileDropdown;
-  bottomOffset;
+  profileDropdownBottomOffset;
 
   // Show/hide info on based resolution
   showDataMobile = false;
+
+  constructor(private authService: AuthenticationService) {
+  }
 
   // Browser width
   @HostListener('window:resize')
@@ -62,8 +67,11 @@ export class MainToolbarDropdownComponent implements OnInit {
     this.isDropdownToggled = !this.isDropdownToggled;
     // TODO: Set dropdown as visibility / to show or hide because like this we can get it size instantly
     setTimeout(() => {
-      this.bottomOffset = this.profileDropdown.nativeElement ? this.profileDropdown.nativeElement.offsetHeight : 0;
-      console.log(this.profileDropdown.nativeElement.offsetHeight);
+      this.profileDropdownBottomOffset = this.profileDropdown.nativeElement ? this.profileDropdown.nativeElement.offsetHeight : 0;
     });
+  }
+
+  userLogout() {
+    this.authService.logout();
   }
 }

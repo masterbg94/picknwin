@@ -101,6 +101,15 @@
 }
 
 /*TODO: Profile menu style for mobile version*/
-//@media screen and (max-width: 1024px){
-//
-//}
+@media screen and (max-width: 1024px) {
+  .logged-user {
+    padding: 0 10px;
+    height: 56px;
+
+    img.img-fluid {
+      width: 40px;
+      height: 40px;
+      object-fit: cover;
+    }
+  }
+}
