@@ -7,7 +7,7 @@
 
   .matches-options-search {
     width: 100%;
-    display: flex;
+    display: flex; 
 
     .matches-options {
       &-select {
@@ -21,9 +21,99 @@
     }
 
     .search-match {
+      .search-wrapper{
+        height: 40px;
+        background-color: #1F2E3A;
+        border-radius: 4px;
+        overflow: hidden;
+        &::after{
+          content: url('../../../../assets/img/icons/search-icons8.svg');
+          position: absolute;
+          right: 6px;
+          top: 12px;
+          color: white;
+          width: 18px;
+          height: 18px;
+        } 
+        input{
+          background: transparent;
+          height: 40px;
+          font-size: 14px;
+          color: white;
+          outline: none;
+          border: none;
+          width: 100%;
+          padding: 0 32px 0 12px;
+          &::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+            color: white;
+            opacity: 1; /* Firefox */
+          }
+          
+          &:-ms-input-placeholder { /* Internet Explorer 10-11 */
+            color: white;
+          }
+          
+          &::-ms-input-placeholder { /* Microsoft Edge */
+            color: white;
+          }
+          #search-clear{
+            display: none!important;
+          }
+        
+        }
+      }
+      // SEARCH-FORM-FIELD 
       mat-form-field{
         width: 100%;
-      }
+      } 
+
+      // ng deep for styling angular material in depth
+      /* ::ng-deep {
+        mat-form-field{
+          // height of whole search
+          height: 40px;
+          .mat-form-field-wrapper{
+            height: 100%;
+            .mat-form-field-flex{
+              height: 100%;
+              .mat-form-field-outline , .mat-form-field-outline-thick{
+                height: 100%;
+              }
+              .mat-form-field-infix{
+                // padding: 0!important;
+                border-top: 0;
+              }
+            }
+          }
+
+          &::after{
+            content: url('../../../../assets/img/icons/search-icons8.svg');
+            position: absolute;
+            right: 6px;
+            top: 24px;
+            color: white;
+          } 
+        }
+        
+        .mat-form-field-appearance-outline .mat-form-field-outline , .mat-form-field-appearance-outline .mat-form-field-outline-thick{
+          color: white !important;
+          background-color: #1F2E3A;
+        }
+
+        // padding & margin for search field
+        mat-form-field .mat-form-field-wrapper{
+          margin: 0!important;
+          padding: 0!important;
+        }
+
+        // Font color inside input of search
+        input.mat-input-element {
+          color: white;
+          font-size: 14px;
+        }
+
+      } */
     }
+
   }
 }
