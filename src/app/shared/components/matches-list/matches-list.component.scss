@@ -7,26 +7,30 @@
 
   .matches-options-search {
     width: 100%;
-    display: flex; 
+    display: flex;
 
     .matches-options {
       &-select {
         color: white;
         padding: 12px;
         cursor: pointer;
-        &:hover{
+
+        &:hover {
           color: $main-yellow;
         }
       }
     }
 
     .search-match {
-      .search-wrapper{
+      margin-bottom: 0px;
+
+      .search-wrapper {
         height: 40px;
         background-color: #1F2E3A;
         border-radius: 4px;
         overflow: hidden;
-        &::after{
+
+        &::after {
           content: url('../../../../assets/img/icons/search-icons8.svg');
           position: absolute;
           right: 6px;
@@ -34,8 +38,9 @@
           color: white;
           width: 18px;
           height: 18px;
-        } 
-        input{
+        }
+
+        input {
           background: transparent;
           height: 40px;
           font-size: 14px;
@@ -44,28 +49,31 @@
           border: none;
           width: 100%;
           padding: 0 32px 0 12px;
+
           &::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
             color: white;
             opacity: 1; /* Firefox */
           }
-          
+
           &:-ms-input-placeholder { /* Internet Explorer 10-11 */
             color: white;
           }
-          
+
           &::-ms-input-placeholder { /* Microsoft Edge */
             color: white;
           }
-          #search-clear{
-            display: none!important;
+
+          #search-clear {
+            display: none !important;
           }
-        
+
         }
       }
-      // SEARCH-FORM-FIELD 
-      mat-form-field{
+
+      // SEARCH-FORM-FIELD
+      mat-form-field {
         width: 100%;
-      } 
+      }
 
       // ng deep for styling angular material in depth
       /* ::ng-deep {
@@ -92,9 +100,9 @@
             right: 6px;
             top: 24px;
             color: white;
-          } 
+          }
         }
-        
+
         .mat-form-field-appearance-outline .mat-form-field-outline , .mat-form-field-appearance-outline .mat-form-field-outline-thick{
           color: white !important;
           background-color: #1F2E3A;
@@ -115,5 +123,12 @@
       } */
     }
 
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .matches-options-search {
+    flex-direction: column;
+    margin: 24px 0;
   }
 }

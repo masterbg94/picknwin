@@ -132,9 +132,9 @@
       order: 1;
       width: 100%;
       // new style for mobile devices
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
 
 
       &--background {
@@ -142,47 +142,52 @@
         // dont need this in mobile view
         display: none !important;
       }
-      &--title{
-    padding: 0;
-    margin: 0;
+
+      &--title {
+        padding: 0;
+        margin: 0;
       }
     }
-    &__team{
+
+    &__team {
       margin: 6px 0;
-      padding:0 12px !important;
+      padding: 0 12px !important;
       order: 2;
-      &--score{
+
+      &--score {
         height: 36px;
         width: 64px;
         line-height: 36px;
         font-size: 12px;
       }
+
       // drugi tim u matchu
-      &:last-child{
+      &:last-child {
         // match team 2 info , img & name
         .match__team--desc {
           order: 1;
-  
+
           .match__team--title {
             text-align: left;
             order: 2;
           }
-  
+
           .match__team--icon {
             order: 2;
             height: 36px;
             margin-right: 24px;
             margin-left: 0;
             width: 44px;
-      
+
             img {
               height: 100%;
               object-fit: contain;
             }
           }
         }
+
         // Kvota
-        .match__team--score{
+        .match__team--score {
           order: 2;
         }
       }

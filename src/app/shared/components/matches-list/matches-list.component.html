@@ -1,22 +1,23 @@
 <div class="matches-settings" *ngIf="haveOptions">
   <div class="matches-options-search">
-    <div class="col-8 m-0 p-0 d-flex matches-options">
+    <div class="col-md-8 col-sm-12 m-0 p-0 d-flex matches-options">
       <div class="matches-options-select">All matches</div>
       <div class="matches-options-select">Upcoming</div>
       <div class="matches-options-select">Live</div>
     </div>
-    <div class="col-4 m-0 p-0 search-match">
-<!--      <input type="search" placeholder="Search matches...">-->
-     <!--  <mat-form-field class="search-form-field"
-      appearance="outline">
-        <mat-label>Search matches...</mat-label>
-        <input matInput type="search" placeholder="Search Matches..."
-               [(ngModel)]="searchValue"
-               (ngModelChange)="changedInput($event)">
-        <button *ngIf="searchValue" matSuffix mat-icon-button aria-label="Clear" (click)="searchValue=''">
-          <mat-icon>close</mat-icon>
-        </button>
-      </mat-form-field> -->
+    <div class="col-md-4 col-sm-12 p-0 search-match">
+      <!-- Material search in case this standard search have problem -->
+      <!--      <input type="search" placeholder="Search matches...">-->
+      <!--  <mat-form-field class="search-form-field"
+       appearance="outline">
+         <mat-label>Search matches...</mat-label>
+         <input matInput type="search" placeholder="Search Matches..."
+                [(ngModel)]="searchValue"
+                (ngModelChange)="changedInput($event)">
+         <button *ngIf="searchValue" matSuffix mat-icon-button aria-label="Clear" (click)="searchValue=''">
+           <mat-icon>close</mat-icon>
+         </button>
+       </mat-form-field> -->
       <div class="search-wrapper">
         <input matInput type="search" placeholder="Search Matches..."
                [(ngModel)]="searchValue"
