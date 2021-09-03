@@ -97,3 +97,24 @@
     }
   }
 }
+
+@media screen and (max-width:576px) {
+  .register-wrapper{
+    padding: 0;
+
+    .register-container{
+      padding: 24px 0;
+      
+      .register-content{
+        &_left{
+          .register-form_register-with{
+            display: none;
+          }
+        }
+        &_right{
+          display: none;
+        }
+      }
+    }
+  }
+}
