@@ -1,1 +1,1 @@
-export const API_KEY = 'https://api.picknwin.gg';
+export const API_HOME = 'https://api.picknwin.gg';

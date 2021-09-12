@@ -18,7 +18,8 @@ export class MatchesComponent implements OnInit {
   ngOnInit(): void {
     this.matchesService.getAllMatches().pipe(take(1)).subscribe(
       (response: Matches) => {
-        this.allMatches = response.data.slice(0,15);
+        // Cut to only 15 matches for matches page
+        this.allMatches = response.data.slice(0, 15);
       }
     );
   }

@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 
-import {API_KEY} from '../../api.config';
+import {API_HOME} from '../../api.config';
 
 @Injectable({providedIn: 'root'})
 export class MatchesService {
@@ -9,6 +9,6 @@ export class MatchesService {
   }
 
   getAllMatches() {
-    return this.httpClient.get(API_KEY + '/matches');
+    return this.httpClient.get(API_HOME + '/matches');
   }
 }

@@ -2,6 +2,7 @@ import {EventEmitter, Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Router} from '@angular/router';
 import {BehaviorSubject, Observable} from 'rxjs';
+import {API_HOME} from '../../api.config';
 
 
 @Injectable({providedIn: 'root'})
@@ -9,6 +10,7 @@ export class AuthenticationService {
   private currentUserSubject: BehaviorSubject<any>;
   public currentUser: Observable<any>;
   public isUserLogged: EventEmitter<any> = new EventEmitter<any>();
+
   // Is user logged to show or hide small login component
 
   constructor(private http: HttpClient, private router: Router) {
