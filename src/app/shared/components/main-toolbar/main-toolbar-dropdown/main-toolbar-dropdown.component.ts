@@ -1,5 +1,7 @@
 import {Component, HostListener, Input, OnInit, ViewChild} from '@angular/core';
 import {AuthenticationService} from '../../../services/auth.service';
+import {Subscription} from 'rxjs';
+import {Login} from '../../../models/user';
 
 @Component({
   selector: 'app-main-toolbar-dropdown',
@@ -43,6 +45,8 @@ export class MainToolbarDropdownComponent implements OnInit {
 
   // Show/hide info on based resolution
   showDataMobile = false;
+  public subscription: Subscription[] = [];
+  loggedUser: any;
 
   constructor(private authService: AuthenticationService) {
   }
@@ -57,6 +61,20 @@ export class MainToolbarDropdownComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.subscription.push(
+      this.authService.currentUser.subscribe(
+        (response) => {
+          if (response) {
+            this.loggedUser = JSON.parse(response).username;
+            console.log(JSON.parse(localStorage.getItem('auth')));
+          }
+          console.log('loggedUser', this.loggedUser);
+        }, (error) => {
+          console.log('error', error);
+        }
+      )
+    );
+
     this.innerWidth = window.innerWidth;
     if (this.innerWidth <= 1024) {
       this.showDataMobile = true;

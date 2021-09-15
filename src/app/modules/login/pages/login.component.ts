@@ -18,8 +18,8 @@ export class LoginComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private authService: AuthenticationService,
-    public formService: FormValidationService,
-    private userService: UserService
+    // public formService: FormValidationService,
+    // private userService: UserService
   ) {
     this.initForm();
     this.initResetPassword();
@@ -44,26 +44,37 @@ export class LoginComponent implements OnInit {
   toggleForgotPassword() {
     this.showResetPassword = !this.showResetPassword;
   }
-
   submitLogin() {
-    /*New test*/
+    const loginData = JSON.stringify(this.loginForm.getRawValue());
+    this.authService.authUser(loginData);
+  }
+  /*submitLogin() {
+    /!*New test*!/
     const loginData = JSON.stringify(this.loginForm.getRawValue());
     this.userService.loginUser(loginData).subscribe(
       (response: any) => {
         console.log('response', response);
-        alert(response.message);
-        // if (response.status == 404) {
-        //   alert(response.message);
-        // } else if (response.status == 201) {
-        //   alert(`successfully created: ${response.message}`);
-        // }
+        // alert(response.message);
+        if (response.status == 404) {
+          alert(`Error ${response.message}`);
+        } else if (response.status == 401) {
+          alert(`Error ${response.message}`);
+        } else if (response.status == 200) {
+          alert(`successfully created: ${response.message}`);
+          // this.authService.authenticate(this.loginForm.get('username').value,this.loginForm.get('password').value)
+          const auth = {
+            username: this.loginForm.get('username').value,
+            password: this.loginForm.get('password').value
+          };
+          localStorage.setItem('auth', JSON.stringify(auth));
+        }
       }, (error: any) => {
         console.log('error');
         console.log(error);
       }
     );
-    /*end New test*/
-    /*
+    /!*end New test*!/
+    /!*
     const username = this.loginForm.get('username').value;
      const password = this.loginForm.get('password').value;
      console.log(this.authService.authenticate(username, password));
@@ -71,8 +82,8 @@ export class LoginComponent implements OnInit {
      if (!this.authService.authenticate(username, password)) {
        this.loginError = 'Username or password is incorrect';
      }
-     */
-  }
+     *!/
+  }*/
 
   submitForgotPassword() {
     alert(`Email sent to: ${this.resetPasswordForm.get('resetPasswordEmail').value}`);

@@ -1,26 +1,7 @@
 /* Custom styles for angular material inputs */
 @import "../palette";
 
-/*** Basic input styles ***/
-
-/* Inputs */
-mat-label {
-  font: normal normal 600 10px/24px Poppins;
-  color: white;
-}
-
-mat-form-field {
-  input {
-    color: white;
-  }
-
-  // MAIN INPUT text color
-  .mat-form-field-infix {
-    input {
-      color: white;
-    }
-  }
-}
+/* Basic input styles */
 
 /* Change INPUT TEXT COLOR styles in */
 input {
@@ -30,6 +11,10 @@ input {
   font-weight: 400;
   color: #333333;
   --placeHolder-color: white;
+
+  #placeholder {
+    color: white;
+  }
 }
 
 input::placeholder {
@@ -46,15 +31,7 @@ input:-ms-input-placeholder {
   color: var(--placeHolder-color);
 }
 
-input:-moz-placeholder {
-  color: var(--placeHolder-color);
-}
-
-input::-moz-placeholder {
-  color: var(--placeHolder-color);
-}
-
-/* Change Autocomplete styles in Chrome*/
+/* AUTOCOMPLETE STYLE */
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
@@ -70,9 +47,7 @@ select:-webkit-autofill:focus {
   transition: background-color 5000s ease-in-out 0s;
 }
 
-
-/*** Custom class mat-input style ***/
-
+/* CUSTOM CLASS MAT-INPUT STYLE */
 .custom-input-field {
   /* default style , without action */
   .mat-form-field-outline {
@@ -103,6 +78,31 @@ select:-webkit-autofill:focus {
   &.mat-form-field-invalid {
     .mat-form-field-outline {
       color: $inputErrorOutline !important;
+    }
+  }
+}
+
+/* DEFAULT MATERIAL INPUT PLACEHOLDER */
+.mat-input-element::-webkit-input-placeholder {
+  color: white;
+}
+
+/* Inputs */
+mat-label {
+  font: normal normal 600 10px/24px Poppins;
+  color: white;
+}
+
+/* DEFAULT MATERIAL INPUT TEXT COLOR */
+mat-form-field {
+  input {
+    color: white;
+  }
+
+  // MAIN INPUT text color
+  .mat-form-field-infix {
+    input {
+      color: white;
     }
   }
 }

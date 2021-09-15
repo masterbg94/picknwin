@@ -22,8 +22,10 @@ export class HomeLoginComponent {
   }
 
   login() {
-    const user = this.homeLoginForm.get('username').value;
-    const pass = this.homeLoginForm.get('password').value;
-    this.authService.authenticate(user, pass);
+    // const user = this.homeLoginForm.get('username').value;
+    // const pass = this.homeLoginForm.get('password').value;
+    // this.authService.authenticate(user, pass);
+    const loginData = JSON.stringify(this.homeLoginForm.getRawValue());
+    this.authService.authUser(loginData);
   }
 }

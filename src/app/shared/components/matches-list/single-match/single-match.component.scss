@@ -53,6 +53,8 @@
       img {
         height: 100%;
         object-fit: contain;
+        //  width 100 for overlapping
+        width: 100%;
       }
     }
 

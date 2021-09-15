@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {UserService} from '../../../shared/services/user.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -12,7 +13,8 @@ export class RegisterComponent {
 
   constructor(
     private formBuilder: FormBuilder,
-    private userService: UserService
+    private userService: UserService,
+    private router: Router
   ) {
     this.initRegisterForm();
   }
@@ -38,8 +40,14 @@ export class RegisterComponent {
     this.userService.registerUser(regData).subscribe(
       (response: any) => {
         console.log('response', response);
+        if (response.status === 201) {
+          alert('successfully created accounts');
+          this.registerForm.reset();
+          // this.router.navigate(['/']);
+        }
       }, error => {
         console.log('error', error);
+        alert(error);
       }
     );
   }

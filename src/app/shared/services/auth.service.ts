@@ -1,8 +1,9 @@
 import {EventEmitter, Injectable} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Router} from '@angular/router';
 import {BehaviorSubject, Observable} from 'rxjs';
 import {API_HOME} from '../../api.config';
+import {UserService} from './user.service';
 
 
 @Injectable({providedIn: 'root'})
@@ -11,9 +12,13 @@ export class AuthenticationService {
   public currentUser: Observable<any>;
   public isUserLogged: EventEmitter<any> = new EventEmitter<any>();
 
+  // Setting headers for this service endpoints
+  private httpHeaders = new HttpHeaders().set('Content-Type', 'application/json');
+  protected options = {headers: this.httpHeaders};
+
   // Is user logged to show or hide small login component
 
-  constructor(private http: HttpClient, private router: Router) {
+  constructor(private http: HttpClient, private router: Router, private userService: UserService) {
     this.currentUserSubject = new BehaviorSubject<any>(
       JSON.parse(localStorage.getItem('auth'))
     );
@@ -21,7 +26,6 @@ export class AuthenticationService {
   }
 
   public authenticate(username: any, password: any): boolean {
-
     /** Backend get status 200 */
     if (username === 'mmaster' && password === 'nemanja') {
       const auth = {
@@ -43,10 +47,39 @@ export class AuthenticationService {
     return false;
   }
 
+  public authUser(loginData) {
+    /** Backend get status 200 */
+    return this.http.post(API_HOME + '/login', loginData, this.options).subscribe(
+      (response: any) => {
+        console.log('1', response);
+
+        if (response.status === 200) {
+          const auth2 = loginData;
+          localStorage.setItem('auth', JSON.stringify(auth2));
+          /** Ne mora nijedan redirekt , nek ostane na istoj strani */
+          // this.router.navigate(['/matches']);
+          this.currentUserSubject.next(auth2);
+          // If user is logged then remove login components
+          this.isUserLogged.emit(true);
+          alert(`Backend say its OK: ${response.status}`);
+          this.userService.setLoggedUserToLS(loginData);
+
+        } else {
+          alert(`Backend ok but error: ${response.status} with message ${response.message}`);
+        }
+      }, (error: any) => {
+        console.log('2', error);
+        alert(`AUTH.SERVICE: backend error ${error.status}`);
+        // return false;
+      }
+    );
+  }
+
   public logout() {
     localStorage.removeItem('auth');
     this.currentUserSubject.next(null);
     // Logged out user , show login components
     this.isUserLogged.emit(null);
+    this.router.navigate(['/']);
   }
 }

@@ -5,7 +5,7 @@
   [class.user-dropdown-opened]="isDropdownToggled"
 >
   <div class="username-coins" *ngIf="!showDataMobile">
-    <p>Jonathan Smith</p>
+    <p>{{loggedUser}}</p>
     <div class="d-flex coins">
       <img src="assets/img/logged-user-coins.svg" alt="" class="img-fluid" />
       <p>125.000</p>
