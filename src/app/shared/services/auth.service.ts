@@ -82,6 +82,9 @@ export class AuthenticationService {
     );
   }
 
+  /**
+   *  At success login save user data/info to local storage to handle data in other coponents
+   */
   public setLoggedUserToLS(loginData): void {
     this.http.get(API_HOME + '/register', this.options)
       .pipe(take(1))

@@ -12,6 +12,7 @@ import {GiveawayModule} from '../../shared/components/giveaway/giveaway.module';
 import {CommonModule} from '@angular/common';
 import {ProfileTableModule} from '../../shared/components/profile-table/profile-table.module';
 import {CustomMaterialModule} from '../custom-material.module';
+import {ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   imports: [
@@ -21,7 +22,8 @@ import {CustomMaterialModule} from '../custom-material.module';
     GiveawayModule,
     CommonModule,
     ProfileTableModule,
-    CustomMaterialModule
+    CustomMaterialModule,
+    ReactiveFormsModule
   ],
   declarations: [
     ProfileComponent,
