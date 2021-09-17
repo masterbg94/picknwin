@@ -26,7 +26,7 @@ export class UserService {
   /**
    * SET USER DATA TO LOCAL STORAGE AFTER SUCCESSFUL LOGIN TO HANDLE IN MENU AND PROFILE SETTINGS
    */
-  public setLoggedUserToLS(loginData): void {
+/*  public setLoggedUserToLS(loginData): void {
     this.httpClient.get(API_HOME + '/register', this.options)
       .pipe(take(1))
       .subscribe(
@@ -36,5 +36,5 @@ export class UserService {
           localStorage.setItem('loggedUserData', JSON.stringify(userForLocalStorage));
         }, error => console.log('userForLocalStorage ERROR:', error)
       );
-  }
+  }*/
 }

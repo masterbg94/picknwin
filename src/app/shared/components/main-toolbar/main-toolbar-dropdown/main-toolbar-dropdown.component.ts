@@ -1,7 +1,7 @@
 import {Component, HostListener, Input, OnInit, ViewChild} from '@angular/core';
 import {AuthenticationService} from '../../../services/auth.service';
 import {Subscription} from 'rxjs';
-import {Login} from '../../../models/user';
+import {Login, SingleRegistratedUser} from '../../../models/user';
 
 @Component({
   selector: 'app-main-toolbar-dropdown',
@@ -47,8 +47,10 @@ export class MainToolbarDropdownComponent implements OnInit {
   showDataMobile = false;
   public subscription: Subscription[] = [];
   loggedUser: any;
+  loggedUserInfo: SingleRegistratedUser;
 
   constructor(private authService: AuthenticationService) {
+    this.loggedUserInfo = JSON.parse(localStorage.getItem('loggedUserData'));
   }
 
   // Browser width
@@ -62,7 +64,7 @@ export class MainToolbarDropdownComponent implements OnInit {
 
   ngOnInit(): void {
     this.subscription.push(
-      this.authService.currentUser.subscribe(
+      /*this.authService.currentUser.subscribe(
         (response) => {
           if (response) {
             this.loggedUser = JSON.parse(response).username;
@@ -71,6 +73,14 @@ export class MainToolbarDropdownComponent implements OnInit {
           console.log('loggedUser', this.loggedUser);
         }, (error) => {
           console.log('error', error);
+        }
+      )*/
+      this.authService.isUserLogged.subscribe(
+        (resp: any) => {
+          if (resp) {
+            console.log('localStor', JSON.parse(localStorage.getItem('loggedUserData')));
+            this.loggedUserInfo = JSON.parse(localStorage.getItem('loggedUserData'));
+          }
         }
       )
     );
