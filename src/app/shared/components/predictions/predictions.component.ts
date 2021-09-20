@@ -21,6 +21,7 @@ export class PredictionsComponent implements OnInit {
       this.predictionService.predictionsObservable.subscribe(
         (resp: any) => {
           this.predictions = resp;
+          console.log('predictions resp:', resp);
         }
       )
     );
@@ -30,6 +31,7 @@ export class PredictionsComponent implements OnInit {
     console.log(event.tab);
     this.tabValue = event.tab.textLabel;
   }
+
 
   deletePrediction(index){
     this.predictionService.removePredictionFromList(index);

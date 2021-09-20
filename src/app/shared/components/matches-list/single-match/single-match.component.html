@@ -1,18 +1,18 @@
 <div class="match">
-  <div class="match__team" (click)="predictTeam(singleMatch.team_one, singleMatch.team_one_points)">
+  <div class="match__team" (click)="predictTeam(singleMatch.team_one_name, singleMatch.team_one_points)">
     <div class="match__team--desc">
       <div class="match__team--icon">
-        <img [src]="singleMatch.team_one.team_logo" alt=""/>
+        <img [src]="singleMatch.team_one_avatar" alt=""/>
       </div>
-      <h4 class="match__team--title">{{singleMatch.team_one.team_name}}</h4>
+      <h4 class="match__team--title">{{singleMatch.team_one_name}}</h4>
     </div>
     <div class="match__team--score"
-         [class.selected-team]="predictedMatch.team === singleMatch.team_one.team_name">{{singleMatch.team_one_points}}</div>
+         [class.selected-team]="predictedMatch.team === singleMatch.team_one_name">{{singleMatch.team_one_points}}</div>
   </div>
   <div class="match__description">
     <div class="match__description--background"></div>
     <div class="match__description--title">
-      FlowFiReLEAGUE 2020 Regional Finals
+      {{singleMatch.event}}
     </div>
     <div class="match__description--date">
       <div class="icon">
@@ -52,14 +52,14 @@
       <span>{{singleMatch.date | date:'HH:mm'}}</span>
     </div>
   </div>
-  <div class="match__team" (click)="predictTeam(singleMatch.team_two , singleMatch.team_two_points)">
+  <div class="match__team" (click)="predictTeam(singleMatch.team_two_name , singleMatch.team_two_points)">
     <div class="match__team--desc">
       <div class="match__team--icon">
-        <img [src]="singleMatch.team_two.team_logo" onerror="" alt="" (error)="errorHandler($event)"/>
+        <img [src]="singleMatch.team_two_avatar" onerror="" alt="" (error)="errorHandler($event)"/>
       </div>
-      <h4 class="match__team--title">{{singleMatch.team_two.team_name}}</h4>
+      <h4 class="match__team--title">{{singleMatch.team_two_name}}</h4>
     </div>
     <div class="match__team--score"
-         [class.selected-team]="predictedMatch.team === singleMatch.team_two.team_name">{{singleMatch.team_two_points}}</div>
+         [class.selected-team]="predictedMatch.team === singleMatch.team_two_name">{{singleMatch.team_two_points}}</div>
   </div>
 </div>

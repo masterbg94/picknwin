@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {take} from 'rxjs/operators';
-import {Matches, MatchesData} from '../../../shared/models/matches';
+import {Matches, MatchesData, NewMatch} from '../../../shared/models/matches';
 import {MatchesService} from '../../../shared/services/matches.service';
 import {Subscription} from 'rxjs';
 import {AuthenticationService} from '../../../shared/services/auth.service';
@@ -11,7 +11,7 @@ import {AuthenticationService} from '../../../shared/services/auth.service';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-  allMatches: MatchesData[];
+  allMatches: NewMatch[];
   subscriptions: Subscription[] = [];
   userNotLogged;
 

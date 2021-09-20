@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {PredictionService} from '../../services/prediction.service';
 import {Subscription} from 'rxjs';
+import {NewMatch} from '../../models/matches';
 
 @Component({
   selector: 'app-matches-list',
@@ -8,7 +9,7 @@ import {Subscription} from 'rxjs';
   styleUrls: ['./matches-list.component.scss']
 })
 export class MatchesListComponent implements OnInit {
-  @Input() matches;
+  @Input() matches: NewMatch[];
   @Input() haveOptions = false;
   searchValue;
   predictedMatches: any[] = [];
@@ -34,9 +35,5 @@ export class MatchesListComponent implements OnInit {
     } else {
       return false;
     }
-  }
-
-  changedInput(x) {
-    console.log('typed search', x);
   }
 }

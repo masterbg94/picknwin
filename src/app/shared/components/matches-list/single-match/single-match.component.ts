@@ -1,6 +1,6 @@
 import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
 
-import {MatchesData} from '../../../models/matches';
+import {MatchesData, NewMatch} from '../../../models/matches';
 import {PredictionService} from '../../../services/prediction.service';
 import {Subscription} from 'rxjs';
 
@@ -10,7 +10,7 @@ import {Subscription} from 'rxjs';
   styleUrls: ['./single-match.component.scss']
 })
 export class SingleMatchComponent implements OnInit {
-  @Input() singleMatch: MatchesData;
+  @Input() singleMatch: NewMatch;
   @Input() index;
   @Input() predictedMatch;
 
@@ -35,12 +35,13 @@ export class SingleMatchComponent implements OnInit {
     );
   }
 
+  /** Add match to prediction list/local storage */
   predictTeam(selectedTeam, points) {
     this.selectedMatch = selectedTeam.team_name;
     const predictionItem = {
       match: this.singleMatch,
-      team: this.selectedMatch,
-      points: points
+      team: selectedTeam,
+      points
     };
     this.predictionService.addToPredictionList(predictionItem);
   }

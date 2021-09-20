@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {SingleRegistratedUser} from '../../../../shared/models/user';
+import {UserService} from '../../../../shared/services/user.service';
 
 @Component({
   selector: 'app-profile-settings-component',
@@ -12,7 +13,7 @@ export class ProfileSettingsComponent implements OnInit {
   settingsForm: FormGroup;
 
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(private formBuilder: FormBuilder, private userService: UserService) {
     this.initSettingsForm();
   }
 
@@ -35,6 +36,19 @@ export class ProfileSettingsComponent implements OnInit {
     this.settingsForm.valueChanges.subscribe(
       value => {
         console.log('promenjena forma', value);
+      }
+    );
+  }
+
+  updateUserInfo() {
+    const updateUserData = this.settingsForm.getRawValue();
+    console.log('updateUserData', updateUserData);
+    this.userService.updateUser(updateUserData).subscribe(
+      (res: any) => {
+        console.log('update res', res);
+        // TODO: Update local storage user data
+      }, (err: any) => {
+        console.log('update error', err);
       }
     );
   }

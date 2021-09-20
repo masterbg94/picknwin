@@ -20,8 +20,9 @@
        </mat-form-field> -->
       <div class="search-wrapper">
         <input matInput type="search" placeholder="Search Matches..."
-               [(ngModel)]="searchValue"
-               (ngModelChange)="changedInput($event)">
+               [autocomplete]="false"
+               [autofocus]="true"
+               [(ngModel)]="searchValue">
       </div>
     </div>
   </div>

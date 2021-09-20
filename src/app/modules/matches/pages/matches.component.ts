@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {take} from 'rxjs/operators';
 
 import {MatchesService} from '../../../shared/services/matches.service';
-import {Matches, MatchesData} from '../../../shared/models/matches';
+import {Matches, NewMatch} from '../../../shared/models/matches';
 
 @Component({
   selector: 'app-matches',
@@ -13,7 +13,7 @@ export class MatchesComponent implements OnInit {
   constructor(private matchesService: MatchesService) {
   }
 
-  allMatches: MatchesData[];
+  allMatches: NewMatch[];
 
   ngOnInit(): void {
     this.matchesService.getAllMatches().pipe(take(1)).subscribe(

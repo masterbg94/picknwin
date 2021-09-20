@@ -33,7 +33,7 @@ export interface BasicResponse {
 
 export interface Matches {
   message: string;
-  data: MatchesData[];
+  data: NewMatch[];
   status: number;
 }
 
@@ -63,4 +63,25 @@ export interface MatchesData {
   team_two_points: number;
   premium: boolean;
   locked: boolean;
+}
+
+export interface NewMatch {
+  id?: string;
+  created_at?: string;
+  updated_at?: string;
+  date?: string;
+  time?: string;
+  team_one_name?: string;
+  team_one_id?: number;
+  team_one_avatar?: string;
+  team_two_name?: string;
+  team_two_id?: number;
+  team_two_avatar?: string;
+  event?: string;
+  outcome?: number;
+  team_one_points?: number;
+  team_two_points?: number;
+  premium?: boolean;
+  unique_identifier?: number;
+  locked?: boolean;
 }

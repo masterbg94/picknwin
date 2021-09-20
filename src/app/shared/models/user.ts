@@ -35,3 +35,11 @@ export interface SingleRegistratedUser {
   avatar_id: string;
   steam_link: string;
 }
+
+export interface UpdateUser {
+  username: string;
+  password: string;
+  name: string;
+  surname: string;
+  email: string;
+}
