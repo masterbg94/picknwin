@@ -54,6 +54,20 @@ p {
       }
     }
   }
+}
 
+@media screen and (max-width: 576px) {
+  .profile-settings-form {
+    .form-two-items {
+      flex-direction: column;
 
+      &:first-of-type {
+        margin-top: 12px;
+      }
+
+      .settings-form-item {
+        max-width: 100% !important;
+      }
+    }
+  }
 }
