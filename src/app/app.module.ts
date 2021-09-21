@@ -9,6 +9,7 @@ import {MainToolbarModule} from './shared/components/main-toolbar/main-toolbar.m
 import {FooterModule} from './shared/components/footer/footer.module';
 import {CustomMaterialModule} from './modules/custom-material.module';
 import {SharedModule} from './modules/shared.module';
+import {ToastrModule} from 'ngx-toastr';
 
 @NgModule({
   declarations: [AppComponent],
@@ -20,7 +21,12 @@ import {SharedModule} from './modules/shared.module';
     MainToolbarModule,
     FooterModule,
     CustomMaterialModule,
-    SharedModule
+    SharedModule,
+    ToastrModule.forRoot({
+      timeOut: 10000,
+      positionClass: 'toast-top-right',
+      preventDuplicates: true,
+    }) // ToastrModule added
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -6,6 +6,7 @@ import {API_HOME} from '../../api.config';
 import {UserService} from './user.service';
 import {take} from 'rxjs/operators';
 import {AllUsers} from '../models/user';
+import {ToastrService} from 'ngx-toastr';
 
 
 @Injectable({providedIn: 'root'})
@@ -22,7 +23,8 @@ export class AuthenticationService {
 
   constructor(
     private http: HttpClient, private router: Router,
-    private userService: UserService
+    private userService: UserService,
+    private toastr: ToastrService
   ) {
     this.currentUserSubject = new BehaviorSubject<any>(
       JSON.parse(localStorage.getItem('auth'))
@@ -52,6 +54,7 @@ export class AuthenticationService {
     return false;
   }
 
+  /** LOGIN USER / AUTH USER */
   public authUser(loginData) {
     /** Backend get status 200 */
     return this.http.post(API_HOME + '/login', loginData, this.options).subscribe(
@@ -67,8 +70,9 @@ export class AuthenticationService {
           this.currentUserSubject.next(auth2);
           // If user is logged then remove login components
           // this.isUserLogged.emit(true);
-          alert(`Backend say its OK: ${response.status}`);
+          // alert(`Backend say its OK: ${response.status}`);
           // this.userService.setLoggedUserToLS(loginData);
+          this.toastr.success('Success login', `${response.status}` );
 
 
         } else {
@@ -83,6 +87,7 @@ export class AuthenticationService {
   }
 
   /**
+   *  IF user can login then save its data/info about
    *  At success login save user data/info to local storage to handle data in other coponents
    */
   public setLoggedUserToLS(loginData): void {
