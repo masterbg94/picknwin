@@ -10,12 +10,12 @@
     </tr>
     </thead>
     <tbody>
-    <tr *ngFor="let t of loopTable">
+    <tr *ngFor="let prediction of userPredictions">
       <td class="text-left">Isurus vs Infinity</td>
-      <td class="text-left">Infinity wins</td>
-      <td class="text-left">3th Jan2021.<br>14:30</td>
+      <td class="text-left">{{prediction.prediction}}</td>
+      <td class="text-left">{{prediction.created_at | date}}<br>{{prediction.created_at | date:'HH:mm'}}</td>
       <td class="text-right">125.000</td>
-      <td class="text-right">Won</td>
+      <td class="text-right">{{prediction.valid ? 'Won' : 'Lose'}}</td>
     </tr>
     </tbody>
   </table>

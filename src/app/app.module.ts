@@ -10,9 +10,11 @@ import {FooterModule} from './shared/components/footer/footer.module';
 import {CustomMaterialModule} from './modules/custom-material.module';
 import {SharedModule} from './modules/shared.module';
 import {ToastrModule} from 'ngx-toastr';
+import {DialogComponent} from './shared/components/dialog/dialog.component';
+import {MAT_DIALOG_DEFAULT_OPTIONS} from '@angular/material/dialog';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, DialogComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -28,8 +30,10 @@ import {ToastrModule} from 'ngx-toastr';
       preventDuplicates: true,
     }) // ToastrModule added
   ],
-  providers: [],
-  bootstrap: [AppComponent],
+  providers: [
+    {provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: false}}
+  ],
+  bootstrap: [AppComponent]
 })
 export class AppModule {
 }

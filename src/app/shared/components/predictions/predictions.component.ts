@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {PredictionService} from '../../services/prediction.service';
 import {Subscription} from 'rxjs';
+import {ToastrService} from 'ngx-toastr';
 
 @Component({
   selector: 'app-predictions-component',
@@ -11,8 +12,13 @@ export class PredictionsComponent implements OnInit {
   tabValue = 'Predictions';
   predictions: any[] = [];
   subscriptions: Subscription[] = [];
+  currentUser: string;
 
-  constructor(private predictionService: PredictionService) {
+  constructor(
+    private predictionService: PredictionService,
+    private toastr: ToastrService
+  ) {
+    this.currentUser = JSON.parse(localStorage.getItem('auth')).username;
   }
 
   ngOnInit(): void {
@@ -28,16 +34,33 @@ export class PredictionsComponent implements OnInit {
   }
 
   changeTab(event) {
-    console.log(event.tab);
     this.tabValue = event.tab.textLabel;
   }
 
 
-  deletePrediction(index){
+  deletePrediction(index) {
     this.predictionService.removePredictionFromList(index);
   }
 
   submitPredictions() {
     console.log('predictions Submited');
+    const newPredType = this.predictions.map(
+      (x) => ({
+        username: this.currentUser,
+        match_id: x.match.id,
+        prediction: x.team,
+        event: x.match.event
+      })
+    );
+    console.log('newpredType', newPredType);
+    this.predictionService.predictMatches(newPredType).subscribe(
+      (resp: any) => {
+        console.log('predictions response', resp);
+        this.toastr.success('Successfully predicted matches', 'Success');
+      }, (err: any) => {
+        this.toastr.error(`Something is wrong \n ${err}`, 'Error');
+      }
+    );
+    this.predictionService.clearAllPredictions();
   }
 }

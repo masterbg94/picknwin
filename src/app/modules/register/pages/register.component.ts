@@ -2,6 +2,7 @@ import {Component} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {UserService} from '../../../shared/services/user.service';
 import {Router} from '@angular/router';
+import {ToastrService} from 'ngx-toastr';
 
 @Component({
   selector: 'app-register',
@@ -14,7 +15,8 @@ export class RegisterComponent {
   constructor(
     private formBuilder: FormBuilder,
     private userService: UserService,
-    private router: Router
+    private router: Router,
+    private toastr: ToastrService
   ) {
     this.initRegisterForm();
   }
@@ -41,13 +43,14 @@ export class RegisterComponent {
       (response: any) => {
         console.log('response', response);
         if (response.status === 201) {
-          alert('successfully created accounts');
+          // alert('successfully created accounts');
+          this.toastr.success('Account successfully created', 'Success');
           this.registerForm.reset();
           // this.router.navigate(['/']);
         }
       }, error => {
         console.log('error', error);
-        alert(error);
+        this.toastr.error(`${error}`, 'Error');
       }
     );
   }

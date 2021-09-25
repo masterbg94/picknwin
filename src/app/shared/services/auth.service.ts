@@ -76,11 +76,13 @@ export class AuthenticationService {
 
 
         } else {
-          alert(`Backend ok but error: ${response.status} with message ${response.message}`);
+          // alert(`Backend ok but error: ${response.status} with message ${response.message}`);
+          this.toastr.error(`Backend ok but error: ${response.status} with message ${response.message}`, `Error` );
         }
       }, (error: any) => {
-        console.log('2', error);
-        alert(`AUTH.SERVICE: backend error ${error.status}`);
+        // console.log('2', error);
+        // alert(`AUTH.SERVICE: backend error ${error.status}`);
+        this.toastr.error(`Backend error ${error.status}`, `Error auth.service` );
         // return false;
       }
     );
@@ -100,6 +102,7 @@ export class AuthenticationService {
           localStorage.setItem('loggedUserData', JSON.stringify(userForLocalStorage));
           // Emit value to get localstorage in main-toolbar-dropdown
           this.isUserLogged.emit(true);
+          this.router.navigate(['/']);
         }, (error: any) => console.log('setLoggedUserToLS ERROR:', error)
       );
   }
@@ -111,5 +114,6 @@ export class AuthenticationService {
     // Logged out user , show login components
     this.isUserLogged.emit(null);
     this.router.navigate(['/']);
+    this.toastr.success('User logged out', `Success` );
   }
 }

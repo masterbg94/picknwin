@@ -4,11 +4,11 @@
   (click)="toggleDropdown()"
   [class.user-dropdown-opened]="isDropdownToggled"
 >
-  <div class="username-coins" *ngIf="!showDataMobile">
-    <p>{{loggedUserInfo.name}} {{loggedUserInfo.surname}}</p>
+  <div class="username-coins" *ngIf="!showDataMobile && loggedUserInfo">
+    <p>{{loggedUserInfo?.name}} {{loggedUserInfo?.surname}}</p>
     <div class="d-flex coins">
       <img src="assets/img/logged-user-coins.svg" alt="" class="img-fluid" />
-      <p>{{loggedUserInfo.points}}</p>
+      <p>{{loggedUserInfo?.points}}</p>
     </div>
   </div>
   <img

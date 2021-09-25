@@ -2,6 +2,7 @@ import {Component, HostListener, Input, OnInit, ViewChild} from '@angular/core';
 import {AuthenticationService} from '../../../services/auth.service';
 import {Subscription} from 'rxjs';
 import {Login, SingleRegistratedUser} from '../../../models/user';
+import {PredictionService} from '../../../services/prediction.service';
 
 @Component({
   selector: 'app-main-toolbar-dropdown',
@@ -49,7 +50,7 @@ export class MainToolbarDropdownComponent implements OnInit {
   loggedUser: any;
   loggedUserInfo: SingleRegistratedUser;
 
-  constructor(private authService: AuthenticationService) {
+  constructor(private authService: AuthenticationService, private predictionService: PredictionService) {
     this.loggedUserInfo = JSON.parse(localStorage.getItem('loggedUserData'));
   }
 
@@ -101,5 +102,6 @@ export class MainToolbarDropdownComponent implements OnInit {
 
   userLogout() {
     this.authService.logout();
+    this.predictionService.clearAllPredictions();
   }
 }

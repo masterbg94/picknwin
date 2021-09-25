@@ -1,0 +1,58 @@
+// Style for modal / material dialog boxes
+@media screen and (min-width: 768px){
+  ::ng-deep {
+    mat-dialog-container {
+      padding: 0 !important;
+      border-radius: 8px !important;
+      overflow: hidden !important;
+      width: 684px !important;
+      height: 464px !important;
+
+      app-dialog {
+        .custom-dialog-box {
+          background: #1A2937;
+          box-shadow: 0px 3px 6px #00000029;
+          border-radius: 6px;
+          height: 100%;
+          padding: 16px;
+
+          mat-dialog-content {
+            padding: 0 !important;
+            margin: 0 !important;
+            height: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px){
+  ::ng-deep {
+    mat-dialog-container {
+      padding: 0 !important;
+      border-radius: 8px !important;
+      overflow: hidden !important;
+      width: 90% !important;
+      height: 90% !important;
+      // SAMO ZA MOBILE margin: auto;
+      margin: auto;
+
+      app-dialog {
+        .custom-dialog-box {
+          background: #1A2937;
+          box-shadow: 0px 3px 6px #00000029;
+          border-radius: 6px;
+          height: 100%;
+          padding: 16px;
+
+          mat-dialog-content {
+            padding: 0 !important;
+            margin: 0 !important;
+            height: 100%;
+          }
+        }
+      }
+    }
+  }
+}
