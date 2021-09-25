@@ -1,8 +1,7 @@
 import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
 
-import {MatchesData, NewMatch} from '../../../models/matches';
+import {NewMatch} from '../../../models/matches';
 import {PredictionService} from '../../../services/prediction.service';
-import {Subscription} from 'rxjs';
 import {MatDialog} from '@angular/material/dialog';
 import {DialogComponent} from '../../dialog/dialog.component';
 
@@ -16,14 +15,9 @@ export class SingleMatchComponent implements OnInit, OnChanges {
   @Input() index;
   @Input() predictedMatch;
   @Input() allowedClick;
-
   prediction: any[] = [];
   selectedMatch;
   localStoragePredictions: any[];
-
-  /** Subscription for same match click but another team */
-  subscription: Subscription[] = [];
-
   /** Logged user / cant bet-predict if not logged */
   loggedUser: string;
 
@@ -35,22 +29,7 @@ export class SingleMatchComponent implements OnInit, OnChanges {
   }
 
   ngOnInit(): void {
-    // SAME FUNCTION TWICE BUT FIRST IS SIMPLIFIED
     this.allowedClick = !!this.loggedUser;
-    // SAME FUNCTION TWICE BUT FIRST IS SIMPLIFIED
-    // if (this.loggedUser) {
-    //   this.allowedClick = true;
-    // } else {
-    //   this.allowedClick = false;
-    // }
-    this.subscription.push(
-      this.predictionService.predictionsObservable.subscribe(
-        (resp: any) => {
-          // this.allPredictionsData = resp;
-          // console.log('all p data', this.allPredictionsData);
-        }
-      )
-    );
   }
 
   /** Add match to prediction list/local storage */
@@ -77,12 +56,10 @@ export class SingleMatchComponent implements OnInit, OnChanges {
     const dialogRef = this.dialog.open(DialogComponent);
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
     });
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    console.log('allowedClick.currentValue', changes?.allowedClick?.currentValue);
   }
 
 }

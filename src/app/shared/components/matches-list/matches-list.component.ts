@@ -1,22 +1,26 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {AfterViewInit, Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
 import {PredictionService} from '../../services/prediction.service';
 import {Subscription} from 'rxjs';
-import {NewMatch} from '../../models/matches';
+import {MatchesData, NewMatch} from '../../models/matches';
 import {UserService} from '../../services/user.service';
 import {AuthenticationService} from '../../services/auth.service';
+import {MatchesService} from '../../services/matches.service';
+import {take} from 'rxjs/operators';
 
 @Component({
   selector: 'app-matches-list',
   templateUrl: './matches-list.component.html',
   styleUrls: ['./matches-list.component.scss']
 })
-export class MatchesListComponent implements OnInit {
+export class MatchesListComponent implements OnInit, OnChanges {
   @Input() matches: NewMatch[];
   @Input() haveOptions = false;
   searchValue;
   predictedMatches: any[] = [];
-
   subscriptions: Subscription[] = [];
+  matchesList: NewMatch[];
+  upcomingMatches;
+  pastMatches;
 
   /**
    *  TODO: CHECK IF USER IS LOGGED OR NOT AND SEND INFO ABOUT CAN IT CLICK ON SINGLE-MATCH.COMPONENT
@@ -25,7 +29,8 @@ export class MatchesListComponent implements OnInit {
 
   constructor(
     private predictService: PredictionService,
-    private auth: AuthenticationService
+    private auth: AuthenticationService,
+    private matchService: MatchesService
   ) {
   }
 
@@ -49,6 +54,9 @@ export class MatchesListComponent implements OnInit {
         }
       )
     );
+    // Get upcoming & past matches matches
+    this.getUpcomingMatches();
+    this.getPastMatches();
   }
 
   returnPredictedMatch(match) {
@@ -57,5 +65,44 @@ export class MatchesListComponent implements OnInit {
     } else {
       return false;
     }
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    console.log(this.matches);
+    console.log(this.matchesList);
+    if (changes.matches) {
+      this.matchesList = this.matches;
+    }
+  }
+
+  getUpcomingMatches() {
+    this.matchService.getUpcomingMatches().pipe(take(1)).subscribe(
+      resp => this.upcomingMatches = resp.data,
+      err => console.log('error get upcoming matches')
+    );
+  }
+
+  getPastMatches() {
+    this.matchService.updatePastMatches().pipe(take(1)).subscribe(
+      resp => this.pastMatches = resp.data,
+      err => console.log('error get upcoming matches')
+    );
+  }
+
+  selectMatchesByTime(x) {
+    // matchesBy
+    console.log('x', x);
+    switch (x) {
+      case 'all':
+        this.matchesList = this.matches;
+        break;
+      case 'upcoming':
+        this.matchesList = this.upcomingMatches;
+        break;
+      case 'live':
+        this.matchesList = this.pastMatches;
+        break;
+    }
+    console.log('selectMatchesByTime', this.matchesList?.length || 'nema meceva');
   }
 }
