@@ -21,6 +21,7 @@ export class MatchesListComponent implements OnInit, OnChanges {
   matchesList: NewMatch[];
   upcomingMatches;
   pastMatches;
+  selectedMatchesOption: string = 'all';
 
   /**
    *  TODO: CHECK IF USER IS LOGGED OR NOT AND SEND INFO ABOUT CAN IT CLICK ON SINGLE-MATCH.COMPONENT
@@ -59,19 +60,19 @@ export class MatchesListComponent implements OnInit, OnChanges {
     this.getPastMatches();
   }
 
-  returnPredictedMatch(match) {
-    if (this.predictedMatches && (this.predictedMatches.findIndex(x => x.match.id === match.id) !== -1)) {
-      return this.predictedMatches[this.predictedMatches.findIndex(x => x.match.id === match.id)];
-    } else {
-      return false;
-    }
-  }
-
   ngOnChanges(changes: SimpleChanges): void {
     console.log(this.matches);
     console.log(this.matchesList);
     if (changes.matches) {
       this.matchesList = this.matches;
+    }
+  }
+
+  returnPredictedMatch(match) {
+    if (this.predictedMatches && (this.predictedMatches.findIndex(x => x.match.id === match.id) !== -1)) {
+      return this.predictedMatches[this.predictedMatches.findIndex(x => x.match.id === match.id)];
+    } else {
+      return false;
     }
   }
 
@@ -95,12 +96,15 @@ export class MatchesListComponent implements OnInit, OnChanges {
     switch (x) {
       case 'all':
         this.matchesList = this.matches;
+        this.selectedMatchesOption = x;
         break;
       case 'upcoming':
         this.matchesList = this.upcomingMatches;
+        this.selectedMatchesOption = x;
         break;
       case 'live':
         this.matchesList = this.pastMatches;
+        this.selectedMatchesOption = x;
         break;
     }
     console.log('selectMatchesByTime', this.matchesList?.length || 'nema meceva');

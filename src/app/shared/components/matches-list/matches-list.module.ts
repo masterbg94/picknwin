@@ -6,6 +6,7 @@ import {SingleMatchModule} from './single-match/single-match.module';
 import {CustomMaterialModule} from '../../../modules/custom-material.module';
 import {FormsModule} from '@angular/forms';
 import {Ng2SearchPipeModule} from 'ng2-search-filter';
+import {RouterModule} from '@angular/router';
 
 @NgModule({
   declarations: [MatchesListComponent],
@@ -15,7 +16,8 @@ import {Ng2SearchPipeModule} from 'ng2-search-filter';
         CustomMaterialModule,
         FormsModule,
         // TODO: discover Ng2SearchPipeModule
-        Ng2SearchPipeModule
+        Ng2SearchPipeModule,
+        RouterModule
     ],
   exports: [MatchesListComponent]
 })
