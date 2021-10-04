@@ -14,7 +14,7 @@ export class PredictionsComponent implements OnInit {
   subscriptions: Subscription[] = [];
   currentUser: string;
   @Input() isMobile;
-  predictionsExpanded: boolean = false;
+  predictionsExpanded: boolean = true;
 
   constructor(
     private predictionService: PredictionService,
@@ -37,6 +37,7 @@ export class PredictionsComponent implements OnInit {
 
   changeTab(event) {
     this.tabValue = event.tab.textLabel;
+    console.log('tab value', this.tabValue);
   }
 
 
@@ -66,7 +67,17 @@ export class PredictionsComponent implements OnInit {
     this.predictionService.clearAllPredictions();
   }
 
-  changePredictionsState(){
-    this.predictionsExpanded = !this.predictionsExpanded;
+  changePredictionsState() {
+    if (this.tabValue === 'predictions') {
+      this.predictionsExpanded = !this.predictionsExpanded;
+      console.log('if (this.tabValue === \'predictions\')');
+      return Boolean(this.predictionsExpanded);
+    } else {
+      return false;
+    }
+  }
+
+  changePredictionToTrue() {
+    this.predictionsExpanded = false;
   }
 }

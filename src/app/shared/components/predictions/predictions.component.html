@@ -2,19 +2,21 @@
   <div class="predictions-container">
     <mat-tab-group [backgroundColor]="'#fff'"
                    (selectedTabChange)="changeTab($event)"
-                   [class.collapsed-container]="predictionsExpanded">
-      <mat-tab>
+                   [class.collapsed-container]="changePredictionsState()">
+      <mat-tab [label]="'predictions'">
         <ng-template mat-tab-label>
-          <div class="d-flex align-items-center" (click)="changePredictionsState()">
+          <div class="d-flex align-items-center"
+               (click)="changePredictionsState()">
             <mat-icon class="example-tab-icon">text_snippet</mat-icon>
             Predictions
+            <!--collapse icon only in mobile version-->
             <mat-icon
+              *ngIf="isMobile"
               aria-hidden="false"
               aria-label="prediction expand-collapse"
-
               style="margin-left: 6px"
             >
-              {{predictionsExpanded ? 'expand' : 'unfold_less'}}
+              {{predictionsExpanded ? 'unfold_less' : 'expand'}}
             </mat-icon>
           </div>
         </ng-template>
@@ -25,22 +27,32 @@
                                            (deletePredictionEvent)="deletePrediction(index)"
           ></app-single-prediction-component>
         </ng-container>
+        <!--        <ng-container *ngIf="predictions==null">-->
+        <!--          <p>No predictions</p>-->
+        <!--        </ng-container>-->
         <button class="submit-predictions" *ngIf="predictions && predictions?.length" (click)="submitPredictions()">
           Submit
         </button>
       </mat-tab>
-      <mat-tab>
-        <ng-template mat-tab-label>
-          <mat-icon class="example-tab-icon">chat</mat-icon>
-          Chat
-        </ng-template>
-        <p>Chat</p>
+      <mat-tab [label]="'chat'">
+        <div (click)="changePredictionToTrue()">
+          <ng-template mat-tab-label>
+            <mat-icon class="example-tab-icon">chat</mat-icon>
+            Chat
+          </ng-template>
+          <p>Chat</p>
+        </div>
+
       </mat-tab>
-      <mat-tab>
-        <ng-template mat-tab-label>
-          <mat-icon class="example-tab-icon">celebration</mat-icon>
-          Activity
-        </ng-template>
+      <mat-tab [label]="'activity'">
+        <div (click)="changePredictionToTrue()">
+          <ng-template mat-tab-label>
+            <mat-icon class="example-tab-icon">celebration</mat-icon>
+            Activity
+          </ng-template>
+          <p>Activity</p>
+        </div>
+
       </mat-tab>
     </mat-tab-group>
   </div>
