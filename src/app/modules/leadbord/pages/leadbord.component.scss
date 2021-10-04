@@ -7,5 +7,16 @@
   //padding-top: 32px;
   /* Menu bug */
   margin-top: -88px;
-  padding-top: 120px;
+}
+
+@media screen and (min-width: 576px) {
+  .leadbord-wrapper {
+    padding-top: 120px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .leadbord-wrapper {
+    padding: 100px 12px 0;
+  }
 }

@@ -24,6 +24,57 @@
       color: white;
     }
   }
+
+  // FLOATING PREDICTION FOR MOBILE
+  &.mobile-predictions {
+    padding: 0 !important;
+    box-shadow: 0 0 5px 1px rgb(255, 255, 255, 0.4) !important;
+
+    .predictions-container {
+      ::ng-deep {
+        mat-tab-group {
+          flex-direction: column-reverse;
+          //height: apx;
+          &.collapsed-container {
+            height: 40px;
+          }
+
+          // head deo
+          mat-tab-header {
+            height: 40px;
+
+            .mat-tab-label-container {
+              .mat-tab-labels {
+                height: 100%;
+                background: #0a1a2a;
+
+                .mat-tab-label {
+                  height: 100%;
+                }
+              }
+            }
+          }
+
+          //content deo
+          .mat-tab-body-wrapper {
+            margin: 0 !important;
+            padding: 12px;
+            max-height: 300px;
+            overflow: scroll;
+          }
+
+          .prediction-expand-collapse {
+            background: #1a2937;
+            border-radius: 3px;
+          }
+        }
+
+        mat-tab-group.mat-tab-group.mat-primary.mat-background-#fff {
+          flex-direction: column-reverse !important;
+        }
+      }
+    }
+  }
 }
 
 ::ng-deep {

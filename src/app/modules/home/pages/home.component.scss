@@ -64,12 +64,29 @@
 }
 
 .home__matches {
-  padding-top: 54px;
+  padding-top: 24px;
   background: $main-dark-blue;
 
   app-matches-list {
     max-width: 684px;
     width: 100%;
+  }
+}
+
+.main-background-blue {
+  padding: 12px;
+}
+
+// only for mobile devices
+@media screen and (max-width: 480px) {
+  .home__matches {
+    padding-top: 0 !important;
+
+    &--wrapper {
+      .mw-330:first-of-type {
+        margin: 12px !important;
+      }
+    }
   }
 }
 
@@ -80,6 +97,7 @@
   // TODO: FIX this CLASS NAME in html & scss
   .home-info-details {
     flex-direction: column;
+    margin-bottom: 24px;
 
     .col-4.three-descriptions {
       max-width: unset;
@@ -89,6 +107,23 @@
 
   .home__matches--wrapper {
   }
+
+  .mw-684 {
+    padding: 0 12px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  //Mobile prediction
+  ::ng-deep.prediction-component-mobile {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+    height: auto;
+    padding: 0;
+    z-index: 10;
+  }
 }
 
 // lomi se premium/tablea/login
@@ -96,11 +131,17 @@
   .home__matches .home__matches--wrapper {
     justify-content: center;
     // prvo ide login i premium
-    .mw-684{
+    .mw-684 {
       order: 2;
     }
-    .mw-330{
-      margin: 24px 12px;
+
+    .mw-330 {
+      //margin: 24px 12px;
+      margin: 0;
+
+      &:first-of-type {
+        margin-right: 24px;
+      }
     }
   }
 }

@@ -12,13 +12,15 @@ import {Router} from '@angular/router';
 export class LeadbordTableComponent implements OnInit {
   allLeadboardData: Leadbord[];
   leadboardPlaces;
+  innerWidth: number;
 
   constructor(private leadbordService: LeadbordService, private router: Router) {
+    this.innerWidth = window.innerWidth;
   }
 
   ngOnInit(): void {
     this.getLeadbordData();
-    if (this.router.url === '/leadbord'){
+    if (this.router.url === '/leadbord') {
       this.leadboardPlaces = true;
     }
   }

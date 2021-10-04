@@ -14,8 +14,10 @@ export class HomeComponent implements OnInit {
   allMatches: NewMatch[];
   subscriptions: Subscription[] = [];
   userNotLogged;
+  browserWidth: number;
 
   constructor(private matchesService: MatchesService, private authService: AuthenticationService) {
+    this.browserWidth = window.innerWidth;
   }
 
   ngOnInit(): void {

@@ -23,18 +23,24 @@
     <div class="mw-684">
       <app-matches-list [matches]="allMatches"></app-matches-list>
     </div>
-    <div class="mw-330">
-      <app-home-login-component *ngIf="userNotLogged"></app-home-login-component>
+    <div class="mw-330" *ngIf="userNotLogged">
+      <app-home-login-component></app-home-login-component>
+    </div>
+    <div class="mw-330 m-0" *ngIf="!userNotLogged">
+      <app-predictions-component
+        [isMobile]="browserWidth<=768"
+        [class.prediction-component-mobile]="browserWidth<=768">
+      </app-predictions-component>
     </div>
   </div>
 </div>
 
-<div class="container-fluid main-background-blue">
-  <div class="container d-flex justify-content-center">
-    <div class="d-flex flex-column mw-684">
+<div class="container-fluid main-background-blue" style="padding: 12px">
+  <div class="container d-flex justify-content-center p-0">
+    <div class="d-flex flex-column mw-684 home-content_wrapper">
       <app-promo-banner-component></app-promo-banner-component>
       <!-- 3 cols description-->
-      <div class="home-info-details d-flex justify-content-between" style="margin-bottom: 24px">
+      <div class="home-info-details d-flex justify-content-between">
         <div class="col-4 three-descriptions">
           <div class="picture">
             <img src="assets/img/gd1.svg" alt="">

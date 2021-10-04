@@ -73,6 +73,8 @@ export class AppComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
+    this.innerWidth = window.innerWidth;
+    // console.log('innerWidth', this.innerWidth);
     this.subscription.push(
       this.authService.currentUser.subscribe(
         (userLogStatus) => {

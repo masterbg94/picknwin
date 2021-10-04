@@ -1,18 +1,18 @@
 <div class="matches-settings" *ngIf="haveOptions">
   <div class="matches-options-search">
-    <div class="col-md-8 col-sm-12 m-0 p-0 d-flex matches-options">
+    <div class="col-md-8 col-sm-12 m-0 p-0 matches-options">
       <div class="matches-options-select"
            (click)="selectMatchesByTime('all')"
-           [class.matches-options-select-active]="selectedMatchesOption === 'all'">All matches({{matches?.length || 0}})
+           [class.matches-options-select-active]="selectedMatchesOption === 'all'">All matches ({{matches?.length ? matches?.length : 0}})
       </div>
       <div class="matches-options-select"
            (click)="selectMatchesByTime('upcoming')"
            [class.matches-options-select-active]="selectedMatchesOption === 'upcoming'">
-        Upcoming({{upcomingMatches?.length || 0}})
+        Upcoming({{upcomingMatches?.length ? upcomingMatches?.length : 0}})
       </div>
       <div class="matches-options-select"
            (click)="selectMatchesByTime('live')"
-           [class.matches-options-select-active]="selectedMatchesOption === 'live'">Live({{pastMatches?.length || 0}})
+           [class.matches-options-select-active]="selectedMatchesOption === 'live'">Live({{pastMatches?.length ? pastMatches?.length : 0}})
       </div>
     </div>
     <div class="col-md-4 col-sm-12 p-0 search-match">

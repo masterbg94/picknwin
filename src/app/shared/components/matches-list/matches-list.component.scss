@@ -10,6 +10,8 @@
     display: flex;
 
     .matches-options {
+      display: flex;
+
       &-select {
         color: white;
         padding: 12px;
@@ -128,7 +130,19 @@
 
 @media screen and (max-width: 576px) {
   .matches-options-search {
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
     margin: 24px 0;
+
+    .matches-options {
+      //flex-direction: column;
+      justify-content: space-between;
+
+      &-select {
+        padding: 12px 0!important;
+        display: flex;
+        flex: auto;
+      }
+    }
   }
 }

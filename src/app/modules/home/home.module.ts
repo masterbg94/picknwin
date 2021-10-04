@@ -9,6 +9,7 @@ import {LeadbordTableComponent} from '../../shared/components/leadbord-table/lea
 import {GameCategoriesModule} from '../../shared/components/game-categories/game-categories.module';
 import {LeadbordTableModule} from '../../shared/components/leadbord-table/leadbord-table.module';
 import {CommonModule} from '@angular/common';
+import {PredictionsModule} from '../../shared/components/predictions/predictions.module';
 
 @NgModule({
   declarations: [HomeComponent],
@@ -20,7 +21,8 @@ import {CommonModule} from '@angular/common';
         PromoBannerModule,
         GameCategoriesModule,
         LeadbordTableModule,
-        CommonModule
+        CommonModule,
+        PredictionsModule
     ],
   exports: [
     LeadbordTableComponent

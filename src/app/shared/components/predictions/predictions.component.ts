@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {PredictionService} from '../../services/prediction.service';
 import {Subscription} from 'rxjs';
 import {ToastrService} from 'ngx-toastr';
@@ -13,6 +13,8 @@ export class PredictionsComponent implements OnInit {
   predictions: any[] = [];
   subscriptions: Subscription[] = [];
   currentUser: string;
+  @Input() isMobile;
+  predictionsExpanded: boolean = false;
 
   constructor(
     private predictionService: PredictionService,
@@ -62,5 +64,9 @@ export class PredictionsComponent implements OnInit {
       }
     );
     this.predictionService.clearAllPredictions();
+  }
+
+  changePredictionsState(){
+    this.predictionsExpanded = !this.predictionsExpanded;
   }
 }
