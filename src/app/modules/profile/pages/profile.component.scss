@@ -79,6 +79,7 @@
       flex-direction: column;
       display: flex;
       max-width: 100%;
+      padding: 12px !important;
 
       ::ng-deep {
         app-upgrade-premium .upgrade-premium {
@@ -93,8 +94,9 @@
         margin-top: 24px;
       }
     }
+
     // profile menu content / outlet
-    .profile-outlet{
+    .profile-outlet {
       margin: 0 auto 24px;
       overflow-x: scroll;
     }

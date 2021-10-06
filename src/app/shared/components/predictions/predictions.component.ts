@@ -68,11 +68,12 @@ export class PredictionsComponent implements OnInit {
   }
 
   changePredictionsState() {
-    if (this.tabValue === 'predictions') {
+    if (this?.tabValue === 'predictions') {
       this.predictionsExpanded = !this.predictionsExpanded;
       console.log('if (this.tabValue === \'predictions\')');
       return Boolean(this.predictionsExpanded);
     } else {
+      this.predictionsExpanded = false;
       return false;
     }
   }

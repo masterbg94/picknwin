@@ -2,7 +2,7 @@
   <div class="predictions-container">
     <mat-tab-group [backgroundColor]="'#fff'"
                    (selectedTabChange)="changeTab($event)"
-                   [class.collapsed-container]="changePredictionsState()">
+                   [class.collapsed-container]="predictionsExpanded">
       <mat-tab [label]="'predictions'">
         <ng-template mat-tab-label>
           <div class="d-flex align-items-center"
