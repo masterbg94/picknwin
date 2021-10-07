@@ -47,7 +47,7 @@
               #{{lead.place}}
             </span>
           <!-- TODO: Fix with svg-icon -->
-          <div class="icon icon__place">
+          <div class="icon icon__place" *ngIf="innerWidth > 576">
             <svg
               *ngIf="i < 3"
               xmlns="http://www.w3.org/2000/svg"
@@ -99,7 +99,7 @@
       </td>
       <td>
         <div class="table__container table__container--start">
-          <div class="avatar"></div>
+          <div class="avatar" *ngIf="innerWidth > 576"></div>
           <span>
               {{lead.player}}
             </span>

@@ -122,5 +122,12 @@
 }
 
 @media screen and (max-width: 576px) {
+  .leadboard__table {
+    margin-bottom: 12px;
 
+    th,
+    td {
+      padding: 0 6px;
+    }
+  }
 }
