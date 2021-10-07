@@ -5,7 +5,8 @@
   /* Menu bug */
   margin-top: -88px;
   padding-top: 120px;
-  .w-1440{
+
+  .w-1440 {
     justify-content: space-between;
   }
 
@@ -14,57 +15,39 @@
   }
 }
 
-// @media screen and (max-width: 768px) {
-//   .matches-page-container{
-//     .w-1440{
-//       flex-direction: column;
-//       .mw-684{
-//         order: 2;
-//       }
-//     }
-//   }
-//   }   
+// Mobile predictions static bottom position
+@media screen and (max-width: 768px) {
+  ::ng-deep.prediction-component-mobile {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+    height: auto;
+    padding: 0;
+    z-index: 10;
+  }
+}
 
-// @media screen and (min-width: 768px) and (max-width: 1024px) {
-//     .matches-page-container{
-//       .w-1440{
-//         flex-direction: column;
-//         .mw-684{
-//           order: 2;
-//         }
-//       }
-//     }
-//   }   
-
-//   @media screen and (min-width: 1024px) and (max-width: 1200px){
-//     .matches-page-container{
-//       .w-1440{
-//         flex-direction: column;
-//         .mw-684{
-//           order: 2;
-//         }
-//       }
-//     }
-//   }
-
-  @media screen and (min-width: 1200px) and (max-width: 1366px){
-    .matches-page-container{
-      .w-1440{
-        // flex-direction: column;
-        flex-wrap: wrap;
-        .mw-684{
-          order: 2;
-        }
-      }
-    }
-   }
-   
-   @media (max-width: 1200px) {
-    .w-1440{
+@media screen and (min-width: 1200px) and (max-width: 1366px) {
+  .matches-page-container {
+    .w-1440 {
+      // flex-direction: column;
       flex-wrap: wrap;
-      justify-content: center!important;
-      .mw-684{
+
+      .mw-684 {
         order: 2;
       }
     }
   }
+}
+
+@media (max-width: 1200px) {
+  .w-1440 {
+    flex-wrap: wrap;
+    justify-content: center !important;
+
+    .mw-684 {
+      order: 2;
+    }
+  }
+}

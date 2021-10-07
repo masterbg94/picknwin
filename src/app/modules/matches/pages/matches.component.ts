@@ -10,7 +10,10 @@ import {Matches, NewMatch} from '../../../shared/models/matches';
   styleUrls: ['./matches.component.scss'],
 })
 export class MatchesComponent implements OnInit {
+  browserWidth: number;
+
   constructor(private matchesService: MatchesService) {
+    this.browserWidth = window.innerWidth;
   }
 
   allMatches: NewMatch[];

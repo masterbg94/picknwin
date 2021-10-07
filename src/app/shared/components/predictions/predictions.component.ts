@@ -9,7 +9,7 @@ import {ToastrService} from 'ngx-toastr';
   styleUrls: ['./predictions.component.scss'],
 })
 export class PredictionsComponent implements OnInit {
-  tabValue = 'Predictions';
+  tabValue = 'predictions';
   predictions: any[] = [];
   subscriptions: Subscription[] = [];
   currentUser: string;

@@ -6,16 +6,18 @@ import {MatchesListModule} from '../../shared/components/matches-list/matches-li
 import {HomeLoginModule} from '../../shared/components/home-login/home-login.module';
 import {GameCategoriesModule} from '../../shared/components/game-categories/game-categories.module';
 import {PredictionsModule} from '../../shared/components/predictions/predictions.module';
+import {CommonModule} from '@angular/common';
 
 @NgModule({
   declarations: [MatchesComponent],
-  imports: [
-    MatchesRoutingModule,
-    UpgradePremiumModule,
-    MatchesListModule,
-    HomeLoginModule,
-    GameCategoriesModule,
-    PredictionsModule,
-  ]
+    imports: [
+        MatchesRoutingModule,
+        UpgradePremiumModule,
+        MatchesListModule,
+        HomeLoginModule,
+        GameCategoriesModule,
+        PredictionsModule,
+        CommonModule,
+    ]
 })
 export class MatchesModule {}
