@@ -10,12 +10,9 @@
     justify-content: space-between;
 
     .documents-selection {
-      padding: 24px 0;
-
       .documents-menu {
         background: rgba(37, 51, 64, 0.6);
         border-radius: 6px;
-        margin-bottom: 24px;
 
         .my-documents-heading {
           display: flex;
@@ -80,6 +77,7 @@
       .documents-selection {
         flex-direction: column;
         max-width: 100%;
+        padding: 12px;
 
         ::ng-deep {
           app-upgrade-premium .upgrade-premium {
@@ -94,15 +92,25 @@
           margin-top: 24px;
         }
       }
+
+      .documents-outlet {
+        padding: 12px;
+      }
     }
   }
 }
 
 @media screen and (min-width: 576px) {
-  .documents-selection{
+  .documents-selection {
     flex-direction: column;
+    padding: 24px 0;
+
+    .documents-menu {
+      margin-bottom: 24px;
+    }
   }
   .documents-outlet {
     margin-left: 24px;
+    margin-top: 24px;
   }
 }
