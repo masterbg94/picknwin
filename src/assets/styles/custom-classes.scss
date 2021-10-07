@@ -62,25 +62,6 @@
   padding-left: 24px;
 }
 
-@media screen and (min-width: 769px){
-  /* Custom width */
-  .mw-330 {
-    max-width: 330px;
-    width: 100%;
-  }
-
-  .mw-684 {
-    max-width: 684px;
-    width: 100%;
-  }
-
-  /* Main container width */
-  .w-1440 {
-    max-width: 1440px;
-    width: 100%;
-  }
-}
-
 /* Main background colors */
 .main-background-blue {
   background: $main-dark-blue;
@@ -109,27 +90,47 @@
   width: 160px;
 }
 
-.cursor-pointer{
+.cursor-pointer {
   cursor: pointer;
 }
-@media screen and (max-width: 768px){
-  .px-24{
-    padding: 0!important;
+
+
+@media screen and (max-width: 768px) {
+  .px-24 {
+    padding: 0 !important;
   }
-  /* Custom width */
+  /* MAX WIDTH 330 */
   .mw-330 {
     //max-width: auto;
     width: 100%;
   }
-
+  /* MAX WIDTH 684 */
   .mw-684 {
     //max-width: 684px;
     width: 100%;
   }
-
-  /* Main container width */
+  /* MAX / WIDTH 1440 */
   .w-1440 {
     //max-width: 1440px;
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  /* MAX WIDTH 330 */
+  .mw-330 {
+    max-width: 330px;
+    width: 100%;
+  }
+  /* MAX WIDTH 684 */
+  .mw-684 {
+    max-width: 684px;
+    width: 100%;
+  }
+  /* MAX / WIDTH 1440 */
+  /* Main container width */
+  .w-1440 {
+    max-width: 1440px;
     width: 100%;
   }
 }

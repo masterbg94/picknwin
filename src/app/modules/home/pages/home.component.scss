@@ -114,6 +114,9 @@
 }
 
 @media screen and (max-width: 768px) {
+  .home-main .heading-text {
+    padding: 0 12px;
+  }
   .main-background-blue {
     padding: 0 !important;
   }

@@ -2,9 +2,7 @@
 
 .game-categories-wrapper {
   background: rgba(37, 51, 64, 0.6);
-  margin-bottom: 24px;
   border-radius: 6px;
-  //height: 400px;
   height: auto;
   transition: 0.5s;
   overflow: hidden;
@@ -101,5 +99,17 @@
         }
       }
     }
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .game-categories-wrapper {
+    margin-bottom: 12px;
+  }
+}
+
+@media screen and (min-width: 577px) {
+  .game-categories-wrapper {
+    margin-bottom: 24px;
   }
 }

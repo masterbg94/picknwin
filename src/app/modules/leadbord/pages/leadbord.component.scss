@@ -1,22 +1,26 @@
 @import "../../../../assets/palette";
 
+@media screen and (max-width: 576px) {
+  // giveaway only for this component
+  ::ng-deep {
+    app-giveaway-component .giveaway-container {
+      margin-bottom: 12px;
+    }
+  }
+  .leadbord-wrapper {
+    padding: 100px 12px 0;
+  }
+}
+
 .leadbord-wrapper {
   display: flex;
   justify-content: center;
   background: $main-dark-blue;
-  //padding-top: 32px;
-  /* Menu bug */
   margin-top: -88px;
 }
 
 @media screen and (min-width: 576px) {
   .leadbord-wrapper {
     padding-top: 120px;
-  }
-}
-
-@media screen and (max-width: 576px) {
-  .leadbord-wrapper {
-    padding: 100px 12px 0;
   }
 }
