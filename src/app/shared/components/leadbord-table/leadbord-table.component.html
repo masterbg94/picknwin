@@ -107,7 +107,7 @@
       </td>
       <td>
         <div class="table__container">
-          <div class="icon icon__score"></div>
+          <div class="icon icon__score" *ngIf="innerWidth > 576"></div>
           <span>
               {{lead.score}}
             </span>
@@ -115,7 +115,7 @@
       </td>
       <td>
         <div class="table__container">
-          <div class="icon icon__prize">
+          <div class="icon icon__prize" *ngIf="innerWidth > 576">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="14.862"

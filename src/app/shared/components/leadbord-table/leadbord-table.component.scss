@@ -131,3 +131,33 @@
     }
   }
 }
+
+@media screen and (max-width: 375px) {
+  .leadboard__table {
+    th,
+    td {
+      max-width: 80px;
+
+      &:first-of-type {
+        max-width: 50px;
+        width: 50px;
+      }
+
+      span {
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .leadboard__table {
+    th,
+    td {
+      max-width: 70px;
+      width: 70px;
+    }
+  }
+}
