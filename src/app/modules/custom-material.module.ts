@@ -9,6 +9,8 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatDialogModule} from '@angular/material/dialog';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatTableModule} from '@angular/material/table';
 
 @NgModule({
   imports: [
@@ -21,6 +23,8 @@ import {MatDialogModule} from '@angular/material/dialog';
     MatSidenavModule,
     MatListModule,
     MatToolbarModule,
+    MatPaginatorModule,
+    MatTableModule,
     MatDialogModule // added this for dialog , also in app.module declarations
   ],
   exports: [
@@ -33,6 +37,8 @@ import {MatDialogModule} from '@angular/material/dialog';
     MatSidenavModule,
     MatListModule,
     MatToolbarModule,
+    MatPaginatorModule,
+    MatTableModule,
     MatDialogModule // added this for dialog , also in app.module declarations
   ],
 })

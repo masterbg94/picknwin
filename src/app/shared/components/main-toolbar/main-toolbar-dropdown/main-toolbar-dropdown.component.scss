@@ -52,6 +52,9 @@
 
 /* Dropdown user menu */
 .login-dropdown {
+  box-shadow: 0 0 10px 1px rgb(255 255 255 / 10%);
+  border-radius: 0 0 6px 6px;
+  user-select: none;
   // Replaced by element dinamically calculated height
   //top: 88px;
   right: 0;

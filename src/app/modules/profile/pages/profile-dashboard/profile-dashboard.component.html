@@ -1,17 +1,65 @@
 <div class="dashboard-wrapper px-24 py-24">
   <p id="heading">Dashboard</p>
+  <!-- Dashboard stats -->
   <div class="profile-dashboard-stats d-flex justify-content-between">
-    <div class="col-12 d-flex flex-wrap p-0">
-      <div class="col-4 p-0 d-flex flex-column">
-        <p>Statistics</p>
+    <div class="col-12 d-flex flex-wrap p-0 mb-24">
+      <div class="stats-single-item">
+        <p class="stats-single-item_heading">Statistics</p>
+        <div class="stats-single-item_content">
+          <div class="d-flex justify-content-between align-items-center" id="yellowed">
+            <!-- TODO: FIX THIS STYLES-->
+            <p>Points earned</p>
+            <p><b>125.000</b></p>
+          </div>
+          <div class="d-flex justify-content-between align-items-center">
+            <p>Predictions Won</p>
+            <p>70 (66%)</p>
+          </div>
+          <div class="d-flex justify-content-between align-items-center">
+            <p>Predictions Lost</p>
+            <p>40</p>
+          </div>
+          <div class="d-flex justify-content-between align-items-center">
+            <p>Top 5</p>
+            <p>5</p>
+          </div>
+        </div>
       </div>
-      <div class="col-4 p-0 d-flex flex-column">
-        <p>Win/Lose Ratio</p>
+      <div class="stats-single-item">
+        <p class="stats-single-item_heading">Win/Lose Ratio</p>
+        <!--          chart-->
+        <div class="stats-single-item_content">
+          <div class="set-size charts-container">
+            <div class="pie-wrapper progress-75 style-2">
+              <span class="label">75<span class="smaller">%</span></span>
+              <div class="pie">
+                <div class="left-side half-circle"></div>
+                <div class="right-side half-circle"></div>
+              </div>
+              <div class="shadow"></div>
+            </div>
+          </div>
+          <!--          chart-->
+        </div>
       </div>
-      <div class="col-4 p-0 d-flex flex-column">
-        <p>Top 5</p>
+      <div class="stats-single-item">
+        <p class="stats-single-item_heading">Top 5</p>
+        <div class="stats-single-item_content">
+          <div class="top-5-icon position-relative d-flex flex-column align-items-center justify-content-between">
+            <svg-icon src="./assets/img/icons/top-5-star.svg"></svg-icon>
+            <svg-icon src="./assets/img/icons/top5-icon.svg" class="position-relative"></svg-icon>
+            <p class="position-absolute"
+               style="font-size: 48px;color: white;line-height: 72px;margin: 0;padding: 0;top: 50%;text-align: center;line-height: 12px">
+              <b>5</b>
+              <br>
+              <span style="font-size: 12px;color: white;line-height: 12px">Times</span>
+            </p>
+          </div>
+          <p class="text-center">Times you were in leadboard top 5</p>
+        </div>
       </div>
     </div>
   </div>
+  <!-- Dashboard stats -->
   <app-profile-table [userPredictions]="userPredictions"></app-profile-table>
 </div>

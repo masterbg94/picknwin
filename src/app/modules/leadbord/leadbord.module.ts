@@ -7,6 +7,7 @@ import { UpgradePremiumModule } from '../../shared/components/upgrade-premium/up
 import { HomeLoginModule } from '../../shared/components/home-login/home-login.module';
 import { GiveawayModule } from '../../shared/components/giveaway/giveaway.module';
 import {CommonModule} from '@angular/common';
+import {LeadTableModule} from '../../shared/components/lead-table/lead-table.module';
 
 @NgModule({
   declarations: [LeadbordComponent],
@@ -17,6 +18,7 @@ import {CommonModule} from '@angular/common';
         HomeLoginModule,
         GiveawayModule,
         CommonModule,
+        LeadTableModule,
     ],
 })
 export class LeadbordModule {}
