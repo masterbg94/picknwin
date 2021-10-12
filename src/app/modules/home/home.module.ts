@@ -10,6 +10,7 @@ import {GameCategoriesModule} from '../../shared/components/game-categories/game
 import {LeadbordTableModule} from '../../shared/components/leadbord-table/leadbord-table.module';
 import {CommonModule} from '@angular/common';
 import {PredictionsModule} from '../../shared/components/predictions/predictions.module';
+import {LeadTableModule} from '../../shared/components/lead-table/lead-table.module';
 
 @NgModule({
   declarations: [HomeComponent],
@@ -22,7 +23,8 @@ import {PredictionsModule} from '../../shared/components/predictions/predictions
         GameCategoriesModule,
         LeadbordTableModule,
         CommonModule,
-        PredictionsModule
+        PredictionsModule,
+        LeadTableModule
     ],
   exports: [
     LeadbordTableComponent

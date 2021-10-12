@@ -109,7 +109,7 @@ export const LeadbordMock: Leadbord[] = [
     score: 221188,
     price: 52218
   },
-  {
+/*  {
     place: 19,
     player: 'WomboDucky',
     score: 142980,
@@ -120,5 +120,5 @@ export const LeadbordMock: Leadbord[] = [
     player: 'chees2y',
     score: 249479,
     price: 118200
-  }
+  }*/
 ];

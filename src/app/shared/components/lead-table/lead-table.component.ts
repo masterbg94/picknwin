@@ -3,6 +3,7 @@ import {MatPaginator} from '@angular/material/paginator';
 import {MatTableDataSource} from '@angular/material/table';
 import {Leadbord} from '../../models/leadbord';
 import {LeadbordService} from '../../services/leadbord.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-lead-table',
@@ -10,8 +11,9 @@ import {LeadbordService} from '../../services/leadbord.service';
   styleUrls: ['./lead-table.component.scss']
 })
 export class LeadTableComponent implements OnInit, AfterViewInit {
+  leadboardPlaces: boolean;
 
-  constructor(public leadService: LeadbordService) {
+  constructor(public leadService: LeadbordService, private router: Router) {
   }
 
   /**
@@ -29,6 +31,9 @@ export class LeadTableComponent implements OnInit, AfterViewInit {
 
   ngOnInit(): void {
     this.getLeadData();
+    if (this.router.url === '/leadbord') {
+      this.leadboardPlaces = true;
+    }
   }
 
   /** Return Of mock data */
