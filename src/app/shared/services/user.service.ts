@@ -2,8 +2,7 @@ import {Injectable} from '@angular/core';
 import {API_HOME} from '../../api.config';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
-import {AllUsers, Register, UpdateUser} from '../models/user';
-import {take} from 'rxjs/operators';
+import {Register, UpdateUser} from '../models/user';
 
 @Injectable({providedIn: 'root'})
 export class UserService {
