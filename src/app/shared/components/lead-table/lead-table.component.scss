@@ -54,9 +54,22 @@ table {
   td {
     color: white !important;
   }
+
+  tbody tr:nth-child(even) {
+    background: $main-blue-gray !important;
+  }
 }
 
 .mat-paginator {
   border-radius: 0 0 6px 6px;
   background: $modal-background;
+
+  ::ng-deep {
+    button, .mat-paginator-page-size {
+      color: white !important;
+    }
+    mat-form-field .mat-form-field-wrapper{
+
+    }
+  }
 }
